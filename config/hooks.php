@@ -2,17 +2,21 @@
 /**
  * Boot order: services listed here are resolved from the container and have
  * their registerHooks() called during Plugin::boot(). Each must implement
- * PluginNamespace\Contract\HasHooks.
+ * Versus\Contract\HasHooks.
  *
- * @package PluginNamespace
+ * @package Versus
  *
  * @return array<class-string>
  */
 
 declare(strict_types=1);
 
+use Versus\Admin\Settings;
+use Versus\Service\VersusService;
+
 defined('ABSPATH') || exit;
 
 return [
-    // WaitlistService::class,
+    VersusService::class,
+    ...(is_admin() ? [Settings::class] : []),
 ];

@@ -1,0 +1,104 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const config = window.versusCompare;
+
+  if (!config) {
+    return;
+  }
+
+  const updateButtons = (productId, active, label) => {
+    document.querySelectorAll(`[data-versus-compare-button][data-product-id="${productId}"]`).forEach((button) => {
+      button.classList.toggle('is-active', active);
+      button.setAttribute('aria-pressed', active ? 'true' : 'false');
+      if (label) {
+        button.textContent = label;
+      }
+    });
+  };
+
+  document.addEventListener('click', async (event) => {
+    const button = event.target.closest('[data-versus-compare-button]');
+    const clearButton = event.target.closest('[data-versus-compare-clear]');
+
+    if (clearButton) {
+      event.preventDefault();
+
+      const body = new URLSearchParams({
+        action: config.clearAction,
+        nonce: config.nonce,
+      });
+
+      const response = await fetch(config.ajaxUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+        body: body.toString(),
+      });
+
+      const payload = await response.json();
+
+      if (payload?.success) {
+        window.location.href = payload.data?.compare_url || window.location.href;
+      }
+
+      return;
+    }
+
+    if (!button) {
+      return;
+    }
+
+    event.preventDefault();
+
+    if (!config.allowGuests && !document.body.classList.contains('logged-in')) {
+      window.location.href = config.loginUrl;
+      return;
+    }
+
+    const productId = button.dataset.productId;
+
+    if (!productId) {
+      return;
+    }
+
+    // Guard against double submissions while a request is in flight.
+    if (button.getAttribute('aria-busy') === 'true') {
+      return;
+    }
+
+    button.disabled = true;
+    button.setAttribute('aria-busy', 'true');
+
+    try {
+      const body = new URLSearchParams({
+        action: config.action,
+        nonce: config.nonce,
+        product_id: productId,
+      });
+
+      const response = await fetch(config.ajaxUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+        body: body.toString(),
+      });
+
+      const payload = await response.json();
+
+      if (payload?.success) {
+        updateButtons(productId, payload.data.in_compare, payload.data.button_text);
+      }
+    } finally {
+      button.disabled = false;
+      button.removeAttribute('aria-busy');
+    }
+  });
+
+  document.querySelectorAll('[data-versus-compare-differences]').forEach((checkbox) => {
+    const applyVisibility = () => {
+      document.querySelectorAll('.versus-compare-table tbody tr').forEach((row) => {
+        row.hidden = checkbox.checked && row.dataset.different !== '1';
+      });
+    };
+
+    checkbox.addEventListener('change', applyVisibility);
+    applyVisibility();
+  });
+});

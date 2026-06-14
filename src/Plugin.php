@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PluginNamespace;
+namespace Versus;
 
-use PluginNamespace\Contract\HasHooks;
+use Versus\Contract\HasHooks;
 
 defined('ABSPATH') || exit;
 
@@ -30,6 +30,14 @@ final class Plugin
     public function container(): Container
     {
         return $this->container;
+    }
+
+    /**
+     * Absolute URL to a bundled asset, relative to the plugin root.
+     */
+    public function url(string $path = ''): string
+    {
+        return VERSUS_URL . ltrim($path, '/');
     }
 
     public function boot(): void

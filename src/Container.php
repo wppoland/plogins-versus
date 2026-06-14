@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PluginNamespace;
+namespace Versus;
 
 defined('ABSPATH') || exit;
 

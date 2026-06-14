@@ -1,0 +1,48 @@
+.versus-compare {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.versus-compare-link {
+    font-size: 13px;
+}
+
+.versus-compare-button.is-active {
+    opacity: .85;
+}
+
+.versus-compare-account__header,
+.versus-compare-actions,
+.versus-compare-product__actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Reserved horizontal scroll: adding columns never reflows the page. */
+.versus-compare-table-wrapper {
+    overflow-x: auto;
+}
+
+.versus-compare-table {
+    min-width: 720px;
+}
+
+.versus-compare-table .is-different th,
+.versus-compare-table .is-different td {
+    background: rgba(255, 214, 10, .12);
+}
+
+.versus-compare-product {
+    min-width: 220px;
+}
+
+.versus-compare-product__name {
+    display: block;
+    margin-top: 8px;
+}
