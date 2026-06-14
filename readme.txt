@@ -73,6 +73,9 @@ On shop and archive loops and on the single product page, depending on your sett
 == Changelog ==
 
 = 0.2.0 =
+* Polished every interface: inline help tooltips on every setting, a modern themeable comparison table (CSS custom properties, fluid sizing, dark-mode and reduced-motion support), a friendly empty-state on the comparison page, and a live count badge on the compare link.
+* Improved accessibility: accessible "?" help affordances wired via `aria-describedby`, a polite live region that announces compare changes to screen readers, visible focus styles and full keyboard operability.
+* More robust front-end: graceful handling of network failures, guard against double submission, automatic table refresh after a remove, and friendly fallbacks for missing data.
 * Added a "Labels & text" section to the settings screen so the compare button, remove button, compare link, differences toggle, clear-all button and empty-list message can be customised (empty falls back to the translated default).
 * Made the plugin fully translation ready: `Domain Path` header and a `versus.pot` template in `/languages` (WordPress loads the translations automatically).
 * Added `uninstall.php` cleanup that removes the plugin options and the comparison-items table when the plugin is deleted.
