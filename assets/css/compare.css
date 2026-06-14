@@ -1,48 +1,257 @@
-.versus-compare {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 10px;
+/**
+ * Versus — storefront comparison styles.
+ *
+ * Themeable via CSS custom properties (override `--versus-*` from your theme).
+ * Layout-shift-safe: the table wrapper reserves its own scroll area so adding
+ * columns never reflows the page. Motion is opt-in and disabled when the visitor
+ * prefers reduced motion. Dark mode follows the visitor's system preference.
+ */
+
+.versus-compare,
+.versus-compare-account {
+    --versus-accent: #2563eb;
+    --versus-accent-contrast: #ffffff;
+    --versus-surface: #ffffff;
+    --versus-surface-muted: #f6f7f9;
+    --versus-border: #d8dce0;
+    --versus-text: #1d2327;
+    --versus-text-muted: #646970;
+    --versus-diff: rgba(255, 196, 0, .16);
+    --versus-diff-border: #f0b429;
+    --versus-radius: 10px;
+    --versus-gap: clamp(.5rem, .4rem + .5vw, .85rem);
+    --versus-focus: 0 0 0 2px var(--versus-surface), 0 0 0 4px var(--versus-accent);
+    --versus-transition: 160ms ease;
 }
 
-.versus-compare-link {
-    font-size: 13px;
+/* ------------------------------------------------------------------ button */
+
+.versus-compare {
+    display: flex;
+    gap: var(--versus-gap);
+    align-items: center;
+    flex-wrap: wrap;
+    margin-block-start: 10px;
+}
+
+.versus-compare-button {
+    display: inline-flex;
+    align-items: center;
+    gap: .4em;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .versus-compare-button {
+        transition: background-color var(--versus-transition), opacity var(--versus-transition), transform var(--versus-transition);
+    }
+
+    .versus-compare-button:active {
+        transform: translateY(1px);
+    }
 }
 
 .versus-compare-button.is-active {
-    opacity: .85;
+    opacity: .92;
+}
+
+/* A small ✓ glyph confirms the product is in the comparison. */
+.versus-compare-button.is-active::before {
+    content: "";
+    inline-size: .85em;
+    block-size: .85em;
+    flex: 0 0 auto;
+    background: currentColor;
+    -webkit-mask: var(--versus-check) center / contain no-repeat;
+    mask: var(--versus-check) center / contain no-repeat;
+}
+
+.versus-compare {
+    --versus-check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M6.5 11.5 3 8l1.1-1.1 2.4 2.4 5.4-5.4L13 5z'/%3E%3C/svg%3E");
+}
+
+.versus-compare-button:focus-visible,
+.versus-compare-account :focus-visible {
+    outline: none;
+    box-shadow: var(--versus-focus);
+}
+
+.versus-compare-link {
+    font-size: .8125rem;
+    display: inline-flex;
+    align-items: center;
+    gap: .3em;
+}
+
+/* Count badge — fixed min size so a 1→2 digit change does not shift layout. */
+.versus-compare-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-inline-size: 1.5em;
+    block-size: 1.5em;
+    padding-inline: .35em;
+    border-radius: 999px;
+    font-size: .72rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--versus-accent-contrast);
+    background: var(--versus-accent);
+}
+
+.versus-compare-count[hidden] {
+    display: none;
+}
+
+/* ------------------------------------------------------------- account page */
+
+.versus-compare-account {
+    color: var(--versus-text);
 }
 
 .versus-compare-account__header,
 .versus-compare-actions,
 .versus-compare-product__actions {
     display: flex;
-    gap: 12px;
+    gap: var(--versus-gap);
     align-items: center;
-    justify-content: space-between;
     flex-wrap: wrap;
+}
+
+.versus-compare-account__header {
+    justify-content: space-between;
+    margin-block-end: 1rem;
+}
+
+.versus-compare-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: .45em;
+    cursor: pointer;
+    user-select: none;
 }
 
 /* Reserved horizontal scroll: adding columns never reflows the page. */
 .versus-compare-table-wrapper {
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: var(--versus-radius);
+    border: 1px solid var(--versus-border);
+    background: var(--versus-surface);
 }
 
 .versus-compare-table {
     min-width: 720px;
+    margin: 0;
+    border-collapse: collapse;
+    inline-size: 100%;
+}
+
+.versus-compare-table th,
+.versus-compare-table td {
+    padding: clamp(.5rem, .4rem + .4vw, .9rem);
+    text-align: start;
+    vertical-align: top;
+    border-block-end: 1px solid var(--versus-border);
+}
+
+/* Sticky feature column keeps row labels visible while scrolling columns. */
+.versus-compare-table thead th:first-child,
+.versus-compare-table tbody th {
+    position: sticky;
+    inset-inline-start: 0;
+    background: var(--versus-surface-muted);
+    z-index: 1;
+    font-weight: 600;
+}
+
+.versus-compare-table thead th {
+    background: var(--versus-surface-muted);
 }
 
 .versus-compare-table .is-different th,
 .versus-compare-table .is-different td {
-    background: rgba(255, 214, 10, .12);
+    background: var(--versus-diff);
+    box-shadow: inset 3px 0 0 0 var(--versus-diff-border);
 }
 
 .versus-compare-product {
     min-width: 220px;
 }
 
+.versus-compare-product img {
+    block-size: auto;
+    max-inline-size: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+}
+
 .versus-compare-product__name {
     display: block;
-    margin-top: 8px;
+    margin-block-start: .5rem;
+    font-weight: 600;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .versus-compare-table tbody tr {
+        transition: opacity var(--versus-transition);
+    }
+}
+
+/* --------------------------------------------------------------- empty state */
+
+.versus-compare-empty {
+    display: grid;
+    place-items: center;
+    gap: .6rem;
+    text-align: center;
+    padding: clamp(1.5rem, 1rem + 4vw, 3.5rem) 1rem;
+    border: 1px dashed var(--versus-border);
+    border-radius: var(--versus-radius);
+    background: var(--versus-surface-muted);
+    color: var(--versus-text-muted);
+}
+
+.versus-compare-empty svg {
+    inline-size: clamp(40px, 8vw, 56px);
+    block-size: auto;
+    opacity: .7;
+}
+
+.versus-compare-empty p {
+    margin: 0;
+    max-inline-size: 42ch;
+}
+
+.versus-compare-empty .button {
+    margin-block-start: .4rem;
+}
+
+/* Screen-reader-only live region for compare announcements. */
+.versus-compare-sr {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ----------------------------------------------------------------- dark mode */
+
+@media (prefers-color-scheme: dark) {
+    .versus-compare,
+    .versus-compare-account {
+        --versus-accent: #3b82f6;
+        --versus-surface: #1a1d21;
+        --versus-surface-muted: #23272c;
+        --versus-border: #3a3f45;
+        --versus-text: #e4e6eb;
+        --versus-text-muted: #9aa0a6;
+        --versus-diff: rgba(255, 196, 0, .12);
+        --versus-focus: 0 0 0 2px var(--versus-surface), 0 0 0 4px var(--versus-accent);
+    }
 }

@@ -3,7 +3,7 @@
  * Plugin Name:       Versus - Product Compare for WooCommerce
  * Plugin URI:        https://plogins.com/versus/
  * Description:        Fast, accessible product comparison for WooCommerce - compare table with difference highlighting, guest + customer lists, no jQuery
- * Version:           0.1.0
+ * Version:           0.2.0
  * Requires at least: 6.5
  * Requires PHP:      8.1
  * Requires Plugins:  woocommerce
@@ -12,6 +12,7 @@
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       versus
+ * Domain Path:       /languages
  * WC requires at least: 8.0
  *
  * @package Versus
@@ -23,7 +24,7 @@ namespace Versus;
 
 defined('ABSPATH') || exit;
 
-const VERSION     = '0.1.0';
+const VERSION     = '0.2.0';
 const PLUGIN_FILE = __FILE__;
 
 define('VERSUS_DIR', plugin_dir_path(__FILE__));
@@ -39,6 +40,10 @@ add_action('before_woocommerce_init', static function (): void {
     }
 });
 
+// Translations: no manual load_plugin_textdomain() call. WordPress 4.6+ loads
+// translations for wp.org-hosted plugins automatically (just-in-time) from the
+// plugin slug, and the bundled languages/versus.pot lets translators get
+// started. The `Domain Path: /languages` header points WP at the local files.
 add_action('plugins_loaded', static function (): void {
     if (! class_exists('WooCommerce')) {
         add_action('admin_notices', static function (): void {
@@ -49,6 +54,7 @@ add_action('plugins_loaded', static function (): void {
         return;
     }
 
+    // Plugin::boot() fires the `versus/booted` action once it has registered its
+    // services, so PRO companions can hook there reliably.
     Plugin::instance()->boot();
-    do_action('versus/booted', Plugin::instance());
 });
