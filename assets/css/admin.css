@@ -1,0 +1,138 @@
+/**
+ * Versus — admin settings styles.
+ *
+ * Scoped to `.versus-settings` so nothing leaks into other admin screens.
+ * Themeable via `--versus-admin-*` custom properties; respects reduced motion
+ * and the admin colour scheme (dark mode).
+ */
+
+.versus-settings {
+    --versus-admin-accent: #2271b1;
+    --versus-admin-surface: #fff;
+    --versus-admin-border: #c3c4c7;
+    --versus-admin-muted: #646970;
+    --versus-admin-help-bg: #1d2327;
+    --versus-admin-help-fg: #fff;
+    --versus-admin-radius: 8px;
+    max-inline-size: 820px;
+}
+
+.versus-settings__intro {
+    margin-block: .25rem 1.25rem;
+    padding: clamp(.75rem, .5rem + 1vw, 1.1rem) 1.15rem;
+    border: 1px solid var(--versus-admin-border);
+    border-inline-start: 4px solid var(--versus-admin-accent);
+    border-radius: var(--versus-admin-radius);
+    background: var(--versus-admin-surface);
+    color: var(--versus-admin-muted);
+    max-inline-size: 65ch;
+}
+
+.versus-settings__intro strong {
+    color: inherit;
+}
+
+.versus-settings h2 {
+    margin-block-start: 2rem;
+    padding-block-end: .35rem;
+    border-block-end: 1px solid var(--versus-admin-border);
+}
+
+/* Accessible help affordance: a focusable "?" button with a tooltip wired via
+ * aria-describedby. The tooltip is shown on hover/focus and toggled by JS for
+ * keyboard/click; CSS provides a no-JS hover fallback. */
+.versus-help {
+    position: relative;
+    display: inline-flex;
+    margin-inline-start: .4em;
+    vertical-align: middle;
+}
+
+.versus-help__toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: 1.25rem;
+    block-size: 1.25rem;
+    padding: 0;
+    font-size: .72rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--versus-admin-muted);
+    background: transparent;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    cursor: help;
+}
+
+.versus-help__toggle:hover,
+.versus-help__toggle:focus-visible {
+    color: var(--versus-admin-accent);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(34, 113, 177, .3);
+}
+
+.versus-help__tip {
+    position: absolute;
+    inset-block-start: calc(100% + 8px);
+    inset-inline-start: 50%;
+    translate: -50% 0;
+    z-index: 20;
+    inline-size: max-content;
+    max-inline-size: min(280px, 70vw);
+    padding: .55rem .7rem;
+    font-size: .8rem;
+    font-weight: 400;
+    line-height: 1.45;
+    color: var(--versus-admin-help-fg);
+    background: var(--versus-admin-help-bg);
+    border-radius: 6px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .25);
+    text-align: start;
+    white-space: normal;
+}
+
+.versus-help__tip::before {
+    content: "";
+    position: absolute;
+    inset-block-end: 100%;
+    inset-inline-start: 50%;
+    translate: -50% 0;
+    border: 6px solid transparent;
+    border-block-end-color: var(--versus-admin-help-bg);
+}
+
+/* Hidden by default; shown on hover/focus (no-JS) or when JS sets [data-open]. */
+.versus-help__tip {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.versus-help:hover .versus-help__tip,
+.versus-help__toggle:focus-visible + .versus-help__tip,
+.versus-help__tip[data-open="true"] {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .versus-help__tip {
+        transition: opacity 140ms ease, visibility 140ms ease;
+    }
+}
+
+.versus-settings .form-table td .description {
+    max-inline-size: 60ch;
+}
+
+@media (prefers-color-scheme: dark) {
+    .versus-settings {
+        --versus-admin-surface: #2c3338;
+        --versus-admin-border: #4a5057;
+        --versus-admin-muted: #a7aaad;
+        --versus-admin-help-bg: #f0f0f1;
+        --versus-admin-help-fg: #1d2327;
+    }
+}

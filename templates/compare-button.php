@@ -22,6 +22,8 @@ $compare_link_text = (string) ($settings['compare_link_text'] ?? '');
 if ('' === $compare_link_text) {
     $compare_link_text = __('View comparison', 'versus');
 }
+
+$count = isset($button['count']) ? (int) $button['count'] : 0;
 ?>
 <div class="versus-compare">
     <button
@@ -35,5 +37,11 @@ if ('' === $compare_link_text) {
     </button>
     <a class="versus-compare-link" href="<?php echo esc_url($button['compare_url']); ?>">
         <?php echo esc_html($compare_link_text); ?>
+        <span
+            class="versus-compare-count"
+            data-versus-compare-count
+            <?php echo $count > 0 ? '' : 'hidden'; ?>
+            aria-hidden="true"
+        ><?php echo esc_html((string) $count); ?></span>
     </a>
 </div>
