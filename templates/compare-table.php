@@ -77,7 +77,7 @@ $toggle_text   = '' !== $toggle_text ? $toggle_text : __('Show only differences'
             <table class="shop_table shop_table_responsive versus-compare-table">
                 <thead>
                     <tr>
-                        <th><?php echo esc_html($feature_label); ?></th>
+                        <th><?php echo esc_html($feature_label !== '' ? $feature_label : __('Feature', 'versus')); ?></th>
                         <?php foreach ($products as $product) : ?>
                             <th class="versus-compare-product">
                                 <a href="<?php echo esc_url(get_permalink($product->get_id()) ?: ''); ?>">
