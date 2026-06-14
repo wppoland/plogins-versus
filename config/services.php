@@ -1,8 +1,7 @@
 <?php
 /**
  * Service wiring. Returns a closure that registers every service in the
- * container. Keep services thin; product logic lives in storefront-kit engines
- * instantiated here with this plugin's text-domain / option prefix / asset URLs.
+ * container.
  *
  * @package Versus
  */
@@ -26,7 +25,6 @@ return static function (Container $c): void {
         return new CompareRepository($wpdb);
     });
 
-    // Thin adapter over the storefront-kit CompareEngine.
     $c->singleton(VersusService::class, static fn (Container $c): VersusService => new VersusService(
         $c->get(CompareRepository::class),
     ));

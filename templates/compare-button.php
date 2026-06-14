@@ -2,8 +2,8 @@
 /**
  * Compare trigger button (used for both loop and single product placements).
  *
- * Rendered by the storefront-kit CompareEngine on
- * `woocommerce_after_shop_loop_item` and `woocommerce_single_product_summary`.
+ * Rendered on `woocommerce_after_shop_loop_item` and
+ * `woocommerce_single_product_summary`.
  *
  * @var \WC_Product          $product
  * @var array<string, mixed> $settings

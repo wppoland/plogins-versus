@@ -1,52 +1,30 @@
-# plugin-template
+# Versus - Product Compare for WooCommerce
 
-GitHub **template repo** for a WPPoland storefront FREE plugin. A thin adapter over
-`wppoland/storefront-kit`, pre-wired to the reusable CI/release workflows. Spin up a new plugin in
-minutes instead of rebuilding CI each time.
+Versus adds a "Compare" button to your WooCommerce shop, archive and single product pages so shoppers can line products up side by side in a clean comparison table without leaving your store.
 
-## Create a new plugin
+## Features
 
-> 🔔 **You must create a new repository for each plugin.** FREE → a **public** repo
-> `wppoland/<slug>`. PRO → a separate **private** repo `wppoland/<slug>-pro`.
+- Side-by-side comparison table showing image, name, price, SKU, availability, short description and every product attribute.
+- Difference highlighting with a single toggle to hide rows that are identical across products.
+- Works for both guests (stored per browser) and logged-in customers (a "Compare" tab in My Account); guest lists merge into the account on login.
+- Vanilla JavaScript front end with no jQuery, deferred and loaded in the footer.
+- No layout shift — the table scrolls horizontally inside its own wrapper.
+- Settings page to control placement, compared fields, the maximum number of products and all front-end labels.
 
-1. **"Use this template" → create `wppoland/<slug>`** (public).
-2. **Run the scaffold script** — replaces all tokens and renames `versus.php → <slug>.php`
-   (cross-platform; review the diff before committing):
-   ```bash
-   python3 scripts/init.py restock Restock "Restock" "Back-in-stock notifications for WooCommerce"
-   #                        ^slug   ^Namespace ^Name    ^short description
-   rm scripts/init.py
-   ```
-   Tokens it replaces (case-sensitive):
+## Installation
 
-   | Token | Replace with | Example |
-   |---|---|---|
-   | `versus` | lowercase slug = text-domain = i18n domain | `restock` |
-   | `Versus` | PSR-4 PHP namespace | `Restock` |
-   | `VERSUS` (in `define()`) | uppercased namespace | `RESTOCK` |
-   | `versus_` | option/meta prefix (slug, dashes→underscores) | `restock_` |
-   | `Versus - Product Compare for WooCommerce` / `Fast, accessible product comparison for WooCommerce - compare table with difference highlighting, guest + customer lists, no jQuery` / `Fast, accessible product comparison for WooCommerce - compare table with difference highlighting, guest + customer lists, no jQuery` | name + descriptions | … |
-3. `composer install` — resolves `wppoland/storefront-kit ^1.0` from VCS (no symlink). Implement
-   your adapter in `src/`, wire it in `config/services.php` + `config/hooks.php`.
-   *(For local atomic kit+adapter dev, see the kit README's path-override note.)*
-4. Add repo secrets: **`WPORG_SVN_USERNAME`**, **`WPORG_SVN_PASSWORD`**.
-5. Drop wp.org assets in `.wordpress-org/`; fill in `readme.txt`.
-6. Add a `PluginEntry` to `plogins` `packages/registry/src/plugins.config.ts` + a docs folder.
-7. **Release:** bump the header `Version:` + `readme.txt` Stable tag, tag `vX.Y.Z`, push →
-   `_release-free.yml` runs CI, vendors the kit, and auto-deploys to wp.org SVN.
+1. Upload the plugin to `/wp-content/plugins/versus`, or install it via Plugins → Add New.
+2. Activate it. WooCommerce must be active.
+3. Open the **Versus** menu in wp-admin to choose the compared fields and placement.
 
-## What's wired
+## Frequently Asked Questions
 
-- **Bootstrap** (`versus.php`): PHP/WC guards, HPOS + cart-blocks compat, `plugins_loaded`
-  boot, `do_action('versus/booted')` (the hook a PRO companion extends).
-- **Autoload** (`autoload.php`): Composer vendor autoloader + PSR-4 fallback (incl. the kit).
-- **DI**: `src/Plugin.php` singleton + `src/Container.php`; services in `config/services.php`,
-  boot order in `config/hooks.php`, defaults in `config/defaults.php`; `src/Migrator.php`.
-- **CI/Release**: `.github/workflows/{ci,release}.yml` call `wppoland/workflows@v1`.
-- **Quality**: `phpcs.xml.dist` (WPCS), `phpstan.neon.dist` (level 6 + WC stubs), `.distignore`
-  (ships `vendor/` so the kit travels), `.wp-env.json`.
+**Does it require WooCommerce?**
+Yes. Versus needs an active WooCommerce installation.
 
-## PRO companion (`<slug>-pro`, private)
+**Can guests compare products?**
+Yes, when "Allow guests" is enabled. A guest's comparison is stored per browser and merged into their account when they log in.
 
-Create a separate private repo. It hooks `add_action('<slug>/booted', …)`, bundles the Freemius
-SDK, and releases via `wppoland/workflows/.github/workflows/_release-pro.yml@v1`.
+Built by WPPoland — https://plogins.com
+
+License: GPL-2.0-or-later

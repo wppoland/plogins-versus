@@ -2,9 +2,8 @@
 /**
  * Comparison table (account page / compare endpoint).
  *
- * Rendered by the storefront-kit CompareEngine via the injected renderTable
- * closure. Reserved space: the table wrapper scrolls horizontally so adding
- * columns never reflows surrounding content.
+ * The table wrapper scrolls horizontally so adding columns never reflows
+ * surrounding content.
  *
  * @var list<\WC_Product>    $products
  * @var list<array{key: string, label: string, values: array<int, string>, text_values: array<int, string>}> $rows

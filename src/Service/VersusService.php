@@ -11,15 +11,14 @@ use Versus\Repository\CompareRepository;
 use WPPoland\StorefrontKit\Compare\CompareEngine;
 
 /**
- * Thin adapter over the storefront-kit {@see CompareEngine}.
+ * Wires up the compare feature for this plugin.
  *
- * Injects this plugin's text-domain ('versus'), option prefix ('versus_'),
- * asset URLs and labels into the namespace-neutral engine, and supplies the
- * closures the engine needs: one to render the packaged loop/single buttons,
- * one to render the comparison table, and a field resolver for any non-standard
- * column. All compare orchestration (endpoint, nonce, enqueue, AJAX, guest
- * cookie, difference highlighting) lives in the kit; this class only supplies
- * localisation, option storage, asset paths and the table/button markup.
+ * Supplies the text-domain ('versus'), option prefix ('versus_'), asset URLs
+ * and labels, plus the closures needed to render the loop/single buttons and
+ * the comparison table, and a field resolver for any non-standard column. The
+ * endpoint, nonce, enqueue, AJAX, guest cookie and difference highlighting are
+ * handled by {@see CompareEngine}; this class supplies localisation, option
+ * storage, asset paths and the table/button markup.
  */
 final class VersusService implements HasHooks
 {
@@ -30,9 +29,8 @@ final class VersusService implements HasHooks
     public function __construct(
         private readonly CompareRepository $repository,
     ) {
-        // The engine ships with storefront-kit >= 1.4.0. When present, wire it
-        // with this plugin's text-domain / option prefix / asset URLs. Otherwise
-        // leave the service inert (see registerHooks()).
+        // Wire the compare engine when available; otherwise leave the service
+        // inert (see registerHooks()).
         if (! class_exists(CompareEngine::class)) {
             return;
         }
@@ -83,25 +81,23 @@ final class VersusService implements HasHooks
         if ($this->engine instanceof CompareEngine) {
             $this->engine->registerHooks();
 
-            // The kit localises window.versusCompare on wp_enqueue_scripts@10
-            // but does not include a generic failure string; compare.js reads
+            // window.versusCompare is localised on wp_enqueue_scripts@10 but
+            // does not include a generic failure string; compare.js reads
             // `config.errorText` to announce network/HTTP errors to assistive
-            // tech. Merge it in after the kit has enqueued (priority 20) without
-            // touching the kit.
+            // tech. Merge it in after the script has enqueued (priority 20).
             add_action('wp_enqueue_scripts', [$this, 'localiseErrorText'], 20);
 
             return;
         }
 
-        // TODO: storefront-kit < 1.4.0 has no CompareEngine. Bump the
-        // `wppoland/storefront-kit` constraint (composer update) to enable the
-        // comparison. No hooks are registered until the engine is present.
+        // No CompareEngine available: no hooks are registered until it is
+        // present.
     }
 
     /**
      * Add a translatable failure message to the already-localised
      * `versusCompare` object so compare.js can announce errors. No-op unless the
-     * kit actually enqueued the script for this request.
+     * script was actually enqueued for this request.
      */
     public function localiseErrorText(): void
     {
@@ -125,8 +121,7 @@ final class VersusService implements HasHooks
 
     /**
      * Ordered map of field key => row label for the standard fields the merchant
-     * has enabled. Resolved by the engine itself (price/sku/availability/
-     * description).
+     * has enabled (price/sku/availability/description).
      *
      * @return array<string, string>
      */

@@ -4,9 +4,7 @@
  *
  * The feature ships enabled. The merchant tunes which standard fields and
  * product attributes appear in the comparison table, the per-list item cap, and
- * whether guests may build a comparison. All comparison logic lives in the
- * storefront-kit CompareEngine; these values are passed through to it as the
- * resolved settings.
+ * whether guests may build a comparison.
  *
  * @package Versus
  *
@@ -37,7 +35,7 @@ return [
     'show_add_to_cart'         => true,
     'show_remove_button'       => true,
 
-    // Standard fields to compare (ordered). Keys map to engine-resolved rows.
+    // Standard fields to compare (ordered).
     'fields' => [
         'price'        => true,
         'sku'          => true,
@@ -46,7 +44,7 @@ return [
     ],
 
     // Runtime strings (front-end + AJAX). Stored empty by default so the
-    // translated fallbacks in the engine labels / templates apply; a merchant
+    // translated fallbacks in the labels / templates apply; a merchant
     // can override any of these from the Versus settings screen.
     'button_add_text'         => '',
     'button_remove_text'      => '',

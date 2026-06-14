@@ -15,8 +15,7 @@ use WPPoland\StorefrontKit\Compare\CompareRepository as CompareRepositoryContrac
  *
  * Items are addressed by product id plus exactly one owner: a logged-in
  * `$userId` or a guest `$sessionId`. The list is returned oldest-first so the
- * engine's `removeOldest()` can enforce the per-list cap. Implements the
- * storefront-kit {@see CompareRepositoryContract}.
+ * per-list cap can be enforced by removing the oldest item.
  *
  * phpcs:disable WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching,WordPress.DB.PreparedSQL.NotPrepared -- Custom plugin table accessed through $wpdb->prepare() with %i/%d/%s placeholders; no caching layer for this owned table.
  */
