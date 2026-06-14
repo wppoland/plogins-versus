@@ -26,10 +26,15 @@ $only_diff     = (bool) ($settings['show_only_differences'] ?? false);
 $show_image    = (bool) ($settings['show_product_image'] ?? true);
 $show_cart     = (bool) ($settings['show_add_to_cart'] ?? true);
 $show_remove   = (bool) ($settings['show_remove_button'] ?? true);
-$remove_label  = (string) ($settings['button_remove_text'] ?? __('Remove', 'versus'));
-$clear_text    = (string) ($settings['clear_text'] ?? __('Clear all', 'versus'));
-$empty_text    = (string) ($settings['empty_text'] ?? __('No products added to compare yet.', 'versus'));
-$toggle_text   = (string) ($settings['differences_toggle_text'] ?? __('Show only differences', 'versus'));
+$remove_label  = (string) ($settings['button_remove_text'] ?? '');
+$clear_text    = (string) ($settings['clear_text'] ?? '');
+$empty_text    = (string) ($settings['empty_text'] ?? '');
+$toggle_text   = (string) ($settings['differences_toggle_text'] ?? '');
+
+$remove_label  = '' !== $remove_label ? $remove_label : __('Remove', 'versus');
+$clear_text    = '' !== $clear_text ? $clear_text : __('Clear all', 'versus');
+$empty_text    = '' !== $empty_text ? $empty_text : __('No products added to compare yet.', 'versus');
+$toggle_text   = '' !== $toggle_text ? $toggle_text : __('Show only differences', 'versus');
 ?>
 <div class="versus-compare-account">
     <div class="versus-compare-account__header">
@@ -49,8 +54,24 @@ $toggle_text   = (string) ($settings['differences_toggle_text'] ?? __('Show only
         <?php endif; ?>
     </div>
 
+    <div class="versus-compare-sr" role="status" aria-live="polite" data-versus-compare-status></div>
+
     <?php if ($products === []) : ?>
-        <p><?php echo esc_html($empty_text); ?></p>
+        <div class="versus-compare-empty">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                <path d="M4 5h7v14H4zM13 5h7v14h-7z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M7 9h1M7 12h1M16 9h1M16 12h1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <p><?php echo esc_html($empty_text); ?></p>
+            <?php
+            $shop_url = function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : '';
+            if (is_string($shop_url) && '' !== $shop_url) :
+                ?>
+                <a class="button" href="<?php echo esc_url($shop_url); ?>">
+                    <?php esc_html_e('Browse products', 'versus'); ?>
+                </a>
+            <?php endif; ?>
+        </div>
     <?php else : ?>
         <div class="versus-compare-table-wrapper">
             <table class="shop_table shop_table_responsive versus-compare-table">
