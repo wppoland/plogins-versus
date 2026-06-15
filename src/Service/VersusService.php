@@ -83,12 +83,39 @@ final class VersusService implements HasHooks
         if ($this->engine instanceof CompareEngine) {
             $this->engine->registerHooks();
 
+            // The kit localises window.versusCompare on wp_enqueue_scripts@10
+            // but does not include a generic failure string; compare.js reads
+            // `config.errorText` to announce network/HTTP errors to assistive
+            // tech. Merge it in after the kit has enqueued (priority 20) without
+            // touching the kit.
+            add_action('wp_enqueue_scripts', [$this, 'localiseErrorText'], 20);
+
             return;
         }
 
         // TODO: storefront-kit < 1.4.0 has no CompareEngine. Bump the
         // `wppoland/storefront-kit` constraint (composer update) to enable the
         // comparison. No hooks are registered until the engine is present.
+    }
+
+    /**
+     * Add a translatable failure message to the already-localised
+     * `versusCompare` object so compare.js can announce errors. No-op unless the
+     * kit actually enqueued the script for this request.
+     */
+    public function localiseErrorText(): void
+    {
+        if (! wp_script_is('versus', 'enqueued')) {
+            return;
+        }
+
+        $errorText = __('Something went wrong. Please try again.', 'versus');
+
+        wp_add_inline_script(
+            'versus',
+            'window.versusCompare = Object.assign(window.versusCompare || {}, ' . wp_json_encode(['errorText' => $errorText]) . ');',
+            'before',
+        );
     }
 
     private function isEnabled(): bool
