@@ -64,7 +64,14 @@
   };
 
   document.addEventListener('click', async (event) => {
-    const clearButton = event.target.closest('[data-versus-compare-clear]');
+    const target = event.target;
+
+    // Clicks can land on non-Element nodes (e.g. text nodes); guard closest().
+    if (!target || typeof target.closest !== 'function') {
+      return;
+    }
+
+    const clearButton = target.closest('[data-versus-compare-clear]');
 
     if (clearButton) {
       event.preventDefault();
@@ -92,7 +99,7 @@
       return;
     }
 
-    const button = event.target.closest('[data-versus-compare-button]');
+    const button = target.closest('[data-versus-compare-button]');
 
     if (!button) {
       return;
