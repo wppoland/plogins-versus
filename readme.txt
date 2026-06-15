@@ -37,9 +37,9 @@ A WooCommerce-capability settings page (Versus menu) lets you:
 
 All strings are translatable through the `versus` text domain, and a `versus.pot` template ships in `/languages`. Deleting the plugin removes its options and the comparison table.
 
-= Engine =
+= Built to be lightweight =
 
-The comparison orchestration (endpoint, nonce, asset enqueue, AJAX, guest cookie, difference calculation) is provided by the shared, namespace-neutral `wppoland/storefront-kit` Compare engine; this plugin is a thin adapter that supplies the text domain, options, asset URLs, storage and the table / button markup.
+Versus does the heavy lifting itself: a nonce-verified AJAX endpoint, per-browser guest storage, and an efficient difference calculation, with assets enqueued only when the compare button or table is on screen.
 
 == Installation ==
 
