@@ -1,5 +1,5 @@
 === Versus - Product Compare for WooCommerce ===
-Contributors: wppoland
+Contributors: motylanogha
 Tags: woocommerce, product compare, compare products, product comparison, comparison table
 Requires at least: 6.5
 Tested up to: 7.0
