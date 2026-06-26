@@ -62,8 +62,8 @@ msgid "Enable comparison"
 msgstr "Włącz porównywanie"
 
 #: src/Admin/Settings.php:142
-msgid "The master switch. When off, no compare buttons, account tab, or table are shown anywhere on the storefront — your other settings here are kept for when you turn it back on."
-msgstr "Główny przełącznik. Gdy wyłączony, żadne przyciski porównywania, zakładka konta ani tabela nie są nigdzie wyświetlane w sklepie — pozostałe ustawienia są zachowywane na wypadek ponownego włączenia."
+msgid "The master switch. When off, no compare buttons, account tab, or table are shown anywhere on the storefront, your other settings here are kept for when you turn it back on."
+msgstr "Główny przełącznik. Gdy wyłączony, żadne przyciski porównywania, zakładka konta ani tabela nie są nigdzie wyświetlane w sklepie, pozostałe ustawienia są zachowywane na wypadek ponownego włączenia."
 
 #: src/Admin/Settings.php:153
 msgid "Show the compare button and enable the comparison table."
@@ -94,8 +94,8 @@ msgid "Show the compare button under each product in loops."
 msgstr "Pokaż przycisk porównywania pod każdym produktem w pętlach."
 
 #: src/Admin/Settings.php:182
-msgid "Adds a Compare button beneath every product on the shop, category, tag, and search results pages — so shoppers can build a comparison while they browse."
-msgstr "Dodaje przycisk Porównaj pod każdym produktem na stronach sklepu, kategorii, tagów i wyników wyszukiwania — dzięki czemu klienci mogą budować porównanie podczas przeglądania."
+msgid "Adds a Compare button beneath every product on the shop, category, tag, and search results pages, so shoppers can build a comparison while they browse."
+msgstr "Dodaje przycisk Porównaj pod każdym produktem na stronach sklepu, kategorii, tagów i wyników wyszukiwania, dzięki czemu klienci mogą budować porównanie podczas przeglądania."
 
 #: src/Admin/Settings.php:183
 msgid "Single product page"
@@ -156,8 +156,8 @@ msgid "SKU"
 msgstr "SKU"
 
 #: src/Admin/Settings.php:198
-msgid "Adds a SKU row — useful for shops where customers reference part or model numbers."
-msgstr "Dodaje wiersz SKU — przydatny w sklepach, gdzie klienci posługują się numerami części lub modeli."
+msgid "Adds a SKU row, useful for shops where customers reference part or model numbers."
+msgstr "Dodaje wiersz SKU, przydatny w sklepach, gdzie klienci posługują się numerami części lub modeli."
 
 #: src/Admin/Settings.php:199
 #: src/Service/VersusService.php:111
@@ -281,8 +281,8 @@ msgid "Remove"
 msgstr "Usuń"
 
 #: src/Admin/Settings.php:219
-msgid "The wording shown once a product has been added — clicking it takes the product back out."
-msgstr "Tekst wyświetlany po dodaniu produktu — kliknięcie usuwa produkt z powrotem."
+msgid "The wording shown once a product has been added, clicking it takes the product back out."
+msgstr "Tekst wyświetlany po dodaniu produktu, kliknięcie usuwa produkt z powrotem."
 
 #: src/Admin/Settings.php:220
 msgid "Compare link"

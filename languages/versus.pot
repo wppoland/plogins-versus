@@ -60,7 +60,7 @@ msgid "Enable comparison"
 msgstr ""
 
 #: src/Admin/Settings.php:142
-msgid "The master switch. When off, no compare buttons, account tab, or table are shown anywhere on the storefront — your other settings here are kept for when you turn it back on."
+msgid "The master switch. When off, no compare buttons, account tab, or table are shown anywhere on the storefront, your other settings here are kept for when you turn it back on."
 msgstr ""
 
 #: src/Admin/Settings.php:153
@@ -92,7 +92,7 @@ msgid "Show the compare button under each product in loops."
 msgstr ""
 
 #: src/Admin/Settings.php:182
-msgid "Adds a Compare button beneath every product on the shop, category, tag, and search results pages — so shoppers can build a comparison while they browse."
+msgid "Adds a Compare button beneath every product on the shop, category, tag, and search results pages, so shoppers can build a comparison while they browse."
 msgstr ""
 
 #: src/Admin/Settings.php:183
@@ -154,7 +154,7 @@ msgid "SKU"
 msgstr ""
 
 #: src/Admin/Settings.php:198
-msgid "Adds a SKU row — useful for shops where customers reference part or model numbers."
+msgid "Adds a SKU row, useful for shops where customers reference part or model numbers."
 msgstr ""
 
 #: src/Admin/Settings.php:199
@@ -279,7 +279,7 @@ msgid "Remove"
 msgstr ""
 
 #: src/Admin/Settings.php:219
-msgid "The wording shown once a product has been added — clicking it takes the product back out."
+msgid "The wording shown once a product has been added, clicking it takes the product back out."
 msgstr ""
 
 #: src/Admin/Settings.php:220

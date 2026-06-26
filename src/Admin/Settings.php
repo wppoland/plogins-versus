@@ -139,7 +139,7 @@ final class Settings implements HasHooks
                         <tr>
                             <th scope="row">
                                 <?php esc_html_e('Enable comparison', 'versus'); ?>
-                                <?php $this->helpTip(__('The master switch. When off, no compare buttons, account tab, or table are shown anywhere on the storefront — your other settings here are kept for when you turn it back on.', 'versus')); ?>
+                                <?php $this->helpTip(__('The master switch. When off, no compare buttons, account tab, or table are shown anywhere on the storefront, your other settings here are kept for when you turn it back on.', 'versus')); ?>
                             </th>
                             <td>
                                 <label for="versus_enabled">
@@ -179,7 +179,7 @@ final class Settings implements HasHooks
                 <table class="form-table" role="presentation">
                     <tbody>
                         <?php
-                        $this->checkboxRow('show_on_loop', __('Shop & archive loops', 'versus'), __('Show the compare button under each product in loops.', 'versus'), $settings, __('Adds a Compare button beneath every product on the shop, category, tag, and search results pages — so shoppers can build a comparison while they browse.', 'versus'));
+                        $this->checkboxRow('show_on_loop', __('Shop & archive loops', 'versus'), __('Show the compare button under each product in loops.', 'versus'), $settings, __('Adds a Compare button beneath every product on the shop, category, tag, and search results pages, so shoppers can build a comparison while they browse.', 'versus'));
                         $this->checkboxRow('show_on_single', __('Single product page', 'versus'), __('Show the compare button on the single product page.', 'versus'), $settings, __('Adds a Compare button to each individual product page, near the add-to-cart area.', 'versus'));
                         $this->checkboxRow('allow_guests', __('Allow guests', 'versus'), __('Let logged-out visitors build a comparison (stored per browser).', 'versus'), $settings, __('When on, visitors who are not signed in can still compare; their selection is remembered in their own browser for six months. When off, clicking Compare sends them to log in first.', 'versus'));
                         $this->checkboxRow('show_in_account', __('Account menu', 'versus'), __('Add a "Compare" tab to the My Account menu for logged-in customers.', 'versus'), $settings, __('Adds a Compare tab inside My Account so signed-in customers can return to their saved comparison at any time. If you change this, save and then re-save Permalinks under Settings → Permalinks once.', 'versus'));
@@ -195,7 +195,7 @@ final class Settings implements HasHooks
                     <tbody>
                         <?php
                         $this->fieldCheckboxRow('price', __('Price', 'versus'), $fields, __('Adds a Price row showing each product’s current price (including any sale price).', 'versus'));
-                        $this->fieldCheckboxRow('sku', __('SKU', 'versus'), $fields, __('Adds a SKU row — useful for shops where customers reference part or model numbers.', 'versus'));
+                        $this->fieldCheckboxRow('sku', __('SKU', 'versus'), $fields, __('Adds a SKU row, useful for shops where customers reference part or model numbers.', 'versus'));
                         $this->fieldCheckboxRow('availability', __('Availability', 'versus'), $fields, __('Adds a stock-status row (In stock, Out of stock, On backorder) so shoppers can rule out unavailable options.', 'versus'));
                         $this->fieldCheckboxRow('description', __('Short description', 'versus'), $fields, __('Adds a row with each product’s short description for an at-a-glance summary.', 'versus'));
                         $this->checkboxRow('show_attributes', __('Product attributes', 'versus'), __('Add a row for each product attribute (colour, size, material, …).', 'versus'), $settings, __('Adds one row per product attribute (such as colour, size, or material). Only attributes that at least one of the compared products defines are shown.', 'versus'));
@@ -216,7 +216,7 @@ final class Settings implements HasHooks
                     <tbody>
                         <?php
                         $this->textRow('button_add_text', __('"Compare" button', 'versus'), __('Compare', 'versus'), $settings, __('The wording on the button that adds a product to the comparison.', 'versus'));
-                        $this->textRow('button_remove_text', __('"Remove" button', 'versus'), __('Remove', 'versus'), $settings, __('The wording shown once a product has been added — clicking it takes the product back out.', 'versus'));
+                        $this->textRow('button_remove_text', __('"Remove" button', 'versus'), __('Remove', 'versus'), $settings, __('The wording shown once a product has been added, clicking it takes the product back out.', 'versus'));
                         $this->textRow('compare_link_text', __('Compare link', 'versus'), __('View comparison', 'versus'), $settings, __('The link, shown next to the button, that opens the full comparison table.', 'versus'));
                         $this->textRow('differences_toggle_text', __('Differences toggle', 'versus'), __('Show only differences', 'versus'), $settings, __('The label for the checkbox on the comparison page that hides identical rows.', 'versus'));
                         $this->textRow('clear_text', __('Clear-all button', 'versus'), __('Clear all', 'versus'), $settings, __('The button that empties the entire comparison in one click.', 'versus'));
