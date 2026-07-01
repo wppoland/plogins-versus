@@ -87,6 +87,11 @@ Yes. Difference highlighting and a "differences only" toggle help shoppers focus
 
 Yes. Logged-in customers get a My Account Compare tab. Guest compare lists can be merged into the account after login.
 
+
+= Does this plugin work on WordPress Multisite? =
+
+Yes. This plugin is compatible with WordPress Multisite. Network activate it or activate it on individual sites; each site keeps its own settings and data.
+
 == Screenshots ==
 
 1. The side-by-side comparison table with difference highlighting.
