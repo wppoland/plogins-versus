@@ -144,3 +144,85 @@
         --versus-admin-help-fg: #1d2327;
     }
 }
+
+/* ------------------------------------------------------------------ *
+ * PRO upsell — dismissible banner, sidebar promo, "what PRO adds"
+ * locked cards. Pure advertising (no disabled inputs), scoped to
+ * .versus-settings, using the plugin's own violet accent for decorative
+ * touches. The CTA buttons use a fixed dark violet (--versus-pro-cta,
+ * #5b21b6) so WHITE text clears WCAG AA in both light and dark admin
+ * (white on #5b21b6 ≈ 8.9:1); the base accent flips light in dark mode,
+ * so it is reserved for borders/badges/lock glyphs only.
+ * ------------------------------------------------------------------ */
+.versus-settings {
+    --versus-pro-cta: #5b21b6;
+    --versus-pro-muted: #646970;
+    --versus-pro-radius: 8px;
+    --versus-pro-radius-sm: 6px;
+    --versus-pro-gap: 20px;
+}
+
+/* Two-column wrapper (form + promo aside); single column on narrow screens. */
+.versus-settings .versus-cols { display: grid; gap: var(--versus-pro-gap); grid-template-columns: 1fr; align-items: start; }
+@media (min-width: 1100px) {
+    .versus-settings .versus-cols { grid-template-columns: minmax(0, 1fr) 300px; }
+}
+
+/* Top banner */
+.versus-settings .versus-pro-banner {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0 0 var(--versus-pro-gap);
+    padding: 12px 16px;
+    border: 1px solid color-mix(in srgb, var(--versus-admin-accent) 30%, #dcdcde);
+    border-inline-start: 4px solid var(--versus-admin-accent);
+    border-radius: var(--versus-pro-radius);
+    background: color-mix(in srgb, var(--versus-admin-accent) 7%, #fff);
+}
+.versus-settings .versus-pro-banner__tag,
+.versus-settings .versus-pro-card__badge,
+.versus-settings .versus-pro-aside__eyebrow {
+    font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+}
+.versus-settings .versus-pro-banner__tag { flex: 0 0 auto; padding: 2px 8px; border-radius: 999px; color: #fff; background: var(--versus-pro-cta); }
+.versus-settings .versus-pro-banner__text { flex: 1 1 auto; margin: 0; color: #1d2327; }
+.versus-settings .versus-pro-banner__sub { margin-inline-start: 4px; color: var(--versus-pro-muted); }
+.versus-settings .versus-pro-banner__price { margin-inline-start: 6px; color: var(--versus-pro-muted); font-weight: 600; white-space: nowrap; }
+.versus-settings .versus-pro-banner__dismiss { flex: 0 0 auto; font-size: 18px; line-height: 1; text-decoration: none; color: var(--versus-pro-muted); padding: 4px; border-radius: 4px; }
+.versus-settings .versus-pro-banner__dismiss:hover { color: #1d2327; background: rgba(0, 0, 0, .05); }
+
+/* Accent CTA buttons (override WP blue with the readable dark-violet accent) */
+.versus-settings .versus-pro-banner__cta.button-primary,
+.versus-settings .versus-pro-aside__cta.button-primary {
+    background: var(--versus-pro-cta); border-color: color-mix(in srgb, var(--versus-pro-cta) 80%, #000); color: #fff; text-shadow: none; box-shadow: none;
+}
+.versus-settings .versus-pro-banner__cta.button-primary:hover,
+.versus-settings .versus-pro-aside__cta.button-primary:hover { background: color-mix(in srgb, var(--versus-pro-cta) 88%, #000); }
+
+/* Sidebar promo card */
+.versus-settings .versus-pro-aside {
+    background: #fff; border: 1px solid #dcdcde; border-top: 3px solid var(--versus-admin-accent); border-radius: var(--versus-pro-radius); padding: 18px 20px; position: sticky; top: 40px;
+}
+.versus-settings .versus-pro-aside__eyebrow { margin: 0 0 4px; color: var(--versus-pro-cta); }
+.versus-settings .versus-pro-aside__heading { margin: 0 0 12px; font-size: 16px; line-height: 1.3; }
+.versus-settings .versus-pro-aside__list { margin: 0 0 16px; padding: 0; list-style: none; }
+.versus-settings .versus-pro-aside__list li { display: flex; align-items: flex-start; gap: 8px; padding: 5px 0; color: #1d2327; font-size: 13px; }
+.versus-settings .versus-pro-aside__lock::before,
+.versus-settings .versus-pro-card__lock::before { content: "\f160"; font-family: dashicons; font-size: 15px; line-height: 1.2; color: var(--versus-admin-accent); }
+.versus-settings .versus-pro-aside__cta { width: 100%; text-align: center; }
+.versus-settings .versus-pro-aside__price { margin: 10px 0 0; font-size: 12px; color: var(--versus-pro-muted); text-align: center; }
+
+/* "What PRO adds" locked cards */
+.versus-settings .versus-pro-cards { max-width: 60rem; margin: var(--versus-pro-gap) 0 0; }
+.versus-settings .versus-pro-cards__title { font-size: 15px; margin: 0 0 12px; }
+.versus-settings .versus-pro-cards__grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+.versus-settings .versus-pro-card { position: relative; padding: 16px; border: 1px solid #dcdcde; border-radius: var(--versus-pro-radius-sm); background: color-mix(in srgb, var(--versus-admin-accent) 3%, #fff); }
+.versus-settings .versus-pro-card__badge { position: absolute; top: 12px; inset-inline-end: 12px; padding: 1px 7px; border-radius: 999px; color: var(--versus-pro-cta); border: 1px solid color-mix(in srgb, var(--versus-admin-accent) 40%, #fff); }
+.versus-settings .versus-pro-card__lock { display: inline-block; margin-bottom: 6px; }
+.versus-settings .versus-pro-card__title { margin: 0 0 6px; font-size: 14px; line-height: 1.3; }
+.versus-settings .versus-pro-card__desc { margin: 0; font-size: 12.5px; line-height: 1.5; color: var(--versus-pro-muted); }
+
+@media (prefers-reduced-motion: no-preference) {
+    .versus-settings .versus-pro-banner__cta, .versus-settings .versus-pro-aside__cta { transition: background-color .15s ease, border-color .15s ease; }
+}
