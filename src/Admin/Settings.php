@@ -27,6 +27,13 @@ final class Settings implements HasHooks
     /** Monotonic counter so each help tooltip gets a unique DOM id. */
     private int $tipSeq = 0;
 
+    private ?ProUpsell $proUpsell = null;
+
+    private function proUpsell(): ProUpsell
+    {
+        return $this->proUpsell ??= new ProUpsell();
+    }
+
     /**
      * Editable front-end label keys. Each is a plain-text string stored in the
      * settings option and consumed by the compare engine / templates.
@@ -47,6 +54,7 @@ final class Settings implements HasHooks
         add_action('admin_menu', [$this, 'addMenuPage']);
         add_action('admin_init', [$this, 'registerSettings']);
         add_action('admin_enqueue_scripts', [$this, 'enqueueAssets']);
+        $this->proUpsell()->registerHooks();
     }
 
     /**
@@ -121,6 +129,8 @@ final class Settings implements HasHooks
         <div class="wrap versus-settings">
             <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
 
+            <?php $this->proUpsell()->banner(); ?>
+
             <p class="versus-settings__intro">
                 <?php
                 echo wp_kses(
@@ -130,6 +140,7 @@ final class Settings implements HasHooks
                 ?>
             </p>
 
+            <div class="versus-cols">
             <form method="post" action="options.php">
                 <?php settings_fields(self::PAGE); ?>
 
@@ -227,6 +238,11 @@ final class Settings implements HasHooks
 
                 <?php submit_button(); ?>
             </form>
+
+                <?php $this->proUpsell()->aside(); ?>
+            </div>
+
+            <?php $this->proUpsell()->cards(); ?>
         </div>
         <?php
     }
