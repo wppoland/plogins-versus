@@ -4,7 +4,7 @@ Tags: woocommerce, product compare, compare products, product comparison, compar
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -103,7 +103,14 @@ Versus does not connect to, or send any data to, any external service or third-p
 
 Comparison data stays inside your WordPress database: a custom `{prefix}versus_compare_items` table holds the compared product IDs, the plugin settings live in the `versus_settings` option (with `versus_db_version` tracking the schema), and a guest's selection is kept in a first-party cookie in their own browser. Adding or removing a product is a same-origin AJAX request to your site's own `admin-ajax.php`; no outbound HTTP request is ever made. Deleting the plugin removes those options and drops the table.
 
+== Translations ==
+
+Plogins Versus includes Polish, German and Spanish translations for the plugin interface. The text domain is `plogins-versus`, so WordPress.org language packs can also override or extend these bundled translations.
+
 == Changelog ==
+
+= 1.0.2 =
+* Added bundled Polish, German and Spanish translations for the plugin interface.
 
 = 1.0.1 =
 * First stable release.
