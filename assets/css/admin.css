@@ -130,17 +130,3 @@
 .versus-settings .form-table td .description {
     max-inline-size: 60ch;
 }
-
-@media (prefers-color-scheme: dark) {
-    .versus-settings {
-        /* Lighter family violet for dark surfaces (matches the storefront's
-         * dark-mode accent). #a78bfa on #2c3338 = 4.71:1 — clears AA. */
-        --versus-admin-accent: #a78bfa;
-        --versus-admin-accent-ring: rgba(167, 139, 250, .4);
-        --versus-admin-surface: #2c3338;
-        --versus-admin-border: #4a5057;
-        --versus-admin-muted: #a7aaad;
-        --versus-admin-help-bg: #f0f0f1;
-        --versus-admin-help-fg: #1d2327;
-    }
-}
