@@ -1,4 +1,4 @@
-=== Plogins Versus - Product Compare for WooCommerce ===
+=== Versus - Product Compare for WooCommerce ===
 Contributors: motylanogha
 Tags: woocommerce, product compare, compare products, product comparison, comparison table
 Requires at least: 6.5
