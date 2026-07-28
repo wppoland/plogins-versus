@@ -27,12 +27,8 @@ final class Settings implements HasHooks
     /** Monotonic counter so each help tooltip gets a unique DOM id. */
     private int $tipSeq = 0;
 
+    /** Lazily built PRO upsell renderer (banner + sidebar + locked cards). */
     private ?ProUpsell $proUpsell = null;
-
-    private function proUpsell(): ProUpsell
-    {
-        return $this->proUpsell ??= new ProUpsell();
-    }
 
     /**
      * Editable front-end label keys. Each is a plain-text string stored in the
@@ -57,8 +53,13 @@ final class Settings implements HasHooks
         $this->proUpsell()->registerHooks();
     }
 
+    private function proUpsell(): ProUpsell
+    {
+        return $this->proUpsell ??= new ProUpsell();
+    }
+
     /**
-     * Enqueue the settings-screen styles/script (real files — Plugin-Check
+     * Enqueue the settings-screen styles/script (real files, Plugin-Check
      * clean) only on the Versus settings page.
      */
     public function enqueueAssets(string $hook): void
@@ -180,7 +181,7 @@ final class Settings implements HasHooks
                                     max="6"
                                     class="small-text"
                                 />
-                                <p class="description"><?php esc_html_e('How many products a shopper can compare at once (2–6).', 'plogins-versus'); ?></p>
+                                <p class="description"><?php esc_html_e('How many products a shopper can compare at once (2-6).', 'plogins-versus'); ?></p>
                             </td>
                         </tr>
                     </tbody>

@@ -1,10 +1,10 @@
-=== Plogins Versus - Product Compare for WooCommerce ===
+=== Versus - Product Compare for WooCommerce ===
 Contributors: motylanogha
 Tags: woocommerce, product compare, compare products, product comparison, comparison table
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
-Stable tag: 0.2.1
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,7 +37,7 @@ The table shows the product image, name, price, SKU, availability and short desc
 
 A WooCommerce-capability settings page (Versus menu) lets you:
 
-* Enable or disable comparison and set how many products can be compared at once (2–6).
+* Enable or disable comparison and set how many products can be compared at once (2-6).
 * Choose where the compare button appears (loops, single product) and whether guests can use it.
 * Choose which standard fields appear as rows (price, SKU, availability, short description) and whether to include product attributes.
 * Toggle difference highlighting, the "differences only" default, and the image / add-to-cart / remove controls in each column header.
@@ -103,7 +103,24 @@ Versus does not connect to, or send any data to, any external service or third-p
 
 Comparison data stays inside your WordPress database: a custom `{prefix}versus_compare_items` table holds the compared product IDs, the plugin settings live in the `versus_settings` option (with `versus_db_version` tracking the schema), and a guest's selection is kept in a first-party cookie in their own browser. Adding or removing a product is a same-origin AJAX request to your site's own `admin-ajax.php`; no outbound HTTP request is ever made. Deleting the plugin removes those options and drops the table.
 
+== Translations ==
+
+Plogins Versus includes Polish, German and Spanish translations for the plugin interface. The text domain is `plogins-versus`, so WordPress.org language packs can also override or extend these bundled translations.
+
 == Changelog ==
+
+= 1.0.4 =
+* Translations: completed Polish, German and Spanish for the PRO upgrade panel.
+
+= 1.0.3 =
+* Accessibility improvements to the admin and storefront markup.
+* Fixed low-contrast admin headings under an OS dark-mode preference.
+
+= 1.0.2 =
+* Added bundled Polish, German and Spanish translations for the plugin interface.
+
+= 1.0.1 =
+* First stable release.
 
 = 0.2.1 =
 * Renamed to Plogins Versus for WooCommerce for a more distinctive plugin name.

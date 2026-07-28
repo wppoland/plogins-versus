@@ -77,9 +77,9 @@ $toggle_text   = '' !== $toggle_text ? $toggle_text : __('Show only differences'
             <table class="shop_table shop_table_responsive versus-compare-table">
                 <thead>
                     <tr>
-                        <th><?php echo esc_html($feature_label !== '' ? $feature_label : __('Feature', 'plogins-versus')); ?></th>
+                        <th scope="col"><?php echo esc_html($feature_label !== '' ? $feature_label : __('Feature', 'plogins-versus')); ?></th>
                         <?php foreach ($products as $product) : ?>
-                            <th class="versus-compare-product">
+                            <th scope="col" class="versus-compare-product">
                                 <a href="<?php echo esc_url(get_permalink($product->get_id()) ?: ''); ?>">
                                     <?php if ($show_image) : ?>
                                         <?php echo $product->get_image('woocommerce_thumbnail'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- WooCommerce returns escaped <img> markup. ?>
@@ -123,7 +123,7 @@ $toggle_text   = '' !== $toggle_text ? $toggle_text : __('Show only differences'
                             data-different="<?php echo $is_different ? '1' : '0'; ?>"
                             class="<?php echo esc_attr($highlight && $is_different ? 'is-different' : ''); ?>"
                         >
-                            <th><?php echo esc_html($row['label']); ?></th>
+                            <th scope="row"><?php echo esc_html($row['label']); ?></th>
                             <?php foreach ($row['values'] as $value) : ?>
                                 <td><?php echo $value !== '-' ? wp_kses_post($value) : esc_html($value); ?></td>
                             <?php endforeach; ?>

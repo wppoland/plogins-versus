@@ -4,25 +4,27 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Versus - Product Compare for WooCommerce 0.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/versus\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2026-06-15T18:07:59+00:00\n"
+"PO-Revision-Date: 2026-06-15T18:07:59+00:00\n"
+"Last-Translator: motylanogha <szatkowski.mariusz@gmail.com>\n"
+"Language-Team: Spanish <es@li.org>\n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-06-15T18:07:59+00:00\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.12.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Domain: plogins-versus\n"
+"X-Generator: WP-CLI 2.12.0\n"
 
 #. Plugin Name of the plugin
 #: versus.php
 msgid "Versus - Product Compare for WooCommerce"
-msgstr ""
+msgstr "Versus - Comparación de productos para WooCommerce"
 
 #. Plugin URI of the plugin
 #: versus.php
 msgid "https://plogins.com/versus/"
-msgstr ""
+msgstr "https://plogins.com/es/versus/"
 
 #. Description of the plugin
 #: versus.php
@@ -30,24 +32,27 @@ msgid ""
 "Fast, accessible product comparison for WooCommerce - compare table with "
 "difference highlighting, guest + customer lists, no jQuery"
 msgstr ""
+"Comparación de productos rápida y accesible para WooCommerce: tabla de "
+"comparación con resaltado de diferencias, listas de invitados + clientes, "
+"sin jQuery"
 
 #. Author of the plugin
 #: versus.php
 msgid "WPPoland"
-msgstr ""
+msgstr "WPPoland"
 
 #. Author URI of the plugin
 #: versus.php
 msgid "https://plogins.com/"
-msgstr ""
+msgstr "https://plogins.com/"
 
 #: src/Admin/Settings.php:83
 msgid "Versus Settings"
-msgstr ""
+msgstr "Ajustes de Versus"
 
 #: src/Admin/Settings.php:84
 msgid "Versus"
-msgstr ""
+msgstr "versus"
 
 #: src/Admin/Settings.php:127
 msgid ""
@@ -57,14 +62,19 @@ msgid ""
 "focus the <span aria-hidden=\"true\">?</span> next to any option for a quick "
 "explanation."
 msgstr ""
+"<strong>Versus</strong> permite a los compradores alinear productos uno al "
+"lado del otro y elegir con confianza. Active la comparación, elija dónde "
+"aparece el botón <em>Comparar</em> y decida qué detalles llenan la tabla de "
+"comparación. Pase el cursor o enfoque el <span aria-hidden=\"true\">?</span> "
+"junto a cualquier opción para obtener una explicación rápida."
 
 #: src/Admin/Settings.php:136
 msgid "General"
-msgstr ""
+msgstr "General"
 
 #: src/Admin/Settings.php:141
 msgid "Enable comparison"
-msgstr ""
+msgstr "Habilitar comparación"
 
 #: src/Admin/Settings.php:142
 msgid ""
@@ -72,14 +82,17 @@ msgid ""
 "shown anywhere on the storefront, your other settings here are kept for when "
 "you turn it back on."
 msgstr ""
+"El interruptor maestro. Cuando está desactivado, no se muestran botones de "
+"comparación, pestañas de cuenta ni tablas en ningún lugar del escaparate; el "
+"resto de configuraciones aquí se conservan para cuando lo vuelvas a activar."
 
 #: src/Admin/Settings.php:153
 msgid "Show the compare button and enable the comparison table."
-msgstr ""
+msgstr "Muestra el botón de comparar y habilita la tabla de comparación."
 
 #: src/Admin/Settings.php:159
 msgid "Maximum products"
-msgstr ""
+msgstr "Productos máximos"
 
 #: src/Admin/Settings.php:160
 msgid ""
@@ -87,50 +100,61 @@ msgid ""
 "more than this, the oldest item drops off automatically so the table never "
 "gets unreadably wide. Two to six works best on most themes."
 msgstr ""
+"El límite de cuántos productos caben en una comparación. Cuando un comprador "
+"añade uno más que este, el artículo más antiguo desaparece automáticamente "
+"para que la tabla nunca se vuelva ilegible. De dos a seis funcionan mejor en "
+"la mayoría de los temas."
 
 #: src/Admin/Settings.php:172
 msgid "How many products a shopper can compare at once (2-6)."
-msgstr ""
+msgstr "Cuántos productos puede comparar un comprador a la vez (2-6)."
 
 #: src/Admin/Settings.php:178
 msgid "Placement & access"
-msgstr ""
+msgstr "Colocación y acceso"
 
 #: src/Admin/Settings.php:182
 msgid "Shop & archive loops"
-msgstr ""
+msgstr "Bucles de tienda y archivo"
 
 #: src/Admin/Settings.php:182
 msgid "Show the compare button under each product in loops."
-msgstr ""
+msgstr "Muestre el botón de comparar debajo de cada producto en bucles."
 
 #: src/Admin/Settings.php:182
 msgid ""
 "Adds a Compare button beneath every product on the shop, category, tag, and "
 "search results pages, so shoppers can build a comparison while they browse."
 msgstr ""
+"Añade un botón Comparar debajo de cada producto en las páginas de tienda, "
+"categoría, etiqueta y resultados de búsqueda, para que los compradores "
+"puedan crear una comparación mientras navegan."
 
 #: src/Admin/Settings.php:183
 msgid "Single product page"
-msgstr ""
+msgstr "Página de producto único"
 
 #: src/Admin/Settings.php:183
 msgid "Show the compare button on the single product page."
-msgstr ""
+msgstr "Muestre el botón de comparar en la página de un solo producto."
 
 #: src/Admin/Settings.php:183
 msgid ""
 "Adds a Compare button to each individual product page, near the add-to-cart "
 "area."
 msgstr ""
+"Añade un botón Comparar a cada página de producto individual, cerca del área "
+"de añadir al carrito."
 
 #: src/Admin/Settings.php:184
 msgid "Allow guests"
-msgstr ""
+msgstr "Permitir invitados"
 
 #: src/Admin/Settings.php:184
 msgid "Let logged-out visitors build a comparison (stored per browser)."
 msgstr ""
+"Permita que los visitantes desconectados creen una comparación (almacenada "
+"por navegador)."
 
 #: src/Admin/Settings.php:184
 msgid ""
@@ -138,14 +162,20 @@ msgid ""
 "is remembered in their own browser for six months. When off, clicking "
 "Compare sends them to log in first."
 msgstr ""
+"Cuando está activado, los visitantes que no hayan iniciado sesión aún pueden "
+"comparar; su selección se recuerda en su propio navegador durante seis "
+"meses. Cuando está desactivado, al hacer clic en Comparar se les envía a "
+"iniciar sesión primero."
 
 #: src/Admin/Settings.php:185
 msgid "Account menu"
-msgstr ""
+msgstr "Menú de cuenta"
 
 #: src/Admin/Settings.php:185
 msgid "Add a \"Compare\" tab to the My Account menu for logged-in customers."
 msgstr ""
+"Añade una pestaña \"Comparar\" al menú Mi cuenta para clientes que hayan "
+"iniciado sesión."
 
 #: src/Admin/Settings.php:185
 msgid ""
@@ -153,336 +183,379 @@ msgid ""
 "their saved comparison at any time. If you change this, save and then re-"
 "save Permalinks under Settings → Permalinks once."
 msgstr ""
+"Añade una pestaña Comparar dentro de Mi cuenta para que los clientes que "
+"hayan iniciado sesión puedan volver a su comparación guardada en cualquier "
+"momento. Si cambia esto, guarde y luego vuelva a guardar los enlaces "
+"permanentes en Configuración → Enlaces permanentes una vez."
 
 #: src/Admin/Settings.php:190
 msgid "Comparison table"
-msgstr ""
+msgstr "tabla comparativa"
 
 #: src/Admin/Settings.php:192
 msgid ""
 "Choose which standard fields appear as rows. Rows that differ between "
 "products can be highlighted."
 msgstr ""
+"Elija qué campos estándar aparecen como filas. Se pueden resaltar filas que "
+"difieren entre productos."
 
 #: src/Admin/Settings.php:197 src/Service/VersusService.php:136
 msgid "Price"
-msgstr ""
+msgstr "Precio"
 
 #: src/Admin/Settings.php:197
 msgid ""
 "Adds a Price row showing each product’s current price (including any sale "
 "price)."
 msgstr ""
+"Añade una fila de Precio que muestra el precio actual de cada producto "
+"(incluido cualquier precio de oferta)."
 
 #: src/Admin/Settings.php:198 src/Service/VersusService.php:137
 msgid "SKU"
-msgstr ""
+msgstr "SKU"
 
 #: src/Admin/Settings.php:198
 msgid ""
 "Adds a SKU row, useful for shops where customers reference part or model "
 "numbers."
 msgstr ""
+"Añade una fila de SKU, útil para tiendas donde los clientes hacen referencia "
+"a números de pieza o modelo."
 
 #: src/Admin/Settings.php:199 src/Service/VersusService.php:138
 msgid "Availability"
-msgstr ""
+msgstr "Disponibilidad"
 
 #: src/Admin/Settings.php:199
 msgid ""
 "Adds a stock-status row (In stock, Out of stock, On backorder) so shoppers "
 "can rule out unavailable options."
 msgstr ""
+"Añade una fila de estado de stock (En stock, Agotado, En espera) para que "
+"los compradores puedan descartar opciones no disponibles."
 
 #: src/Admin/Settings.php:200
 msgid "Short description"
-msgstr ""
+msgstr "Breve descripción"
 
 #: src/Admin/Settings.php:200
 msgid ""
 "Adds a row with each product’s short description for an at-a-glance summary."
 msgstr ""
+"Añade una fila con la breve descripción de cada producto para obtener un "
+"resumen de un vistazo."
 
 #: src/Admin/Settings.php:201
 msgid "Product attributes"
-msgstr ""
+msgstr "Atributos del producto"
 
 #: src/Admin/Settings.php:201
 msgid "Add a row for each product attribute (colour, size, material, …)."
 msgstr ""
+"Añade una fila para cada atributo del producto (color, talla, material,…)."
 
 #: src/Admin/Settings.php:201
 msgid ""
 "Adds one row per product attribute (such as colour, size, or material). Only "
 "attributes that at least one of the compared products defines are shown."
 msgstr ""
+"Añade una fila por atributo del producto (como color, tamaño o material). "
+"Sólo se muestran los atributos que define al menos uno de los productos "
+"comparados."
 
 #: src/Admin/Settings.php:202
 msgid "Highlight differences"
-msgstr ""
+msgstr "Resaltar diferencias"
 
 #: src/Admin/Settings.php:202
 msgid "Visually highlight rows whose values differ between products."
-msgstr ""
+msgstr "Resalte visualmente las filas cuyos valores difieren entre productos."
 
 #: src/Admin/Settings.php:202
 msgid ""
 "Tints any row where the products’ values are not identical, so the things "
 "that set them apart jump out immediately."
 msgstr ""
+"Tiñe cualquier fila donde los valores de los productos no son idénticos, de "
+"modo que las cosas que los distinguen saltan inmediatamente."
 
 #: src/Admin/Settings.php:203
 msgid "Default to differences only"
-msgstr ""
+msgstr "Por defecto solo diferencias"
 
 #: src/Admin/Settings.php:203
 msgid "Tick the \"show only differences\" toggle by default."
-msgstr ""
+msgstr "Marque la opción \"mostrar sólo diferencias\" de forma predeterminada."
 
 #: src/Admin/Settings.php:203
 msgid ""
 "Pre-ticks the “Show only differences” toggle on the comparison page, hiding "
 "rows that are the same. Shoppers can still untick it to see everything."
 msgstr ""
+"Premarca la opción \"Mostrar solo diferencias\" en la página de comparación, "
+"ocultando filas que son iguales. Los compradores aún pueden desmarcarlo para "
+"verlo todo."
 
 #: src/Admin/Settings.php:204
 msgid "Product image"
-msgstr ""
+msgstr "Imagen del producto"
 
 #: src/Admin/Settings.php:204
 msgid "Show the product image in each column header."
-msgstr ""
+msgstr "Muestre la imagen del producto en el encabezado de cada columna."
 
 #: src/Admin/Settings.php:204
 msgid ""
 "Shows each product’s thumbnail at the top of its column. Space is reserved "
 "for the image so the table never jumps as pictures load."
 msgstr ""
+"Muestra la miniatura de cada producto en la parte superior de su columna. Se "
+"reserva espacio para la imagen, de modo que la tabla nunca salte mientras se "
+"cargan las imágenes."
 
 #: src/Admin/Settings.php:205
 msgid "Add to cart"
-msgstr ""
+msgstr "Añadir al carrito"
 
 #: src/Admin/Settings.php:205
 msgid "Show an add-to-cart button in each column header."
 msgstr ""
+"Muestre un botón de añadir al carrito en el encabezado de cada columna."
 
 #: src/Admin/Settings.php:205
 msgid ""
 "Adds an Add to cart button under each product so shoppers can buy straight "
 "from the comparison once they have decided."
 msgstr ""
+"Añade un botón Añadir al carrito debajo de cada producto para que los "
+"compradores puedan comprar directamente desde la comparación una vez que lo "
+"hayan decidido."
 
 #: src/Admin/Settings.php:206
 msgid "Remove button"
-msgstr ""
+msgstr "botón quitar"
 
 #: src/Admin/Settings.php:206
 msgid "Show a remove button in each column header."
-msgstr ""
+msgstr "Muestre un botón de eliminación en el encabezado de cada columna."
 
 #: src/Admin/Settings.php:206
 msgid ""
 "Lets shoppers drop a single product from the comparison without clearing the "
 "whole list."
 msgstr ""
+"Permite a los compradores eliminar un solo producto de la comparación sin "
+"borrar toda la lista."
 
 #: src/Admin/Settings.php:211
 msgid "Labels &amp; text"
-msgstr ""
+msgstr "Etiquetas y texto"
 
 #: src/Admin/Settings.php:213
 msgid ""
 "Customise the front-end strings. Leave a field empty to use the default "
 "translation."
 msgstr ""
+"Personaliza las cadenas del front-end. Deje un campo vacío para utilizar la "
+"traducción predeterminada."
 
 #: src/Admin/Settings.php:218
 msgid "\"Compare\" button"
-msgstr ""
+msgstr "Botón \"Comparar\""
 
 #: src/Admin/Settings.php:218 src/Service/VersusService.php:57
 #: src/Service/VersusService.php:59
 msgid "Compare"
-msgstr ""
+msgstr "Comparar"
 
 #: src/Admin/Settings.php:218
 msgid "The wording on the button that adds a product to the comparison."
-msgstr ""
+msgstr "El texto del botón que añade un producto a la comparación."
 
 #: src/Admin/Settings.php:219
 msgid "\"Remove\" button"
-msgstr ""
+msgstr "Botón \"eliminar\""
 
 #: src/Admin/Settings.php:219 src/Service/VersusService.php:58
 #: templates/compare-table.php:34
 msgid "Remove"
-msgstr ""
+msgstr "Eliminar"
 
 #: src/Admin/Settings.php:219
 msgid ""
 "The wording shown once a product has been added, clicking it takes the "
 "product back out."
 msgstr ""
+"El texto que se muestra una vez que se ha agregado un producto, al hacer "
+"clic en él, se retira el producto."
 
 #: src/Admin/Settings.php:220
 msgid "Compare link"
-msgstr ""
+msgstr "Enlace de comparación"
 
 #: src/Admin/Settings.php:220 templates/compare-button.php:23
 msgid "View comparison"
-msgstr ""
+msgstr "Ver comparación"
 
 #: src/Admin/Settings.php:220
 msgid ""
 "The link, shown next to the button, that opens the full comparison table."
 msgstr ""
+"El enlace, que se muestra junto al botón, que abre la tabla de comparación "
+"completa."
 
 #: src/Admin/Settings.php:221
 msgid "Differences toggle"
-msgstr ""
+msgstr "Alternar diferencias"
 
 #: src/Admin/Settings.php:221 templates/compare-table.php:37
 msgid "Show only differences"
-msgstr ""
+msgstr "Mostrar solo diferencias"
 
 #: src/Admin/Settings.php:221
 msgid ""
 "The label for the checkbox on the comparison page that hides identical rows."
 msgstr ""
+"La etiqueta de la casilla de verificación en la página de comparación que "
+"oculta filas idénticas."
 
 #: src/Admin/Settings.php:222
 msgid "Clear-all button"
-msgstr ""
+msgstr "Botón borrar todo"
 
 #: src/Admin/Settings.php:222 templates/compare-table.php:35
 msgid "Clear all"
-msgstr ""
+msgstr "Borrar todo"
 
 #: src/Admin/Settings.php:222
 msgid "The button that empties the entire comparison in one click."
-msgstr ""
+msgstr "El botón que vacía toda la comparativa en un clic."
 
 #: src/Admin/Settings.php:223
 msgid "Empty comparison message"
-msgstr ""
+msgstr "Mensaje de comparación vacío"
 
 #: src/Admin/Settings.php:223 templates/compare-table.php:36
 msgid "No products added to compare yet."
-msgstr ""
+msgstr "Aún no se han agregado productos para comparar."
 
 #: src/Admin/Settings.php:223
 msgid ""
 "The friendly message shown on the comparison page before any products have "
 "been added."
 msgstr ""
+"El mensaje amigable que se muestra en la página de comparación antes de "
+"añadir cualquier producto."
 
 #: src/Admin/Settings.php:248
 msgid "More information"
-msgstr ""
+msgstr "Más información"
 
 #. translators: %s: comparison field label.
 #: src/Admin/Settings.php:312
 #, php-format
 msgid "Show the %s row."
-msgstr ""
+msgstr "Muestra la fila %s."
 
 #: src/Service/VersusService.php:60 templates/compare-table.php:80
 msgid "Feature"
-msgstr ""
+msgstr "Característica"
 
 #: src/Service/VersusService.php:61
 msgid "Please log in to compare products."
-msgstr ""
+msgstr "Por favor inicia sesión para comparar productos."
 
 #: src/Service/VersusService.php:62
 msgid "Product not found."
-msgstr ""
+msgstr "Producto no encontrado."
 
 #: src/Service/VersusService.php:63
 msgid "Could not clear the comparison."
-msgstr ""
+msgstr "No se pudo borrar la comparación."
 
 #: src/Service/VersusService.php:64
 msgid "You can compare up to {limit} products. The oldest item was removed."
 msgstr ""
+"Puedes comparar hasta {limit} productos. Se eliminó el elemento más antiguo."
 
 #: src/Service/VersusService.php:112
 msgid "Something went wrong. Please try again."
-msgstr ""
+msgstr "Algo salió mal. Por favor inténtalo de nuevo."
 
 #: src/Service/VersusService.php:139
 msgid "Description"
-msgstr ""
+msgstr "Descripción"
 
 #: templates/compare-table.php:41
 msgid "Compare products"
-msgstr ""
+msgstr "Comparar productos"
 
 #: templates/compare-table.php:71
 msgid "Browse products"
-msgstr ""
+msgstr "Explorar productos"
 
 #: versus.php:51
 msgid "Versus requires WooCommerce to be active."
-msgstr ""
+msgstr "Versus requiere que WooCommerce esté activo."
 
 #: src/Admin/ProUpsell.php:81
 msgid "Wkrótce"
-msgstr ""
+msgstr "Próximamente"
 
 #: src/Admin/ProUpsell.php:81
 msgid "Coming soon"
-msgstr ""
+msgstr "Próximamente"
 
 #. translators: %d: yearly price in PLN
 #: src/Admin/ProUpsell.php:86
 #, php-format
 msgid "od %d zł/rok"
-msgstr ""
+msgstr "desde %d zł/año"
 
 #. translators: 1: currency symbol, 2: yearly price
 #: src/Admin/ProUpsell.php:91
 #, php-format
 msgid "from %1$s%2$d/yr"
-msgstr ""
+msgstr "desde %1$s%2$d/año"
 
 #: src/Admin/ProUpsell.php:100
 msgid "Upgrade to PRO"
-msgstr ""
+msgstr "Mejora a PRO"
 
 #: src/Admin/ProUpsell.php:101
 msgid "Powiadom mnie"
-msgstr ""
+msgstr "Avísame"
 
 #: src/Admin/ProUpsell.php:101
 msgid "Get notified"
-msgstr ""
+msgstr "Avísame"
 
 #: src/Admin/ProUpsell.php:131
 msgid "Permission denied."
-msgstr ""
+msgstr "Permiso denegado."
 
 #. translators: %s: PRO edition name
 #: src/Admin/ProUpsell.php:161
 #, php-format
 msgid "Do more with %s"
-msgstr ""
+msgstr "Haz más con %s"
 
 #: src/Admin/ProUpsell.php:168
 msgid "Dismiss this notice"
-msgstr ""
+msgstr "Descartar este aviso"
 
 #: src/Admin/ProUpsell.php:185
 msgid "Unlock every PRO feature"
-msgstr ""
+msgstr "Desbloquea todas las funciones PRO"
 
 #: src/Admin/ProUpsell.php:198
 msgid "one licence, every PRO feature"
-msgstr ""
+msgstr "una licencia, todas las funciones PRO"
 
 #. translators: %s: PRO edition name
 #: src/Admin/ProUpsell.php:217
 #, php-format
 msgid "What %s adds"
-msgstr ""
+msgstr "Lo que añade %s"
