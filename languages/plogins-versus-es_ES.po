@@ -56,17 +56,17 @@ msgstr "versus"
 
 #: src/Admin/Settings.php:127
 msgid ""
-"<strong>Versus</strong> lets shoppers line products up side by side and pick"
-" with confidence. Turn the comparison on, choose where the <em>Compare</em> "
-"button appears, and decide which details fill the comparison table. Hover or"
-" focus the <span aria-hidden=\"true\">?</span> next to any option for a "
-"quick explanation."
+"<strong>Versus</strong> lets shoppers line products up side by side and pick "
+"with confidence. Turn the comparison on, choose where the <em>Compare</em> "
+"button appears, and decide which details fill the comparison table. Hover or "
+"focus the <span aria-hidden=\"true\">?</span> next to any option for a quick "
+"explanation."
 msgstr ""
 "<strong>Versus</strong> permite a los compradores alinear productos uno al "
 "lado del otro y elegir con confianza. Active la comparación, elija dónde "
 "aparece el botón <em>Comparar</em> y decida qué detalles llenan la tabla de "
-"comparación. Pase el cursor o enfoque el <span aria-hidden=\"true\">?</span>"
-" junto a cualquier opción para obtener una explicación rápida."
+"comparación. Pase el cursor o enfoque el <span aria-hidden=\"true\">?</span> "
+"junto a cualquier opción para obtener una explicación rápida."
 
 #: src/Admin/Settings.php:136
 msgid "General"
@@ -79,13 +79,12 @@ msgstr "Habilitar comparación"
 #: src/Admin/Settings.php:142
 msgid ""
 "The master switch. When off, no compare buttons, account tab, or table are "
-"shown anywhere on the storefront, your other settings here are kept for when"
-" you turn it back on."
+"shown anywhere on the storefront, your other settings here are kept for when "
+"you turn it back on."
 msgstr ""
 "El interruptor maestro. Cuando está desactivado, no se muestran botones de "
-"comparación, pestañas de cuenta ni tablas en ningún lugar del escaparate; el"
-" resto de configuraciones aquí se conservan para cuando lo vuelvas a "
-"activar."
+"comparación, pestañas de cuenta ni tablas en ningún lugar del escaparate; el "
+"resto de configuraciones aquí se conservan para cuando lo vuelvas a activar."
 
 #: src/Admin/Settings.php:153
 msgid "Show the compare button and enable the comparison table."
@@ -101,10 +100,10 @@ msgid ""
 "more than this, the oldest item drops off automatically so the table never "
 "gets unreadably wide. Two to six works best on most themes."
 msgstr ""
-"El límite de cuántos productos caben en una comparación. Cuando un comprador"
-" añade uno más que este, el artículo más antiguo desaparece automáticamente "
-"para que la tabla nunca se vuelva ilegible. De dos a seis funcionan mejor en"
-" la mayoría de los temas."
+"El límite de cuántos productos caben en una comparación. Cuando un comprador "
+"añade uno más que este, el artículo más antiguo desaparece automáticamente "
+"para que la tabla nunca se vuelva ilegible. De dos a seis funcionan mejor en "
+"la mayoría de los temas."
 
 #: src/Admin/Settings.php:172
 msgid "How many products a shopper can compare at once (2–6)."
@@ -144,8 +143,8 @@ msgid ""
 "Adds a Compare button to each individual product page, near the add-to-cart "
 "area."
 msgstr ""
-"Añade un botón Comparar a cada página de producto individual, cerca del área"
-" de añadir al carrito."
+"Añade un botón Comparar a cada página de producto individual, cerca del área "
+"de añadir al carrito."
 
 #: src/Admin/Settings.php:184
 msgid "Allow guests"
@@ -163,8 +162,8 @@ msgid ""
 "is remembered in their own browser for six months. When off, clicking "
 "Compare sends them to log in first."
 msgstr ""
-"Cuando está activado, los visitantes que no hayan iniciado sesión aún pueden"
-" comparar; su selección se recuerda en su propio navegador durante seis "
+"Cuando está activado, los visitantes que no hayan iniciado sesión aún pueden "
+"comparar; su selección se recuerda en su propio navegador durante seis "
 "meses. Cuando está desactivado, al hacer clic en Comparar se les envía a "
 "iniciar sesión primero."
 
@@ -222,8 +221,8 @@ msgid ""
 "Adds a SKU row, useful for shops where customers reference part or model "
 "numbers."
 msgstr ""
-"Añade una fila de SKU, útil para tiendas donde los clientes hacen referencia"
-" a números de pieza o modelo."
+"Añade una fila de SKU, útil para tiendas donde los clientes hacen referencia "
+"a números de pieza o modelo."
 
 #: src/Admin/Settings.php:199 src/Service/VersusService.php:138
 msgid "Availability"
@@ -259,8 +258,8 @@ msgstr ""
 
 #: src/Admin/Settings.php:201
 msgid ""
-"Adds one row per product attribute (such as colour, size, or material). Only"
-" attributes that at least one of the compared products defines are shown."
+"Adds one row per product attribute (such as colour, size, or material). Only "
+"attributes that at least one of the compared products defines are shown."
 msgstr ""
 "Añade una fila por atributo del producto (como color, tamaño o material). "
 "Sólo se muestran los atributos que define al menos uno de los productos "
@@ -295,9 +294,9 @@ msgid ""
 "Pre-ticks the “Show only differences” toggle on the comparison page, hiding "
 "rows that are the same. Shoppers can still untick it to see everything."
 msgstr ""
-"Premarca la opción \"Mostrar solo diferencias\" en la página de comparación,"
-" ocultando filas que son iguales. Los compradores aún pueden desmarcarlo "
-"para verlo todo."
+"Premarca la opción \"Mostrar solo diferencias\" en la página de comparación, "
+"ocultando filas que son iguales. Los compradores aún pueden desmarcarlo para "
+"verlo todo."
 
 #: src/Admin/Settings.php:204
 msgid "Product image"
@@ -312,9 +311,9 @@ msgid ""
 "Shows each product’s thumbnail at the top of its column. Space is reserved "
 "for the image so the table never jumps as pictures load."
 msgstr ""
-"Muestra la miniatura de cada producto en la parte superior de su columna. Se"
-" reserva espacio para la imagen, de modo que la tabla nunca salte mientras "
-"se cargan las imágenes."
+"Muestra la miniatura de cada producto en la parte superior de su columna. Se "
+"reserva espacio para la imagen, de modo que la tabla nunca salte mientras se "
+"cargan las imágenes."
 
 #: src/Admin/Settings.php:205
 msgid "Add to cart"
@@ -344,8 +343,8 @@ msgstr "Muestre un botón de eliminación en el encabezado de cada columna."
 
 #: src/Admin/Settings.php:206
 msgid ""
-"Lets shoppers drop a single product from the comparison without clearing the"
-" whole list."
+"Lets shoppers drop a single product from the comparison without clearing the "
+"whole list."
 msgstr ""
 "Permite a los compradores eliminar un solo producto de la comparación sin "
 "borrar toda la lista."
@@ -500,3 +499,63 @@ msgstr "Explorar productos"
 #: versus.php:51
 msgid "Versus requires WooCommerce to be active."
 msgstr "Versus requiere que WooCommerce esté activo."
+
+#: src/Admin/ProUpsell.php:81
+msgid "Wkrótce"
+msgstr "Próximamente"
+
+#: src/Admin/ProUpsell.php:81
+msgid "Coming soon"
+msgstr "Próximamente"
+
+#. translators: %d: yearly price in PLN
+#: src/Admin/ProUpsell.php:86
+#, php-format
+msgid "od %d zł/rok"
+msgstr "desde %d zł/año"
+
+#. translators: 1: currency symbol, 2: yearly price
+#: src/Admin/ProUpsell.php:91
+#, php-format
+msgid "from %1$s%2$d/yr"
+msgstr "desde %1$s%2$d/año"
+
+#: src/Admin/ProUpsell.php:100
+msgid "Upgrade to PRO"
+msgstr "Mejora a PRO"
+
+#: src/Admin/ProUpsell.php:101
+msgid "Powiadom mnie"
+msgstr "Avísame"
+
+#: src/Admin/ProUpsell.php:101
+msgid "Get notified"
+msgstr "Avísame"
+
+#: src/Admin/ProUpsell.php:131
+msgid "Permission denied."
+msgstr "Permiso denegado."
+
+#. translators: %s: PRO edition name
+#: src/Admin/ProUpsell.php:161
+#, php-format
+msgid "Do more with %s"
+msgstr "Haz más con %s"
+
+#: src/Admin/ProUpsell.php:168
+msgid "Dismiss this notice"
+msgstr "Descartar este aviso"
+
+#: src/Admin/ProUpsell.php:185
+msgid "Unlock every PRO feature"
+msgstr "Desbloquea todas las funciones PRO"
+
+#: src/Admin/ProUpsell.php:198
+msgid "one licence, every PRO feature"
+msgstr "una licencia, todas las funciones PRO"
+
+#. translators: %s: PRO edition name
+#: src/Admin/ProUpsell.php:217
+#, php-format
+msgid "What %s adds"
+msgstr "Lo que añade %s"

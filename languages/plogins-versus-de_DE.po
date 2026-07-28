@@ -32,8 +32,8 @@ msgid ""
 "Fast, accessible product comparison for WooCommerce - compare table with "
 "difference highlighting, guest + customer lists, no jQuery"
 msgstr ""
-"Schneller, zugänglicher Produktvergleich für WooCommerce – Vergleichstabelle"
-" mit Differenzhervorhebung, Gäste- und Kundenlisten, kein jQuery"
+"Schneller, zugänglicher Produktvergleich für WooCommerce – Vergleichstabelle "
+"mit Differenzhervorhebung, Gäste- und Kundenlisten, kein jQuery"
 
 #. Author of the plugin
 #: versus.php
@@ -55,11 +55,11 @@ msgstr "Versus"
 
 #: src/Admin/Settings.php:127
 msgid ""
-"<strong>Versus</strong> lets shoppers line products up side by side and pick"
-" with confidence. Turn the comparison on, choose where the <em>Compare</em> "
-"button appears, and decide which details fill the comparison table. Hover or"
-" focus the <span aria-hidden=\"true\">?</span> next to any option for a "
-"quick explanation."
+"<strong>Versus</strong> lets shoppers line products up side by side and pick "
+"with confidence. Turn the comparison on, choose where the <em>Compare</em> "
+"button appears, and decide which details fill the comparison table. Hover or "
+"focus the <span aria-hidden=\"true\">?</span> next to any option for a quick "
+"explanation."
 msgstr ""
 "Mit <strong>Versus</strong> können Käufer Produkte nebeneinander aufstellen "
 "und sicher auswählen. Aktiviere den Vergleich, wähle aus, wo die "
@@ -79,8 +79,8 @@ msgstr "Vergleich aktivieren"
 #: src/Admin/Settings.php:142
 msgid ""
 "The master switch. When off, no compare buttons, account tab, or table are "
-"shown anywhere on the storefront, your other settings here are kept for when"
-" you turn it back on."
+"shown anywhere on the storefront, your other settings here are kept for when "
+"you turn it back on."
 msgstr ""
 "Der Hauptschalter. Wenn diese Option deaktiviert ist, werden auf der "
 "Storefront keine Vergleichsschaltflächen, keine Kontoregisterkarte oder "
@@ -102,10 +102,10 @@ msgid ""
 "more than this, the oldest item drops off automatically so the table never "
 "gets unreadably wide. Two to six works best on most themes."
 msgstr ""
-"Die Obergrenze dafür, wie viele Produkte in einen Vergleich passen. Wenn ein"
-" Käufer einen weiteren Artikel hinzufügt, wird der älteste Artikel "
-"automatisch entfernt, sodass die Tabelle nie unleserlich breit wird. Bei den"
-" meisten Themen funktionieren zwei bis sechs am besten."
+"Die Obergrenze dafür, wie viele Produkte in einen Vergleich passen. Wenn ein "
+"Käufer einen weiteren Artikel hinzufügt, wird der älteste Artikel "
+"automatisch entfernt, sodass die Tabelle nie unleserlich breit wird. Bei den "
+"meisten Themen funktionieren zwei bis sechs am besten."
 
 #: src/Admin/Settings.php:172
 msgid "How many products a shopper can compare at once (2–6)."
@@ -166,9 +166,9 @@ msgid ""
 "is remembered in their own browser for six months. When off, clicking "
 "Compare sends them to log in first."
 msgstr ""
-"Wenn diese Option aktiviert ist, können Besucher, die nicht angemeldet sind,"
-" trotzdem vergleichen. deine Auswahl wird sechs Monate lang in ihrem eigenen"
-" Browser gespeichert. Wenn diese Option deaktiviert ist, werden sie durch "
+"Wenn diese Option aktiviert ist, können Besucher, die nicht angemeldet sind, "
+"trotzdem vergleichen. deine Auswahl wird sechs Monate lang in ihrem eigenen "
+"Browser gespeichert. Wenn diese Option deaktiviert ist, werden sie durch "
 "Klicken auf „Vergleichen“ dazu veranlasst, sich zuerst anzumelden."
 
 #: src/Admin/Settings.php:185
@@ -263,8 +263,8 @@ msgstr ""
 
 #: src/Admin/Settings.php:201
 msgid ""
-"Adds one row per product attribute (such as colour, size, or material). Only"
-" attributes that at least one of the compared products defines are shown."
+"Adds one row per product attribute (such as colour, size, or material). Only "
+"attributes that at least one of the compared products defines are shown."
 msgstr ""
 "Fügt eine Zeile pro Produktattribut hinzu (z. B. Farbe, Größe oder "
 "Material). Es werden nur Attribute angezeigt, die mindestens eines der "
@@ -318,9 +318,8 @@ msgid ""
 "Shows each product’s thumbnail at the top of its column. Space is reserved "
 "for the image so the table never jumps as pictures load."
 msgstr ""
-"Zeigt die Miniaturansicht jedes Produkts oben in der Spalte an. Für das Bild"
-" ist Platz reserviert, sodass die Tabelle beim Laden von Bildern nie "
-"springt."
+"Zeigt die Miniaturansicht jedes Produkts oben in der Spalte an. Für das Bild "
+"ist Platz reserviert, sodass die Tabelle beim Laden von Bildern nie springt."
 
 #: src/Admin/Settings.php:205
 msgid "Add to cart"
@@ -337,9 +336,9 @@ msgid ""
 "Adds an Add to cart button under each product so shoppers can buy straight "
 "from the comparison once they have decided."
 msgstr ""
-"Fügt unter jedem Produkt eine Schaltfläche „Zum Warenkorb hinzufügen“ hinzu,"
-" sodass Käufer direkt im Vergleich kaufen können, sobald sie sich "
-"entschieden haben."
+"Fügt unter jedem Produkt eine Schaltfläche „Zum Warenkorb hinzufügen“ hinzu, "
+"sodass Käufer direkt im Vergleich kaufen können, sobald sie sich entschieden "
+"haben."
 
 #: src/Admin/Settings.php:206
 msgid "Remove button"
@@ -351,8 +350,8 @@ msgstr "In jeder Spaltenüberschrift eine Schaltfläche zum Entfernen anzeigen."
 
 #: src/Admin/Settings.php:206
 msgid ""
-"Lets shoppers drop a single product from the comparison without clearing the"
-" whole list."
+"Lets shoppers drop a single product from the comparison without clearing the "
+"whole list."
 msgstr ""
 "Ermöglicht Käufern, ein einzelnes Produkt aus dem Vergleich zu entfernen, "
 "ohne die gesamte Liste zu löschen."
@@ -510,3 +509,63 @@ msgstr "Produkte durchsuchen"
 #: versus.php:51
 msgid "Versus requires WooCommerce to be active."
 msgstr "Versus erfordert, dass WooCommerce aktiv ist."
+
+#: src/Admin/ProUpsell.php:81
+msgid "Wkrótce"
+msgstr "Demnächst"
+
+#: src/Admin/ProUpsell.php:81
+msgid "Coming soon"
+msgstr "Demnächst"
+
+#. translators: %d: yearly price in PLN
+#: src/Admin/ProUpsell.php:86
+#, php-format
+msgid "od %d zł/rok"
+msgstr "ab %d zł/Jahr"
+
+#. translators: 1: currency symbol, 2: yearly price
+#: src/Admin/ProUpsell.php:91
+#, php-format
+msgid "from %1$s%2$d/yr"
+msgstr "ab %1$s%2$d/Jahr"
+
+#: src/Admin/ProUpsell.php:100
+msgid "Upgrade to PRO"
+msgstr "Auf PRO upgraden"
+
+#: src/Admin/ProUpsell.php:101
+msgid "Powiadom mnie"
+msgstr "Benachrichtige mich"
+
+#: src/Admin/ProUpsell.php:101
+msgid "Get notified"
+msgstr "Benachrichtige mich"
+
+#: src/Admin/ProUpsell.php:131
+msgid "Permission denied."
+msgstr "Zugriff verweigert."
+
+#. translators: %s: PRO edition name
+#: src/Admin/ProUpsell.php:161
+#, php-format
+msgid "Do more with %s"
+msgstr "Mehr erreichen mit %s"
+
+#: src/Admin/ProUpsell.php:168
+msgid "Dismiss this notice"
+msgstr "Diesen Hinweis ausblenden"
+
+#: src/Admin/ProUpsell.php:185
+msgid "Unlock every PRO feature"
+msgstr "Alle PRO-Funktionen freischalten"
+
+#: src/Admin/ProUpsell.php:198
+msgid "one licence, every PRO feature"
+msgstr "eine Lizenz, alle PRO-Funktionen"
+
+#. translators: %s: PRO edition name
+#: src/Admin/ProUpsell.php:217
+#, php-format
+msgid "What %s adds"
+msgstr "Was %s ergänzt"
