@@ -1,5 +1,5 @@
 /**
- * Versus — storefront comparison styles.
+ * Versus, storefront comparison styles.
  *
  * Themeable via CSS custom properties (override `--versus-*` from your theme).
  * Layout-shift-safe: the table wrapper reserves its own scroll area so adding
@@ -9,7 +9,7 @@
 
 .versus-compare,
 .versus-compare-account {
-    --versus-accent: #6d28d9;        /* decisive violet — a deliberate compare voice, not a default blue */
+    --versus-accent: #6d28d9;        /* decisive violet, a deliberate compare voice, not a default blue */
     --versus-accent-contrast: #ffffff;
     --versus-surface: #ffffff;
     --versus-surface-muted: #f6f7f9;
@@ -82,7 +82,7 @@
     gap: .3em;
 }
 
-/* Count badge — fixed min size so a 1→2 digit change does not shift layout. */
+/* Count badge, fixed min size so a 1→2 digit change does not shift layout. */
 .versus-compare-count {
     display: inline-flex;
     align-items: center;

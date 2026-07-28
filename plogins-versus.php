@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name:       Plogins Versus - Product Compare for WooCommerce
+ * Plugin Name:       Versus - Product Compare for WooCommerce
  * Plugin URI:        https://plogins.com/plogins-versus/
  * Description:        Fast, accessible product comparison for WooCommerce - compare table with difference highlighting, guest + customer lists, no jQuery
- * Version:           0.2.1
+ * Version:           1.0.5
  * Requires at least: 6.5
  * Requires PHP:      8.1
  * Requires Plugins:  woocommerce
@@ -14,6 +14,7 @@
  * Text Domain:       plogins-versus
  * Domain Path:       /languages
  * WC requires at least: 8.0
+ * WC tested up to: 10.9
  *
  * @package Versus
  */
@@ -24,7 +25,7 @@ namespace Versus;
 
 defined('ABSPATH') || exit;
 
-const VERSION     = '0.2.1';
+const VERSION     = '1.0.5';
 const PLUGIN_FILE = __FILE__;
 
 define('VERSUS_DIR', plugin_dir_path(__FILE__));
@@ -55,7 +56,7 @@ add_action('plugins_loaded', static function (): void {
     }
 
     // Boot on init:0 (not synchronously in plugins_loaded) so services that call
-    // __()/translation functions don't run before the `init` hook — loading a text
+    // __()/translation functions don't run before the `init` hook, loading a text
     // domain earlier triggers WordPress 6.7+'s _load_textdomain_just_in_time
     // notice. Plugin::boot() fires the `versus/booted` action once it has
     // registered its services, so PRO companions can hook there reliably.
