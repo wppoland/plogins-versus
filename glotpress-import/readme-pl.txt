@@ -12,7 +12,7 @@ Szybkie porównywanie produktów dla WooCommerce: tabela porównawcza obok siebi
 
 == Description ==
 
-Versus dodaje przycisk „Porównaj” do Twojego sklepu WooCommerce — na stronach sklepu, archiwów i pojedynczych produktów. Kupujący porównują produkty obok siebie w tabeli porównawczej WooCommerce, a dane produktów pozostają w Twoim sklepie.
+Versus dodaje przycisk „Porównaj” do Twojego sklepu WooCommerce, na stronach sklepu, archiwów i pojedynczych produktów. Kupujący porównują produkty obok siebie w tabeli porównawczej WooCommerce, a dane produktów pozostają w Twoim sklepie.
 
 Versus jest rozwijany otwarcie (open source). Kod oraz miejsce do zgłaszania błędów i propozycji funkcji znajdziesz na https://github.com/wppoland/plogins-versus.
 
@@ -28,7 +28,7 @@ Tabela pokazuje zdjęcie produktu, nazwę, cenę, SKU, dostępność i krótki o
 
 = Built for speed and accessibility =
 
-* <strong>Bez jQuery</strong> we własnym kodzie front-endu wtyczki — skrypt to czysty JavaScript, ładowany z opóźnieniem w stopce.
+* <strong>Bez jQuery</strong> we własnym kodzie front-endu wtyczki, skrypt to czysty JavaScript, ładowany z opóźnieniem w stopce.
 * <strong>Bez przeskoków układu (CLS).</strong> Tabela porównawcza przewija się poziomo we własnym kontenerze, więc dodawanie kolumn nigdy nie przebudowuje strony.
 * <strong>Przyjazny dla klawiatury.</strong> Przyciski porównania to prawdziwe przyciski ze stanem `aria-pressed`, który aktualizuje się przez AJAX.
 * <strong>Goście i klienci.</strong> Wylogowani odwiedzający budują porównanie przechowywane w przeglądarce; zalogowani klienci otrzymują zakładkę „Porównaj” w Moim koncie, a lista gościa jest łączona z kontem po zalogowaniu.
@@ -37,11 +37,11 @@ Tabela pokazuje zdjęcie produktu, nazwę, cenę, SKU, dostępność i krótki o
 
 Strona ustawień (menu Versus, dostępna dla uprawnień WooCommerce) pozwala:
 
-* Włączyć lub wyłączyć porównywanie i ustawić, ile produktów można porównać jednocześnie (2–6).
+* Włączyć lub wyłączyć porównywanie i ustawić, ile produktów można porównać jednocześnie (2-6).
 * Wybrać, gdzie pojawia się przycisk porównania (pętle, pojedynczy produkt) i czy mogą z niego korzystać goście.
 * Wybrać, które standardowe pola pojawią się jako wiersze (cena, SKU, dostępność, krótki opis) i czy uwzględnić atrybuty produktu.
 * Przełączać podświetlanie różnic, domyślne ustawienie „tylko różnice” oraz elementy sterujące obrazem / dodawaniem do koszyka / usuwaniem w nagłówku każdej kolumny.
-* Dostosować teksty front-endu: przycisk porównania, przycisk usuwania, link porównania, przełącznik różnic, przycisk czyszczenia wszystkiego i komunikat o pustej liście — lub pozostawić je w przetłumaczonych ustawieniach domyślnych.
+* Dostosować teksty front-endu: przycisk porównania, przycisk usuwania, link porównania, przełącznik różnic, przycisk czyszczenia wszystkiego i komunikat o pustej liście, lub pozostawić je w przetłumaczonych ustawieniach domyślnych.
 
 = Translation ready =
 
@@ -99,7 +99,7 @@ Tak. Ta wtyczka jest zgodna z WordPress Multisite. Włącz ją dla całej sieci 
 
 == External Services ==
 
-Versus nie łączy się z żadną usługą zewnętrzną ani serwerem podmiotu trzeciego i nie wysyła do nich żadnych danych. Nie dołącza żadnego SDK, klienta API, czcionki internetowej, kafelka mapy, zasobu CDN ani wywołania analitycznego — wszystko działa w Twojej własnej witrynie.
+Versus nie łączy się z żadną usługą zewnętrzną ani serwerem podmiotu trzeciego i nie wysyła do nich żadnych danych. Nie dołącza żadnego SDK, klienta API, czcionki internetowej, kafelka mapy, zasobu CDN ani wywołania analitycznego, wszystko działa w Twojej własnej witrynie.
 
 Dane porównań pozostają w Twojej bazie danych WordPress: niestandardowa tabela `{prefix}versus_compare_items` przechowuje identyfikatory porównywanych produktów, ustawienia wtyczki znajdują się w opcji `versus_settings` (a `versus_db_version` śledzi wersję schematu), a wybór gościa jest przechowywany w pliku cookie własnej witryny w jego własnej przeglądarce. Dodanie lub usunięcie produktu to żądanie AJAX z tej samej domeny do własnego pliku `admin-ajax.php` Twojej witryny; nigdy nie jest wykonywane wychodzące żądanie HTTP. Usunięcie wtyczki kasuje te opcje i usuwa tabelę.
 

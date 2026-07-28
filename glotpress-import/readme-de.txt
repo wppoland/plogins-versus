@@ -28,7 +28,7 @@ Die Tabelle zeigt das Produktbild, den Namen, den Preis, die Artikelnummer, die 
 
 = Built for speed and accessibility =
 
-* <strong>Kein jQuery</strong> im eigenen Frontend-Code des Plugins – das Skript ist reines JavaScript, verzögert und im Footer geladen.
+* <strong>Kein jQuery</strong> im eigenen Frontend-Code des Plugins, das Skript ist reines JavaScript, verzögert und im Footer geladen.
 * <strong>Keine Layout-Verschiebung (CLS).</strong> Die Vergleichstabelle scrollt horizontal in ihrem eigenen Wrapper, sodass das Hinzufügen von Spalten die Seite nie neu umbricht.
 * <strong>Tastaturfreundlich.</strong> Die Vergleichs-Buttons sind echte Buttons mit dem Status `aria-pressed`, der über AJAX aktualisiert wird.
 * <strong>Gäste und Kunden.</strong> Abgemeldete Besucher erstellen einen pro Browser gespeicherten Vergleich; eingeloggte Kunden erhalten in „Mein Konto“ die Registerkarte „Vergleichen“, und beim Anmelden wird eine Gästeliste in das Konto übernommen.
@@ -37,11 +37,11 @@ Die Tabelle zeigt das Produktbild, den Namen, den Preis, die Artikelnummer, die 
 
 Eine Einstellungsseite (Menü „Versus“, für WooCommerce-Berechtigungen) lässt dich:
 
-* Den Vergleich aktivieren oder deaktivieren und festlegen, wie viele Produkte gleichzeitig verglichen werden können (2–6).
+* Den Vergleich aktivieren oder deaktivieren und festlegen, wie viele Produkte gleichzeitig verglichen werden können (2-6).
 * Wählen, wo der Vergleichs-Button erscheint (Loops, einzelnes Produkt) und ob Gäste ihn verwenden können.
 * Wählen, welche Standardfelder als Zeilen angezeigt werden (Preis, SKU, Verfügbarkeit, Kurzbeschreibung) und ob Produktattribute einbezogen werden.
 * Die Hervorhebung von Unterschieden, die Standardeinstellung „Nur Unterschiede“ und die Steuerelemente für Bild / In den Warenkorb / Entfernen in jeder Spaltenüberschrift umschalten.
-* Die Frontend-Texte anpassen: den Vergleichen-Button, den Entfernen-Button, den Vergleichslink, den Unterschiede-Umschalter, den Alles-löschen-Button und die Meldung für die leere Liste – oder sie bei den übersetzten Standardwerten belassen.
+* Die Frontend-Texte anpassen: den Vergleichen-Button, den Entfernen-Button, den Vergleichslink, den Unterschiede-Umschalter, den Alles-löschen-Button und die Meldung für die leere Liste, oder sie bei den übersetzten Standardwerten belassen.
 
 = Translation ready =
 
@@ -99,7 +99,7 @@ Ja. Dieses Plugin ist mit WordPress Multisite kompatibel. Aktiviere es im Netzwe
 
 == External Services ==
 
-Versus stellt keine Verbindung zu externen Diensten oder Servern Dritter her und sendet keine Daten an diese. Es bündelt kein SDK, keinen API-Client, keine Web-Schriftart, keine Kartenkachel, kein CDN-Asset und keinen Analyse-Aufruf – alles läuft auf deiner eigenen Website.
+Versus stellt keine Verbindung zu externen Diensten oder Servern Dritter her und sendet keine Daten an diese. Es bündelt kein SDK, keinen API-Client, keine Web-Schriftart, keine Kartenkachel, kein CDN-Asset und keinen Analyse-Aufruf, alles läuft auf deiner eigenen Website.
 
 Die Vergleichsdaten bleiben in deiner WordPress-Datenbank: Eine eigene Tabelle `{prefix}versus_compare_items` enthält die IDs der verglichenen Produkte, die Plugin-Einstellungen liegen in der Option `versus_settings` (wobei `versus_db_version` das Schema verfolgt), und die Auswahl eines Gastes wird in einem Erstanbieter-Cookie in seinem eigenen Browser gespeichert. Das Hinzufügen oder Entfernen eines Produkts ist eine AJAX-Anfrage gleichen Ursprungs an die eigene `admin-ajax.php` deiner Website; es wird nie eine ausgehende HTTP-Anfrage gestellt. Beim Löschen des Plugins werden diese Optionen entfernt und die Tabelle gelöscht.
 

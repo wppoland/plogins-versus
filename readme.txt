@@ -4,7 +4,7 @@ Tags: woocommerce, product compare, compare products, product comparison, compar
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,7 +37,7 @@ The table shows the product image, name, price, SKU, availability and short desc
 
 A WooCommerce-capability settings page (Versus menu) lets you:
 
-* Enable or disable comparison and set how many products can be compared at once (2–6).
+* Enable or disable comparison and set how many products can be compared at once (2-6).
 * Choose where the compare button appears (loops, single product) and whether guests can use it.
 * Choose which standard fields appear as rows (price, SKU, availability, short description) and whether to include product attributes.
 * Toggle difference highlighting, the "differences only" default, and the image / add-to-cart / remove controls in each column header.

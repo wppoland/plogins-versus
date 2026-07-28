@@ -19,7 +19,7 @@ msgstr ""
 #. Plugin Name of the plugin
 #: versus.php
 msgid "Versus - Product Compare for WooCommerce"
-msgstr "Versus – Produktvergleich für WooCommerce"
+msgstr "Versus, Produktvergleich für WooCommerce"
 
 #. Plugin URI of the plugin
 #: versus.php
@@ -32,7 +32,7 @@ msgid ""
 "Fast, accessible product comparison for WooCommerce - compare table with "
 "difference highlighting, guest + customer lists, no jQuery"
 msgstr ""
-"Schneller, zugänglicher Produktvergleich für WooCommerce – Vergleichstabelle "
+"Schneller, zugänglicher Produktvergleich für WooCommerce, Vergleichstabelle "
 "mit Differenzhervorhebung, Gäste- und Kundenlisten, kein jQuery"
 
 #. Author of the plugin
@@ -108,8 +108,8 @@ msgstr ""
 "meisten Themen funktionieren zwei bis sechs am besten."
 
 #: src/Admin/Settings.php:172
-msgid "How many products a shopper can compare at once (2–6)."
-msgstr "Wie viele Produkte kann ein Käufer gleichzeitig vergleichen (2–6)?"
+msgid "How many products a shopper can compare at once (2-6)."
+msgstr "Wie viele Produkte kann ein Käufer gleichzeitig vergleichen (2-6)?"
 
 #: src/Admin/Settings.php:178
 msgid "Placement & access"

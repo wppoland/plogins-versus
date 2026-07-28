@@ -59,7 +59,7 @@ final class Settings implements HasHooks
     }
 
     /**
-     * Enqueue the settings-screen styles/script (real files — Plugin-Check
+     * Enqueue the settings-screen styles/script (real files, Plugin-Check
      * clean) only on the Versus settings page.
      */
     public function enqueueAssets(string $hook): void
@@ -181,7 +181,7 @@ final class Settings implements HasHooks
                                     max="6"
                                     class="small-text"
                                 />
-                                <p class="description"><?php esc_html_e('How many products a shopper can compare at once (2–6).', 'plogins-versus'); ?></p>
+                                <p class="description"><?php esc_html_e('How many products a shopper can compare at once (2-6).', 'plogins-versus'); ?></p>
                             </td>
                         </tr>
                     </tbody>

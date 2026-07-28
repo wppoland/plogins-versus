@@ -89,7 +89,7 @@ msgid ""
 msgstr ""
 
 #: src/Admin/Settings.php:172
-msgid "How many products a shopper can compare at once (2–6)."
+msgid "How many products a shopper can compare at once (2-6)."
 msgstr ""
 
 #: src/Admin/Settings.php:178

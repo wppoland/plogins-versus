@@ -37,7 +37,7 @@ La tabla muestra la imagen del producto, el nombre, el precio, el SKU, la dispon
 
 Una página de ajustes (menú «Versus», con permisos de WooCommerce) te permite:
 
-* Activar o desactivar la comparación y establecer cuántos productos se pueden comparar a la vez (2–6).
+* Activar o desactivar la comparación y establecer cuántos productos se pueden comparar a la vez (2-6).
 * Elegir dónde aparece el botón de comparar (loops, producto individual) y si los invitados pueden usarlo.
 * Elegir qué campos estándar aparecen como filas (precio, SKU, disponibilidad, descripción corta) y si se incluyen los atributos del producto.
 * Alternar el resaltado de diferencias, el valor predeterminado «solo diferencias» y los controles de imagen / añadir al carrito / eliminar en la cabecera de cada columna.

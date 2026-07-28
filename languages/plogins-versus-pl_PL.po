@@ -106,8 +106,8 @@ msgstr ""
 "sześciu sprawdza się najlepiej w większości motywów."
 
 #: src/Admin/Settings.php:172
-msgid "How many products a shopper can compare at once (2–6)."
-msgstr "Ile produktów klient może porównywać naraz (2–6)."
+msgid "How many products a shopper can compare at once (2-6)."
+msgstr "Ile produktów klient może porównywać naraz (2-6)."
 
 #: src/Admin/Settings.php:178
 msgid "Placement & access"
