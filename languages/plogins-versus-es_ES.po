@@ -106,8 +106,8 @@ msgstr ""
 "la mayoría de los temas."
 
 #: src/Admin/Settings.php:172
-msgid "How many products a shopper can compare at once (2–6)."
-msgstr "Cuántos productos puede comparar un comprador a la vez (2–6)."
+msgid "How many products a shopper can compare at once (2-6)."
+msgstr "Cuántos productos puede comparar un comprador a la vez (2-6)."
 
 #: src/Admin/Settings.php:178
 msgid "Placement & access"

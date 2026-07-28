@@ -1,5 +1,5 @@
 /**
- * Versus — storefront comparison behaviour.
+ * Versus, storefront comparison behaviour.
  *
  * Dependency-free. Uses event delegation, guards against double submission,
  * keeps the count badge in sync, announces changes to assistive tech via a
@@ -140,7 +140,7 @@
         announce(data.message || '');
 
         // If we're on the comparison page, the table no longer matches the
-        // stored set after a remove — refresh so it stays in sync.
+        // stored set after a remove, refresh so it stays in sync.
         if (data.in_compare === false && document.querySelector('.versus-compare-table')) {
           window.location.reload();
         }

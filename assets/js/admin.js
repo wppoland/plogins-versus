@@ -1,5 +1,5 @@
 /**
- * Versus — admin settings enhancement.
+ * Versus, admin settings enhancement.
  *
  * Progressive enhancement for the "?" help affordances: makes each tooltip
  * toggleable by keyboard/click (it is already hover/focus-reachable via CSS),
