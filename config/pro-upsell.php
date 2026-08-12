@@ -34,10 +34,6 @@ return [
             'pl' => ['title' => 'Przyklejony pasek', 'desc' => 'Pasek u dołu list sklepu i kategorii, podgląd wybranych produktów i link do pełnego porównania.'],
         ],
         [
-            'en' => ['title' => 'Difference highlighting', 'desc' => 'Highlights rows where compared products differ, makes scanning the table faster.'],
-            'pl' => ['title' => 'Podświetlanie różnic', 'desc' => 'Wyróżnia wiersze, w których porównywane produkty się różnią, ułatwia szybkie skanowanie tabeli.'],
-        ],
-        [
             'en' => ['title' => 'Comparison export', 'desc' => 'Download CSV, PDF and print the table on the [versus_compare] page. Exports can be disabled in PRO settings.'],
             'pl' => ['title' => 'Eksport porównania', 'desc' => 'Pobierz CSV, PDF i drukuj tabelę na stronie [versus_compare]. Eksport można wyłączyć w ustawieniach PRO.'],
         ],
