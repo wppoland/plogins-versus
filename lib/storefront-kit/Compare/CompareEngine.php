@@ -315,14 +315,18 @@ final class CompareEngine
 
     public function getCompareUrl(): string
     {
-        if (is_user_logged_in() && ($this->getSettings()['show_in_account'] ?? true)) {
-            return wc_get_account_endpoint_url($this->endpoint);
-        }
-
-        return add_query_arg([
-            'post_type' => 'product',
-            $this->endpoint => '1',
-        ], home_url('/'));
+        // The table is emitted from one place only: the My Account endpoint,
+        // and WooCommerce dispatches that endpoint from has_action(), not from
+        // the account menu. The old fallback handed out
+        // home_url('/?post_type=product&<endpoint>=1'), which is just the shop
+        // archive: the merchant saw a "View comparison" link under every
+        // product, the shopper clicked it and landed on a page with no
+        // comparison on it. That hit every guest, and every customer too once
+        // the account tab was unticked. Always point at the endpoint, so
+        // hiding the tab now only hides the tab, and a logged-out visitor gets
+        // the account login form, after which their guest list is merged in by
+        // transferGuestToUser().
+        return wc_get_account_endpoint_url($this->endpoint);
     }
 
     /**
