@@ -4,7 +4,7 @@ Tags: woocommerce, product compare, compare products, product comparison, compar
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -73,7 +73,7 @@ Yes, when "Allow guests" is enabled. A guest's comparison is stored per browser 
 
 = Where does the compare button appear? =
 
-On shop and archive loops and on the single product page, depending on your settings. The comparison itself opens on the My Account "Compare" tab for customers, or a dedicated compare URL for guests.
+On shop and archive loops and on the single product page, depending on your settings. The comparison itself opens on the My Account "Compare" tab. A guest can build a list without an account and is asked to sign in to open it; the list they built is merged into the account on login.
 
 = What fields appear in the comparison table? =
 
@@ -108,6 +108,11 @@ Comparison data stays inside your WordPress database: a custom `{prefix}versus_c
 Plogins Versus includes Polish, German and Spanish translations for the plugin interface. The text domain is `plogins-versus`, so WordPress.org language packs can also override or extend these bundled translations.
 
 == Changelog ==
+
+= 1.0.6 =
+* The "View comparison" link now always opens the comparison table. Guests, and customers in stores that hide the account tab, used to land on the shop page with no comparison on it.
+* Hiding the My Account "Compare" tab now only hides the tab: shoppers can still open their comparison from the link next to the compare button.
+* Clearer wording on the "Allow guests" and "Account menu" settings about where a shopper actually sees the comparison table.
 
 = 1.0.4 =
 * Translations: completed Polish, German and Spanish for the PRO upgrade panel.
