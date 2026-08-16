@@ -2,9 +2,10 @@
 Contributors: motylanogha
 Tags: woocommerce, product compare, compare products, product comparison, comparison table
 Requires at least: 6.5
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 8.1
 Stable tag: 1.0.6
+Requires Plugins: woocommerce
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -105,7 +106,7 @@ Comparison data stays inside your WordPress database: a custom `{prefix}versus_c
 
 == Translations ==
 
-Plogins Versus includes Polish, German and Spanish translations for the plugin interface. The text domain is `plogins-versus`, so WordPress.org language packs can also override or extend these bundled translations.
+Versus is fully translatable and ships the `plogins-versus.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
 
