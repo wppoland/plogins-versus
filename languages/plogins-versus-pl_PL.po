@@ -18,17 +18,17 @@ msgstr ""
 "X-Generator: WP-CLI 2.12.0\n"
 
 #. Plugin Name of the plugin
-#: versus.php
-msgid "Versus - Product Compare for WooCommerce"
-msgstr "Versus - Porównywarka produktów dla WooCommerce"
+#: plogins-versus.php
+msgid "Plogins Versus - Product Compare for WooCommerce"
+msgstr "Plogins Versus - Porównywarka produktów dla WooCommerce"
 
 #. Plugin URI of the plugin
-#: versus.php
-msgid "https://plogins.com/versus/"
-msgstr "https://plogins.com/versus/"
+#: plogins-versus.php
+msgid "https://plogins.com/plogins-versus/"
+msgstr "https://plogins.com/plogins-versus/"
 
 #. Description of the plugin
-#: versus.php
+#: plogins-versus.php
 msgid ""
 "Fast, accessible product comparison for WooCommerce - compare table with "
 "difference highlighting, guest + customer lists, no jQuery"
@@ -37,12 +37,12 @@ msgstr ""
 "podświetlaniem różnic, listy gości i klientów, bez jQuery"
 
 #. Author of the plugin
-#: versus.php
+#: plogins-versus.php
 msgid "WPPoland"
 msgstr "WPPoland"
 
 #. Author URI of the plugin
-#: versus.php
+#: plogins-versus.php
 msgid "https://plogins.com/"
 msgstr "https://plogins.com/"
 
@@ -490,7 +490,7 @@ msgstr "Porównaj produkty"
 msgid "Browse products"
 msgstr "Przeglądaj produkty"
 
-#: versus.php:51
+#: plogins-versus.php:51
 msgid "Versus requires WooCommerce to be active."
 msgstr "Versus wymaga aktywnego WooCommerce."
 

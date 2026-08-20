@@ -1,10 +1,10 @@
-=== Versus - Product Compare for WooCommerce ===
+=== Plogins Versus - Product Compare for WooCommerce ===
 Contributors: motylanogha
 Tags: woocommerce, product compare, compare products, product comparison, comparison table
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 Requires Plugins: woocommerce
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html

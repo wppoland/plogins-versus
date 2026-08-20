@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name:       Versus - Product Compare for WooCommerce
+ * Plugin Name:       Plogins Versus - Product Compare for WooCommerce
  * Plugin URI:        https://plogins.com/plogins-versus/
  * Description:        Fast, accessible product comparison for WooCommerce - compare table with difference highlighting, guest + customer lists, no jQuery
- * Version:           1.0.6
+ * Version:           1.0.7
  * Requires at least: 6.5
  * Requires PHP:      8.1
  * Requires Plugins:  woocommerce
@@ -25,7 +25,7 @@ namespace Versus;
 
 defined('ABSPATH') || exit;
 
-const VERSION     = '1.0.6';
+const VERSION     = '1.0.7';
 const PLUGIN_FILE = __FILE__;
 
 define('VERSUS_DIR', plugin_dir_path(__FILE__));
