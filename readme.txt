@@ -4,7 +4,7 @@ Tags: woocommerce, product compare, compare products, product comparison, compar
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 Requires Plugins: woocommerce
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -15,16 +15,16 @@ Fast product compare for WooCommerce: side-by-side comparison table, difference 
 
 Versus adds a "Compare" button to your WooCommerce shop, archive and single product pages. Shoppers compare products side by side in a WooCommerce comparison table, with product data kept inside your store.
 
-Versus is developed in the open. The code, and a place to report bugs or request features, live at https://github.com/wppoland/plogins-versus.
+Versus is developed in the open. The code, and a place to report bugs or request features, live at [github.com/wppoland/plogins-versus](https://github.com/wppoland/plogins-versus).
 
 The table shows the product image, name, price, SKU, availability and short description, plus a row for every product attribute (colour, size, material and more). Rows whose values differ between products are highlighted, and a single toggle hides everything that is identical so the real differences stand out.
 
 = Documentation and links =
 
-* **Documentation** - https://plogins.com/plogins-versus/docs/
-* **Plugin page** - https://plogins.com/plogins-versus/
-* **Source code** - https://github.com/wppoland/plogins-versus
-* **Bug reports and feature requests** - https://github.com/wppoland/plogins-versus/issues
+* **Documentation**: [plogins.com/plogins-versus/docs/](https://plogins.com/plogins-versus/docs/)
+* **Plugin page**: [plogins.com/plogins-versus/](https://plogins.com/plogins-versus/)
+* **Source code**: [github.com/wppoland/plogins-versus](https://github.com/wppoland/plogins-versus)
+* **Bug reports and feature requests**: [github.com/wppoland/plogins-versus/issues](https://github.com/wppoland/plogins-versus/issues)
 
 
 = Built for speed and accessibility =
