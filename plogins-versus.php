@@ -3,7 +3,7 @@
  * Plugin Name:       Plogins Versus - Product Compare for WooCommerce
  * Plugin URI:        https://plogins.com/plogins-versus/
  * Description:        Fast, accessible product comparison for WooCommerce - compare table with difference highlighting, guest + customer lists, no jQuery
- * Version:           1.0.8
+ * Version:           1.0.9
  * Requires at least: 6.5
  * Requires PHP:      8.1
  * Requires Plugins:  woocommerce
