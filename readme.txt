@@ -119,6 +119,9 @@ Versus is fully translatable and ships the `plogins-versus.pot` template. Transl
 = 1.0.9 =
 * Fixed the PRO promo on the settings screen quoting a price in PLN. PRO is priced and charged in EUR, so an admin on a Polish site was shown a zloty amount and then billed in euro, and the zloty figure was a fixed conversion that drifted from the real charge as the rate moved. The promo now shows the euro price that is actually taken.
 
+= 1.0.8 =
+* Approved on WordPress.org and renamed to Plogins Versus.
+
 = 1.0.6 =
 * The "View comparison" link now always opens the comparison table. Guests, and customers in stores that hide the account tab, used to land on the shop page with no comparison on it.
 * Hiding the My Account "Compare" tab now only hides the tab: shoppers can still open their comparison from the link next to the compare button.
