@@ -25,7 +25,7 @@ namespace Versus;
 
 defined('ABSPATH') || exit;
 
-const VERSION     = '1.0.8';
+const VERSION     = '1.0.10';
 const PLUGIN_FILE = __FILE__;
 
 define('VERSUS_DIR', plugin_dir_path(__FILE__));
