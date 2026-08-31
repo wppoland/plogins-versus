@@ -52,6 +52,25 @@ All strings are translatable through the `versus` text domain, and a `versus.pot
 
 Adding or removing a product is a single nonce-verified AJAX request; no full page reload. Guest selections are kept in a per-browser cookie for six months and merged into the account on login. The CSS and JavaScript are enqueued only on pages that actually show the compare button or the table.
 
+== Plogins Versus PRO ==
+
+The free plugin is complete for what it does: a Compare button and a comparison
+set, with nothing time-limited and no account to create. **Plogins Versus PRO**
+is a separate add-on that turns that set into a real comparison page:
+
+* **Comparison page shortcode** - `[versus_compare]` renders the shopper's set as a side-by-side table with price, SKU, stock, weight, dimensions, description and every product attribute
+* **Configurable rows** - choose which rows appear and cap how many products can be compared at once
+* **Difference highlighting** - mark the rows where compared products actually differ
+* **Sticky compare bar** - a persistent bar listing the selected products, linking straight to the comparison page
+* **Export** - download the comparison as CSV or PDF, or print it
+* **Category-scoped compare** - keep comparisons to like-for-like products
+
+Versus PRO requires the free plugin and does not replace it. If the free plugin
+is missing or disabled, PRO stays dormant and says so rather than half-working.
+
+* **Plogins Versus PRO** - [plogins.com/versus-pro/](https://plogins.com/versus-pro/)
+* **Pricing** - [plogins.com/versus-pro/pricing/](https://plogins.com/versus-pro/pricing/)
+
 == Installation ==
 
 1. Upload the plugin to `/wp-content/plugins/versus`, or install via Plugins → Add New.
