@@ -25,8 +25,8 @@ return [
             'pl' => ['title' => 'Shortcode strony porównania', 'desc' => 'Shortcode [versus_compare] renderuje pełną tabelę z ceną, SKU, stanem, wagą, wymiarami i atrybutami produktu.'],
         ],
         [
-            'en' => ['title' => 'Configurable rows', 'desc' => 'Toggle which table rows appear (price, SKU, stock, weight, dimensions, description, attributes) under Products → Versus Pro.'],
-            'pl' => ['title' => 'Konfigurowalne wiersze', 'desc' => 'Włącz/wyłącz wiersze tabeli (cena, SKU, stan, waga, wymiary, opis, atrybuty) w Products → Versus Pro.'],
+            'en' => ['title' => 'Configurable rows', 'desc' => 'Toggle which table rows appear (price, SKU, stock, weight, dimensions, description, attributes) under Products > Versus Pro.'],
+            'pl' => ['title' => 'Konfigurowalne wiersze', 'desc' => 'Włącz/wyłącz wiersze tabeli (cena, SKU, stan, waga, wymiary, opis, atrybuty) w Products > Versus Pro.'],
         ],
         [
             'en' => ['title' => 'Sticky compare bar', 'desc' => 'A bar at the bottom of shop and category pages, preview selected products and jump to the full comparison.'],
