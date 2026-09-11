@@ -53,7 +53,7 @@ Dodanie lub usunięcie produktu to pojedyncze żądanie AJAX zweryfikowane nonce
 
 == Installation ==
 
-1. Wgraj wtyczkę do `/wp-content/plugins/versus` lub zainstaluj przez Wtyczki → Dodaj nową.
+1. Wgraj wtyczkę do `/wp-content/plugins/versus` lub zainstaluj przez Wtyczki > Dodaj nową.
 2. Włącz ją. WooCommerce musi być aktywne.
 3. Wejdź w menu <strong>Versus</strong> w wp-admin, aby wybrać porównywane pola i miejsce wyświetlania.
 

@@ -82,7 +82,7 @@
     gap: .3em;
 }
 
-/* Count badge, fixed min size so a 1→2 digit change does not shift layout. */
+/* Count badge, fixed min size so a 1>2 digit change does not shift layout. */
 .versus-compare-count {
     display: inline-flex;
     align-items: center;

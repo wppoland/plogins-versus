@@ -53,7 +53,7 @@ Das Hinzufügen oder Entfernen eines Produkts ist eine einzelne, per Nonce verif
 
 == Installation ==
 
-1. Lade das Plugin nach `/wp-content/plugins/versus` hoch oder installiere es über Plugins → Neu hinzufügen.
+1. Lade das Plugin nach `/wp-content/plugins/versus` hoch oder installiere es über Plugins > Neu hinzufügen.
 2. Aktiviere es. WooCommerce muss aktiv sein.
 3. Besuche das Menü <strong>Versus</strong> in wp-admin, um die verglichenen Felder und die Platzierung auszuwählen.
 

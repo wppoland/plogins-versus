@@ -53,7 +53,7 @@ Añadir o eliminar un producto es una única solicitud AJAX verificada con nonce
 
 == Installation ==
 
-1. Sube el plugin a `/wp-content/plugins/versus`, o instálalo a través de Plugins → Añadir nuevo.
+1. Sube el plugin a `/wp-content/plugins/versus`, o instálalo a través de Plugins > Añadir nuevo.
 2. Actívalo. WooCommerce debe estar activo.
 3. Entra en el menú <strong>Versus</strong> en wp-admin para elegir los campos comparados y la ubicación.
 

@@ -179,11 +179,11 @@ msgstr ""
 msgid ""
 "Adds a Compare tab inside My Account so signed-in customers can return to "
 "their saved comparison at any time. If you change this, save and then re-"
-"save Permalinks under Settings → Permalinks once."
+"save Permalinks under Settings > Permalinks once."
 msgstr ""
 "Dodaje zakładkę Porównaj wewnątrz Mojego konta, aby zalogowani klienci mogli "
 "w każdej chwili wrócić do zapisanego porównania. Jeśli to zmienisz, zapisz, "
-"a następnie raz zapisz ponownie Bezpośrednie odnośniki w Ustawienia → "
+"a następnie raz zapisz ponownie Bezpośrednie odnośniki w Ustawienia > "
 "Bezpośrednie odnośniki."
 
 #: src/Admin/Settings.php:190
