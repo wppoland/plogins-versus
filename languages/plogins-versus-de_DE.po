@@ -185,11 +185,11 @@ msgstr ""
 msgid ""
 "Adds a Compare tab inside My Account so signed-in customers can return to "
 "their saved comparison at any time. If you change this, save and then re-"
-"save Permalinks under Settings → Permalinks once."
+"save Permalinks under Settings > Permalinks once."
 msgstr ""
 "Fügt in „Mein Konto“ eine Registerkarte „Vergleichen“ hinzu, sodass "
 "angemeldete Kunden jederzeit zu ihrem gespeicherten Vergleich zurückkehren "
-"können. Wenn du dies ändern, speichere die Permalinks unter Einstellungen → "
+"können. Wenn du dies ändern, speichere die Permalinks unter Einstellungen > "
 "Permalinks einmal und speichere sie erneut."
 
 #: src/Admin/Settings.php:190

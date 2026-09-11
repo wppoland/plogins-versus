@@ -109,11 +109,11 @@ msgstr ""
 "faktycznie pokazują przycisk porównania lub tabelę."
 
 msgid ""
-"1. Upload the plugin to `/wp-content/plugins/versus`, or install via Plugins → Add New.\n"
+"1. Upload the plugin to `/wp-content/plugins/versus`, or install via Plugins > Add New.\n"
 "2. Activate it. WooCommerce must be active.\n"
 "3. Visit the <strong>Versus</strong> menu in wp-admin to choose the compared fields and placement."
 msgstr ""
-"1. Wgraj wtyczkę do `/wp-content/plugins/versus` lub zainstaluj przez Wtyczki → Dodaj nową.\n"
+"1. Wgraj wtyczkę do `/wp-content/plugins/versus` lub zainstaluj przez Wtyczki > Dodaj nową.\n"
 "2. Włącz ją. WooCommerce musi być aktywne.\n"
 "3. Wejdź w menu <strong>Versus</strong> w wp-admin, aby wybrać porównywane pola i miejsce wyświetlania."
 

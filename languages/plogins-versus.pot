@@ -186,7 +186,7 @@ msgid "Add a \"Compare\" tab to the My Account menu for logged-in customers."
 msgstr ""
 
 #: src/Admin/Settings.php:201
-msgid "Adds a Compare tab inside My Account so signed-in customers can return to their saved comparison at any time. With the tab off, the comparison is still reachable from the View comparison link next to each compare button. If you change this, save and then re-save Permalinks under Settings → Permalinks once."
+msgid "Adds a Compare tab inside My Account so signed-in customers can return to their saved comparison at any time. With the tab off, the comparison is still reachable from the View comparison link next to each compare button. If you change this, save and then re-save Permalinks under Settings > Permalinks once."
 msgstr ""
 
 #: src/Admin/Settings.php:206
