@@ -1,10 +1,10 @@
-=== Plogins Versus - Product Compare for WooCommerce ===
+=== Versus - Product Compare for WooCommerce ===
 Contributors: motylanogha
 Tags: woocommerce, product compare, compare products, product comparison, comparison table
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.0.16
+Stable tag: 1.0.17
 Requires Plugins: woocommerce
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -128,6 +128,9 @@ Comparison data stays inside your WordPress database: a custom `{prefix}versus_c
 Versus is fully translatable and ships the `plogins-versus.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.0.17 =
+* Display name drops the "Plogins " prefix. The slug, the text domain and every option key are unchanged, so nothing on an existing install moves.
 
 = 1.0.16 =
 * The sidebar upgrade promo now follows the same dismissal as the banner. Dismissing the banner used to leave a full-height advert on the settings screen for good, which is not what the WordPress.org guideline on upgrade prompts means by used with moderation.
