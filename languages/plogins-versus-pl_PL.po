@@ -39,12 +39,12 @@ msgstr ""
 #. Author of the plugin
 #: plogins-versus.php
 msgid "WPPoland.com"
-msgstr ""
+msgstr "WPPoland.com"
 
 #. Author URI of the plugin
 #: plogins-versus.php
 msgid "https://wppoland.com"
-msgstr ""
+msgstr "https://wppoland.com"
 
 #: plogins-versus.php:52
 msgid "Versus requires WooCommerce to be active."
@@ -212,7 +212,7 @@ msgstr "Zezwól na gości"
 msgid ""
 "Let logged-out visitors build a comparison (stored per browser, opened once "
 "they sign in)."
-msgstr ""
+msgstr "Pozwól niezalogowanym odwiedzającym budować porównanie (zapisywane w przeglądarce, otwierane po zalogowaniu)."
 
 #: src/Admin/Settings.php:200
 msgid ""
@@ -221,7 +221,7 @@ msgid ""
 "table itself lives in My Account, so opening it asks a guest to sign in, and "
 "the list they built follows them into their account. When off, clicking "
 "Compare sends them to log in first."
-msgstr ""
+msgstr "Gdy włączone, odwiedzający bez zalogowania mogą dodawać produkty, a ich wybór jest zapamiętywany w ich własnej przeglądarce przez sześć miesięcy. Sama tabela porównania znajduje się w Moim koncie, więc jej otwarcie prosi gościa o zalogowanie, a zbudowana lista przechodzi razem z nim do konta. Gdy wyłączone, kliknięcie Porównaj kieruje go najpierw do logowania."
 
 #: src/Admin/Settings.php:201
 msgid "Account menu"
@@ -239,7 +239,7 @@ msgid ""
 "still reachable from the View comparison link next to each compare button. "
 "If you change this, save and then re-save Permalinks under Settings > "
 "Permalinks once."
-msgstr ""
+msgstr "Dodaje zakładkę Porównaj w Moim koncie, aby zalogowani klienci mogli w każdej chwili wrócić do zapisanego porównania. Przy wyłączonej zakładce porównanie nadal jest dostępne z linku Zobacz porównanie obok każdego przycisku porównywania. Jeśli to zmienisz, zapisz, a następnie raz zapisz ponownie Bezpośrednie odnośniki w Ustawienia > Bezpośrednie odnośniki."
 
 #: src/Admin/Settings.php:206
 msgid "Comparison table"
