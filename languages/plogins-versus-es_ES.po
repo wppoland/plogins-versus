@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plogins Versus - Product Compare for WooCommerce 1.0.7\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/plogins-versus\n"
-"POT-Creation-Date: 2026-09-09T14:38:04+00:00\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/versus\n"
+"POT-Creation-Date: 2026-09-26T04:48:59+00:00\n"
 "PO-Revision-Date: 2026-06-15T18:07:59+00:00\n"
 "Last-Translator: motylanogha <szatkowski.mariusz@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -18,8 +18,8 @@ msgstr ""
 
 #. Plugin Name of the plugin
 #: plogins-versus.php
-msgid "Plogins Versus - Product Compare for WooCommerce"
-msgstr "Plogins Versus - Comparación de productos para WooCommerce"
+msgid "Versus - Product Compare for WooCommerce"
+msgstr "Versus - Comparación de productos para WooCommerce"
 
 #. Plugin URI of the plugin
 #: plogins-versus.php
@@ -50,56 +50,56 @@ msgstr ""
 msgid "Versus requires WooCommerce to be active."
 msgstr "Versus requiere que WooCommerce esté activo."
 
-#: src/Admin/ProUpsell.php:81
+#: src/Admin/ProUpsell.php:88
 msgid "Wkrótce"
 msgstr "Próximamente"
 
-#: src/Admin/ProUpsell.php:81
+#: src/Admin/ProUpsell.php:88
 msgid "Coming soon"
 msgstr "Próximamente"
 
 #. translators: 1: currency symbol, 2: yearly price
-#: src/Admin/ProUpsell.php:87
+#: src/Admin/ProUpsell.php:94
 #, php-format
 msgid "from %1$s%2$d/yr"
 msgstr "desde %1$s%2$d/año"
 
-#: src/Admin/ProUpsell.php:96
+#: src/Admin/ProUpsell.php:103
 msgid "Upgrade to PRO"
 msgstr "Mejora a PRO"
 
-#: src/Admin/ProUpsell.php:97
+#: src/Admin/ProUpsell.php:104
 msgid "Powiadom mnie"
 msgstr "Avísame"
 
-#: src/Admin/ProUpsell.php:97
+#: src/Admin/ProUpsell.php:104
 msgid "Get notified"
 msgstr "Avísame"
 
-#: src/Admin/ProUpsell.php:127
+#: src/Admin/ProUpsell.php:134
 msgid "Permission denied."
 msgstr "Permiso denegado."
 
 #. translators: %s: PRO edition name
-#: src/Admin/ProUpsell.php:157
+#: src/Admin/ProUpsell.php:164
 #, php-format
 msgid "Do more with %s"
 msgstr "Haz más con %s"
 
-#: src/Admin/ProUpsell.php:164
+#: src/Admin/ProUpsell.php:171
 msgid "Dismiss this notice"
 msgstr "Descartar este aviso"
 
-#: src/Admin/ProUpsell.php:181
+#: src/Admin/ProUpsell.php:193
 msgid "Unlock every PRO feature"
 msgstr "Desbloquea todas las funciones PRO"
 
-#: src/Admin/ProUpsell.php:194
+#: src/Admin/ProUpsell.php:206
 msgid "one licence, every PRO feature"
 msgstr "una licencia, todas las funciones PRO"
 
 #. translators: %s: PRO edition name
-#: src/Admin/ProUpsell.php:213
+#: src/Admin/ProUpsell.php:225
 #, php-format
 msgid "What %s adds"
 msgstr "Lo que añade %s"
