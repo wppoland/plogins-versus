@@ -4,7 +4,7 @@ Tags: woocommerce, product compare, compare products, product comparison, compar
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.0.18
+Stable tag: 1.0.19
 Requires Plugins: woocommerce
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -129,6 +129,9 @@ Versus is fully translatable and ships the `plogins-versus.pot` template. Transl
 
 == Changelog ==
 
+= 1.0.19 =
+* Security: the compare list no longer accepts or shows draft, pending, private or password-protected products. A logged-in customer could add one by id and read its name, SKU and price in the My Account compare table.
+
 = 1.0.18 =
 * The upgrade notice's "Coming soon" and "Get notified" labels are English source strings for every language; Polish sites used to get their own Polish source text, which translators in other languages then saw untranslated.
 
@@ -194,3 +197,8 @@ Versus is fully translatable and ships the `plogins-versus.pot` template. Transl
 
 = 0.1.0 =
 * Initial release: accessible product comparison for WooCommerce with a difference-highlighting table, guest + customer lists, and a settings page for compared fields and placement.
+
+== Upgrade Notice ==
+
+= 1.0.19 =
+Security release. Unpublished and password-protected products can no longer be added to or shown in a compare list.
