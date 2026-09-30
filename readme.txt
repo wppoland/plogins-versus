@@ -130,7 +130,8 @@ Versus is fully translatable and ships the `plogins-versus.pot` template. Transl
 == Changelog ==
 
 = 1.0.19 =
-* Security: the compare list no longer accepts or shows draft, pending, private or password-protected products. A logged-in customer could add one by id and read its name, SKU and price in the My Account compare table.
+* Security (medium): the compare list no longer accepts or shows draft, pending, private or password-protected products. A logged-in customer could add one by id and read its name, SKU and price in the My Account compare table.
+* Security (low): a disabled variation under a published product is no longer accepted in the compare list.
 
 = 1.0.18 =
 * The upgrade notice's "Coming soon" and "Get notified" labels are English source strings for every language; Polish sites used to get their own Polish source text, which translators in other languages then saw untranslated.
