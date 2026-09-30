@@ -296,7 +296,11 @@ final class CompareEngine
             return current_user_can('edit_post', $id);
         }
 
-        return 'publish' === get_post_status($id) || current_user_can('read_post', $id);
+        // A disabled variation is 'private' under a published parent, so the
+        // variation's own status counts as well as the parent's.
+        $own = $product->get_id() === $id || 'publish' === get_post_status($product->get_id());
+
+        return ($own && 'publish' === get_post_status($id)) || current_user_can('read_post', $id);
     }
 
     public function getCount(): int
