@@ -3,7 +3,7 @@
  * Plugin Name:       Versus - Product Compare for WooCommerce
  * Plugin URI:        https://plogins.com/plogins-versus/
  * Description:        Fast, accessible product comparison for WooCommerce - compare table with difference highlighting, guest + customer lists, no jQuery
- * Version:           1.0.19
+ * Version:           1.0.20
  * Requires at least: 6.5
  * Requires PHP:      8.1
  * Requires Plugins:  woocommerce
@@ -25,13 +25,19 @@ namespace Versus;
 
 defined('ABSPATH') || exit;
 
-const VERSION     = '1.0.19';
+const VERSION     = '1.0.20';
 const PLUGIN_FILE = __FILE__;
 
 define('VERSUS_DIR', plugin_dir_path(__FILE__));
 define('VERSUS_URL', plugin_dir_url(__FILE__));
 
 require_once __DIR__ . '/autoload.php';
+
+// Reactivation skips the Migrator (the version is already current), so ask for
+// the same one-off rewrite flush the Migrator requests on install.
+register_activation_hook(__FILE__, static function (): void {
+    update_option('versus_flush_rewrite', 1, false);
+});
 
 // HPOS + cart/checkout blocks compatibility.
 add_action('before_woocommerce_init', static function (): void {

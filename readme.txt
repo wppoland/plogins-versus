@@ -4,7 +4,7 @@ Tags: woocommerce, product compare, compare products, product comparison, compar
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.0.19
+Stable tag: 1.0.20
 Requires Plugins: woocommerce
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -46,7 +46,7 @@ A WooCommerce-capability settings page (Versus menu) lets you:
 
 = Translation ready =
 
-All strings are translatable through the `versus` text domain, and a `versus.pot` template ships in `/languages`. Deleting the plugin removes its options and the comparison table.
+All strings are translatable through the `plogins-versus` text domain, and a `plogins-versus.pot` template ships in `/languages`. Deleting the plugin removes its options and the comparison table.
 
 = How it works =
 
@@ -73,7 +73,7 @@ is missing or disabled, PRO stays dormant and says so rather than half-working.
 
 == Installation ==
 
-1. Upload the plugin to `/wp-content/plugins/versus`, or install via Plugins > Add New.
+1. Upload the plugin to `/wp-content/plugins/plogins-versus`, or install via Plugins > Add New.
 2. Activate it. WooCommerce must be active.
 3. Visit the **Versus** menu in wp-admin to choose the compared fields and placement.
 
@@ -128,6 +128,11 @@ Comparison data stays inside your WordPress database: a custom `{prefix}versus_c
 Versus is fully translatable and ships the `plogins-versus.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.0.20 =
+* Fixed: the comparison page answered 404 on a new install until Permalinks were re-saved, because nothing flushed the rewrite rules for its My Account endpoint. The rules are now flushed once after install, update and activation.
+* Fixed: emptying a custom storefront label in the settings kept the old custom text instead of returning to the translated default.
+* Fixed: the comparison page heading read "Feature" (the first column's label) instead of "Compare products".
 
 = 1.0.19 =
 * Security (medium): the compare list no longer accepts or shows draft, pending, private or password-protected products. A logged-in customer could add one by id and read its name, SKU and price in the My Account compare table.
@@ -200,6 +205,9 @@ Versus is fully translatable and ships the `plogins-versus.pot` template. Transl
 * Initial release: accessible product comparison for WooCommerce with a difference-highlighting table, guest + customer lists, and a settings page for compared fields and placement.
 
 == Upgrade Notice ==
+
+= 1.0.20 =
+The comparison page no longer answers 404 on a new install, and a cleared storefront label returns to its default.
 
 = 1.0.19 =
 Security release. Unpublished and password-protected products can no longer be added to or shown in a compare list.
