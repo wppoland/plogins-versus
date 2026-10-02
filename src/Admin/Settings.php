@@ -399,12 +399,10 @@ final class Settings implements HasHooks
                 ? sanitize_text_field(wp_unslash($raw[$key]))
                 : '';
 
-            // Empty falls back to the packaged default (and its translation).
-            if ($value !== '') {
-                $labels[$key] = $value;
-            } elseif (isset($defaults[$key]) && is_string($defaults[$key])) {
-                $labels[$key] = $defaults[$key];
-            }
+            // Stored empty, so the translated default applies again. Falling
+            // back to $defaults here kept the previous custom text, because
+            // $defaults is the stored option, and a label could never be reset.
+            $labels[$key] = $value;
         }
 
         return array_merge($defaults, $labels, [
