@@ -16,6 +16,8 @@ final class Migrator
     private const OPTION   = 'versus_db_version';
     private const SETTINGS = 'versus_settings';
 
+    public const FLUSH_FLAG = 'versus_flush_rewrite';
+
     public function maybeMigrate(): void
     {
         $current = (string) get_option(self::OPTION, '0');
@@ -26,6 +28,11 @@ final class Migrator
 
         $this->createCompareTable();
         $this->seedDefaultSettings();
+
+        // The compare table lives on a My Account endpoint, and nothing else
+        // flushes rewrite rules after an install or update, so the endpoint
+        // answered 404 until the merchant re-saved Permalinks.
+        update_option(self::FLUSH_FLAG, 1, false);
 
         update_option(self::OPTION, VERSION, false);
     }

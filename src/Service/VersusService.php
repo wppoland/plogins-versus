@@ -90,12 +90,29 @@ final class VersusService implements HasHooks
             // touching the kit.
             add_action('wp_enqueue_scripts', [$this, 'localiseErrorText'], 20);
 
+            // After the engine registers its endpoint on init:10.
+            add_action('init', [$this, 'maybeFlushRewriteRules'], 20);
+
             return;
         }
 
         // TODO: storefront-kit < 1.4.0 has no CompareEngine. Bump the
         // `wppoland/storefront-kit` constraint (composer update) to enable the
         // comparison. No hooks are registered until the engine is present.
+    }
+
+    /**
+     * Flush once after an install, update or activation, so the compare
+     * endpoint resolves without a manual Permalinks re-save.
+     */
+    public function maybeFlushRewriteRules(): void
+    {
+        if (! get_option(\Versus\Migrator::FLUSH_FLAG)) {
+            return;
+        }
+
+        delete_option(\Versus\Migrator::FLUSH_FLAG);
+        flush_rewrite_rules(false);
     }
 
     /**
