@@ -38,7 +38,7 @@ $toggle_text   = '' !== $toggle_text ? $toggle_text : __('Show only differences'
 ?>
 <div class="versus-compare-account">
     <div class="versus-compare-account__header">
-        <h2><?php echo esc_html($feature_label !== '' ? $feature_label : __('Compare products', 'plogins-versus')); ?></h2>
+        <h2><?php esc_html_e('Compare products', 'plogins-versus'); ?></h2>
 
         <?php if ($products !== []) : ?>
             <div class="versus-compare-actions">

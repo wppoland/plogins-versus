@@ -15,6 +15,7 @@ defined('WP_UNINSTALL_PLUGIN') || exit;
 
 delete_option('versus_settings');
 delete_option('versus_db_version');
+delete_option('versus_flush_rewrite');
 
 // The PRO banner's dismissal is stored per user, so it belongs to the
 // plugin rather than to the site content. User meta is global, not
