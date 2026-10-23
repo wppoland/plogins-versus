@@ -61,7 +61,6 @@ fuller comparison page:
 
 * **Comparison page shortcode** - `[versus_compare]` renders the shopper's set as a side-by-side table with price, SKU, stock, weight, dimensions, description and every product attribute
 * **Configurable rows** - choose which rows appear and cap how many products can be compared at once
-* **Difference highlighting** - mark the rows where compared products actually differ
 * **Sticky compare bar** - a persistent bar listing the selected products, linking straight to the comparison page
 * **Export** - download the comparison as CSV or PDF, or print it
 * **Category-scoped compare** - keep comparisons to like-for-like products
