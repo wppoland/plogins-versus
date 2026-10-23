@@ -32,7 +32,7 @@ final class CompareEngine
      *        `description`) are resolved internally; others go to `fieldResolver`.
      * @param array<string, string> $labels Fallback strings keyed by
      *        `add`, `remove`, `account`, `feature`, `login_required`,
-     *        `not_found`, `clear_error`, `limit_notice` (the last supports a
+     *        `not_found`, `clear_error`, `error`, `limit_notice` (the last supports a
      *        `{limit}` token).
      * @param \Closure(): bool $isEnabled
      * @param \Closure(): array<string, mixed> $settings Resolved settings array.
@@ -74,6 +74,10 @@ final class CompareEngine
         add_action('wp_enqueue_scripts', [$this, 'enqueueAssets']);
         add_action('woocommerce_single_product_summary', [$this, 'renderSingleButton'], 34);
         add_action('woocommerce_after_shop_loop_item', [$this, 'renderLoopButton'], 20);
+        // Block-theme grids (Product Collection, blockified shop archive) never
+        // fire the classic loop hook, so the button rides on the product-button
+        // block instead. The two paths never run for the same card.
+        add_filter('render_block_woocommerce/product-button', [$this, 'appendBlockButton'], 10, 3);
         add_action('wp_ajax_' . $this->ajaxAction, [$this, 'handleToggle']);
         add_action('wp_ajax_nopriv_' . $this->ajaxAction, [$this, 'handleToggle']);
         add_action('wp_ajax_' . $this->clearAjaxAction, [$this, 'handleClear']);
@@ -94,22 +98,42 @@ final class CompareEngine
             return;
         }
 
-        wp_enqueue_style($this->assetHandle, $this->styleUrl, [], $this->version);
-        wp_enqueue_script($this->assetHandle, $this->scriptUrl, [], $this->version, [
-            'in_footer' => true,
-            'strategy' => 'defer',
-        ]);
+        $this->enqueueOnDemand();
+    }
 
-        wp_localize_script($this->assetHandle, $this->scriptObjectName, [
-            'ajaxUrl' => admin_url('admin-ajax.php'),
-            'action' => $this->ajaxAction,
-            'clearAction' => $this->clearAjaxAction,
-            'nonce' => wp_create_nonce($this->nonceAction),
-            'loginUrl' => wc_get_page_permalink('myaccount'),
-            'compareUrl' => $this->getCompareUrl(),
-            'allowGuests' => (bool) ($this->getSettings()['allow_guests'] ?? true),
-            'showOnlyDifferences' => (bool) ($this->getSettings()['show_only_differences'] ?? false),
-        ]);
+    /**
+     * Enqueue the assets from wherever compare markup is printed. Safe before
+     * wp_enqueue_scripts (block themes render the template first) and after
+     * it (the script is in the footer, a late style prints in the footer).
+     */
+    public function enqueueOnDemand(): void
+    {
+        if (! $this->isEnabled() || is_admin()) {
+            return;
+        }
+
+        if (! wp_script_is($this->assetHandle, 'registered')) {
+            wp_register_style($this->assetHandle, $this->styleUrl, [], $this->version);
+            wp_register_script($this->assetHandle, $this->scriptUrl, [], $this->version, [
+                'in_footer' => true,
+                'strategy' => 'defer',
+            ]);
+
+            wp_localize_script($this->assetHandle, $this->scriptObjectName, [
+                'ajaxUrl' => admin_url('admin-ajax.php'),
+                'action' => $this->ajaxAction,
+                'clearAction' => $this->clearAjaxAction,
+                'nonce' => wp_create_nonce($this->nonceAction),
+                'loginUrl' => wc_get_page_permalink('myaccount'),
+                'compareUrl' => $this->getCompareUrl(),
+                'allowGuests' => (bool) ($this->getSettings()['allow_guests'] ?? true),
+                'showOnlyDifferences' => (bool) ($this->getSettings()['show_only_differences'] ?? false),
+                'errorText' => $this->labels['error'] ?? '',
+            ]);
+        }
+
+        wp_enqueue_style($this->assetHandle);
+        wp_enqueue_script($this->assetHandle);
     }
 
     public function renderSingleButton(): void
@@ -140,6 +164,46 @@ final class CompareEngine
             'settings' => $this->getSettings(),
             'button' => $this->getButtonData($product),
         ]);
+    }
+
+    /**
+     * @param string $blockContent Rendered product-button markup.
+     * @param array<string, mixed> $block Parsed block.
+     */
+    public function appendBlockButton(string $blockContent, array $block, ?\WP_Block $instance = null): string
+    {
+        // Only the grid card button: the add-to-cart form on a blockified
+        // single product page reuses the same block outside a query loop.
+        // An inherited grid on a shop or taxonomy archive is tagged
+        // isInherited by WooCommerce's compatibility layer, which then fires
+        // woocommerce_after_shop_loop_item per card, so renderLoopButton()
+        // already covers it.
+        if (empty($block['attrs']['isDescendentOfQueryLoop'])
+            || ! empty($block['attrs']['isInherited'])
+            || ! ($this->getSettings()['show_on_loop'] ?? true)
+            || ! $this->canUse()
+            || str_contains($blockContent, 'data-versus-compare-button')
+        ) {
+            return $blockContent;
+        }
+
+        $productId = (int) ($instance?->context['postId'] ?? get_the_ID());
+        $product = $productId > 0 ? wc_get_product($productId) : null;
+
+        if (! $product instanceof \WC_Product) {
+            return $blockContent;
+        }
+
+        $this->enqueueOnDemand();
+
+        ob_start();
+        ($this->renderTemplate)($this->loopButtonTemplate, [
+            'product' => $product,
+            'settings' => $this->getSettings(),
+            'button' => $this->getButtonData($product),
+        ]);
+
+        return $blockContent . (string) ob_get_clean();
     }
 
     public function handleToggle(): void
@@ -446,6 +510,13 @@ final class CompareEngine
         }
 
         if (is_shop() || is_product() || is_product_taxonomy() || is_account_page()) {
+            return true;
+        }
+
+        // A product grid block in the content of a classic-theme page renders
+        // after wp_head; enqueue up front so the style is not late. Grids in
+        // templates, parts or patterns enqueue themselves while rendering.
+        if (is_singular() && has_block('woocommerce/product-button')) {
             return true;
         }
 

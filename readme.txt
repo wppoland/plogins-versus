@@ -4,7 +4,7 @@ Tags: woocommerce, product compare, compare products, product comparison, compar
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.0.20
+Stable tag: 1.0.21
 Requires Plugins: woocommerce
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -93,7 +93,7 @@ Yes, when "Allow guests" is enabled. A guest's comparison is stored per browser 
 
 = Where does the compare button appear? =
 
-On shop and archive loops and on the single product page, depending on your settings. The comparison itself opens on the My Account "Compare" tab. A guest can build a list without an account and is asked to sign in to open it; the list they built is merged into the account on login.
+On shop and archive loops (classic templates and block-theme product grids such as the Product Collection block) and on the single product page, depending on your settings. The comparison itself opens on the My Account "Compare" tab. A guest can build a list without an account and is asked to sign in to open it; the list they built is merged into the account on login.
 
 = What fields appear in the comparison table? =
 
@@ -128,6 +128,9 @@ Comparison data stays inside your WordPress database: a custom `{prefix}versus_c
 Versus is fully translatable and ships the `plogins-versus.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.0.21 =
+* Fixed: the compare button was missing from block-theme product grids (the Product Collection block, the blockified shop page), because only the classic loop hook added it. It now follows the product button in those grids and shows the same in-compare state, and the compare script and style load on any page that renders one.
 
 = 1.0.20 =
 * Fixed: the comparison page answered 404 on a new install until Permalinks were re-saved, because nothing flushed the rewrite rules for its My Account endpoint. The rules are now flushed once after install, update and activation.
@@ -205,6 +208,9 @@ Versus is fully translatable and ships the `plogins-versus.pot` template. Transl
 * Initial release: accessible product comparison for WooCommerce with a difference-highlighting table, guest + customer lists, and a settings page for compared fields and placement.
 
 == Upgrade Notice ==
+
+= 1.0.21 =
+The compare button now appears in block-theme product grids such as the Product Collection block.
 
 = 1.0.20 =
 The comparison page no longer answers 404 on a new install, and a cleared storefront label returns to its default.
