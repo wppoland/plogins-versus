@@ -84,6 +84,9 @@ final class CompareEngine
         add_action('wp_ajax_nopriv_' . $this->clearAjaxAction, [$this, 'handleClear']);
         add_filter('woocommerce_account_menu_items', [$this, 'addAccountMenuItem']);
         add_action('woocommerce_account_' . $this->endpoint . '_endpoint', [$this, 'renderAccountPage']);
+        // WooCommerce shows a guest the login form at every account endpoint
+        // and never dispatches the endpoint action, so the table goes above it.
+        add_action('woocommerce_before_customer_login_form', [$this, 'renderGuestTable']);
         add_action('wp_login', [$this, 'transferGuestToUser'], 10, 2);
     }
 
@@ -303,6 +306,35 @@ final class CompareEngine
         echo $this->renderCompareTable();
     }
 
+    /**
+     * The comparison table for a logged-out visitor on the account endpoint.
+     * WooCommerce already sends no-cache headers for the account page, so the
+     * list read from the guest cookie is never served to someone else.
+     */
+    public function renderGuestTable(): void
+    {
+        global $wp;
+
+        if (is_user_logged_in() || ! $this->canUse() || ! isset($wp->query_vars[$this->endpoint])) {
+            return;
+        }
+
+        $this->enqueueOnDemand();
+
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Output is escaped by the host template.
+        echo $this->renderCompareTable();
+    }
+
+    /**
+     * Published page the merchant picked for the comparison, if any.
+     */
+    public function comparePageId(): int
+    {
+        $pageId = absint($this->getSettings()['compare_page_id'] ?? 0);
+
+        return $pageId > 0 && 'page' === get_post_type($pageId) && 'publish' === get_post_status($pageId) ? $pageId : 0;
+    }
+
     public function renderCompareTable(): string
     {
         $products = $this->getProducts();
@@ -399,17 +431,20 @@ final class CompareEngine
 
     public function getCompareUrl(): string
     {
-        // The table is emitted from one place only: the My Account endpoint,
-        // and WooCommerce dispatches that endpoint from has_action(), not from
-        // the account menu. The old fallback handed out
-        // home_url('/?post_type=product&<endpoint>=1'), which is just the shop
-        // archive: the merchant saw a "View comparison" link under every
-        // product, the shopper clicked it and landed on a page with no
-        // comparison on it. That hit every guest, and every customer too once
-        // the account tab was unticked. Always point at the endpoint, so
-        // hiding the tab now only hides the tab, and a logged-out visitor gets
-        // the account login form, after which their guest list is merged in by
-        // transferGuestToUser().
+        // A guest opens the merchant's comparison page when one is set, and
+        // otherwise the account endpoint, where renderGuestTable() shows the
+        // table above the login form; signing in merges the guest list in
+        // through transferGuestToUser(). A logged-in customer always gets the
+        // account endpoint, which renders whether or not the tab is listed.
+        if (! is_user_logged_in()) {
+            $pageId = $this->comparePageId();
+            $permalink = $pageId > 0 ? get_permalink($pageId) : false;
+
+            if (is_string($permalink) && $permalink !== '') {
+                return $permalink;
+            }
+        }
+
         return wc_get_account_endpoint_url($this->endpoint);
     }
 
