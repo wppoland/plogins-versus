@@ -24,6 +24,11 @@
     --versus-transition: 160ms ease;
 }
 
+/* A guest's table on the account endpoint sits right above the login form. */
+.woocommerce > .versus-compare-account {
+    margin-block-end: 2.5em;
+}
+
 /* ------------------------------------------------------------------ button */
 
 .versus-compare {

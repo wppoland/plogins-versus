@@ -193,11 +193,27 @@ final class Settings implements HasHooks
                         <?php
                         $this->checkboxRow('show_on_loop', __('Shop & archive loops', 'plogins-versus'), __('Show the compare button under each product in loops.', 'plogins-versus'), $settings, __('Adds a Compare button beneath every product on the shop, category, tag, and search results pages, so shoppers can build a comparison while they browse.', 'plogins-versus'));
                         $this->checkboxRow('show_on_single', __('Single product page', 'plogins-versus'), __('Show the compare button on the single product page.', 'plogins-versus'), $settings, __('Adds a Compare button to each individual product page, near the add-to-cart area.', 'plogins-versus'));
-                        // The comparison table is rendered in My Account and nowhere else, so
-                        // the guest copy no longer implies a browser-side comparison a guest can
-                        // open on their own, and the account row says the table stays reachable
-                        // from the compare link when the tab is hidden.
-                        $this->checkboxRow('allow_guests', __('Allow guests', 'plogins-versus'), __('Let logged-out visitors build a comparison (stored per browser, opened once they sign in).', 'plogins-versus'), $settings, __('When on, visitors who are not signed in can still add products; their selection is remembered in their own browser for six months. The comparison table itself lives in My Account, so opening it asks a guest to sign in, and the list they built follows them into their account. When off, clicking Compare sends them to log in first.', 'plogins-versus'));
+                        $this->checkboxRow('allow_guests', __('Allow guests', 'plogins-versus'), __('Let logged-out visitors build and open a comparison (stored per browser).', 'plogins-versus'), $settings, __('When on, visitors who are not signed in can add products and open their comparison table; their selection is remembered in their own browser for six months, and it follows them into their account when they sign in. When off, clicking Compare sends them to log in first.', 'plogins-versus'));
+                        ?>
+                        <tr>
+                            <th scope="row">
+                                <label for="versus_compare_page_id"><?php esc_html_e('Comparison page for guests', 'plogins-versus'); ?></label>
+                                <?php $this->helpTip(__('Without a page, a guest opens the comparison on the My Account Compare address, above the login form. With a page, the View comparison link sends guests there instead. The page is excluded from page caching, because each visitor sees their own list.', 'plogins-versus')); ?>
+                            </th>
+                            <td>
+                                <?php
+                                wp_dropdown_pages([
+                                    'name'              => esc_attr(self::OPTION) . '[compare_page_id]',
+                                    'id'                => 'versus_compare_page_id',
+                                    'selected'          => absint($settings['compare_page_id'] ?? 0),
+                                    'show_option_none'  => esc_html__('None (My Account)', 'plogins-versus'),
+                                    'option_none_value' => '0',
+                                ]);
+                                ?>
+                                <p class="description"><?php esc_html_e('Add the [versus] shortcode to the page you choose: it shows the visitor their own comparison table.', 'plogins-versus'); ?></p>
+                            </td>
+                        </tr>
+                        <?php
                         $this->checkboxRow('show_in_account', __('Account menu', 'plogins-versus'), __('Add a "Compare" tab to the My Account menu for logged-in customers.', 'plogins-versus'), $settings, __('Adds a Compare tab inside My Account so signed-in customers can return to their saved comparison at any time. With the tab off, the comparison is still reachable from the View comparison link next to each compare button. If you change this, save and then re-save Permalinks under Settings > Permalinks once.', 'plogins-versus'));
                         ?>
                     </tbody>
@@ -392,6 +408,9 @@ final class Settings implements HasHooks
             $fields[$key] = ! empty($rawFields[$key]);
         }
 
+        $comparePageId = isset($raw['compare_page_id']) ? absint($raw['compare_page_id']) : 0;
+        $comparePageId = $comparePageId > 0 && 'page' === get_post_type($comparePageId) ? $comparePageId : 0;
+
         $labels = [];
 
         foreach (self::LABEL_KEYS as $key) {
@@ -411,6 +430,7 @@ final class Settings implements HasHooks
             'show_on_loop'          => ! empty($raw['show_on_loop']),
             'show_on_single'        => ! empty($raw['show_on_single']),
             'allow_guests'          => ! empty($raw['allow_guests']),
+            'compare_page_id'       => $comparePageId,
             'show_in_account'       => ! empty($raw['show_in_account']),
             'show_attributes'       => ! empty($raw['show_attributes']),
             'highlight_differences' => ! empty($raw['highlight_differences']),

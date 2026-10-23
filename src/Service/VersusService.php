@@ -25,6 +25,8 @@ final class VersusService implements HasHooks
 {
     private const OPTION = 'versus_settings';
 
+    private const SHORTCODE = 'versus';
+
     private ?CompareEngine $engine = null;
 
     public function __construct(
@@ -87,6 +89,9 @@ final class VersusService implements HasHooks
             // After the engine registers its endpoint on init:10.
             add_action('init', [$this, 'maybeFlushRewriteRules'], 20);
 
+            add_shortcode(self::SHORTCODE, [$this, 'renderShortcode']);
+            add_action('template_redirect', [$this, 'preventCaching']);
+
             return;
         }
 
@@ -107,6 +112,47 @@ final class VersusService implements HasHooks
 
         delete_option(\Versus\Migrator::FLUSH_FLAG);
         flush_rewrite_rules(false);
+    }
+
+    /**
+     * `[versus]`: the visitor's own comparison table, the same one My Account
+     * shows, on any page (guests included when guests are allowed).
+     */
+    public function renderShortcode(): string
+    {
+        if (! $this->engine instanceof CompareEngine || ! $this->engine->canUse()) {
+            return '';
+        }
+
+        $this->engine->enqueueOnDemand();
+
+        return $this->engine->renderCompareTable();
+    }
+
+    /**
+     * The table is read from a per-visitor cookie, so the comparison page
+     * must never come out of a page cache.
+     */
+    public function preventCaching(): void
+    {
+        if (! $this->engine instanceof CompareEngine || ! is_page()) {
+            return;
+        }
+
+        $pageId = (int) get_queried_object_id();
+        $post = get_post($pageId);
+
+        if ($pageId !== $this->engine->comparePageId()
+            && ! ($post instanceof \WP_Post && has_shortcode($post->post_content, self::SHORTCODE))
+        ) {
+            return;
+        }
+
+        nocache_headers();
+
+        if (! defined('DONOTCACHEPAGE')) {
+            define('DONOTCACHEPAGE', true);
+        }
     }
 
     private function isEnabled(): bool
