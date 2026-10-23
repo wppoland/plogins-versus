@@ -34,6 +34,14 @@
     margin-block-start: 10px;
 }
 
+.wp-block-woocommerce-product-button.align-center + .versus-compare {
+    justify-content: center;
+}
+
+.wp-block-woocommerce-product-button.align-right + .versus-compare {
+    justify-content: flex-end;
+}
+
 .versus-compare-button {
     display: inline-flex;
     align-items: center;

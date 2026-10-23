@@ -61,6 +61,7 @@ final class VersusService implements HasHooks
                 'login_required' => __('Please log in to compare products.', 'plogins-versus'),
                 'not_found'      => __('Product not found.', 'plogins-versus'),
                 'clear_error'    => __('Could not clear the comparison.', 'plogins-versus'),
+                'error'          => __('Something went wrong. Please try again.', 'plogins-versus'),
                 'limit_notice'   => __('You can compare up to {limit} products. The oldest item was removed.', 'plogins-versus'),
             ],
             isEnabled: fn (): bool => $this->isEnabled(),
@@ -82,13 +83,6 @@ final class VersusService implements HasHooks
     {
         if ($this->engine instanceof CompareEngine) {
             $this->engine->registerHooks();
-
-            // The kit localises window.versusCompare on wp_enqueue_scripts@10
-            // but does not include a generic failure string; compare.js reads
-            // `config.errorText` to announce network/HTTP errors to assistive
-            // tech. Merge it in after the kit has enqueued (priority 20) without
-            // touching the kit.
-            add_action('wp_enqueue_scripts', [$this, 'localiseErrorText'], 20);
 
             // After the engine registers its endpoint on init:10.
             add_action('init', [$this, 'maybeFlushRewriteRules'], 20);
@@ -113,26 +107,6 @@ final class VersusService implements HasHooks
 
         delete_option(\Versus\Migrator::FLUSH_FLAG);
         flush_rewrite_rules(false);
-    }
-
-    /**
-     * Add a translatable failure message to the already-localised
-     * `versusCompare` object so compare.js can announce errors. No-op unless the
-     * kit actually enqueued the script for this request.
-     */
-    public function localiseErrorText(): void
-    {
-        if (! wp_script_is('versus', 'enqueued')) {
-            return;
-        }
-
-        $errorText = __('Something went wrong. Please try again.', 'plogins-versus');
-
-        wp_add_inline_script(
-            'versus',
-            'window.versusCompare = Object.assign(window.versusCompare || {}, ' . wp_json_encode(['errorText' => $errorText]) . ');',
-            'before',
-        );
     }
 
     private function isEnabled(): bool
