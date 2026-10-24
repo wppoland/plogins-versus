@@ -24,6 +24,11 @@
     --versus-transition: 160ms ease;
 }
 
+/* A guest's table on the account endpoint sits right above the login form. */
+.woocommerce > .versus-compare-account {
+    margin-block-end: 2.5em;
+}
+
 /* ------------------------------------------------------------------ button */
 
 .versus-compare {
@@ -32,6 +37,14 @@
     align-items: center;
     flex-wrap: wrap;
     margin-block-start: 10px;
+}
+
+.wp-block-woocommerce-product-button.align-center + .versus-compare {
+    justify-content: center;
+}
+
+.wp-block-woocommerce-product-button.align-right + .versus-compare {
+    justify-content: flex-end;
 }
 
 .versus-compare-button {

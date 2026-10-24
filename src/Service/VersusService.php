@@ -25,6 +25,8 @@ final class VersusService implements HasHooks
 {
     private const OPTION = 'versus_settings';
 
+    private const SHORTCODE = 'versus';
+
     private ?CompareEngine $engine = null;
 
     public function __construct(
@@ -61,6 +63,7 @@ final class VersusService implements HasHooks
                 'login_required' => __('Please log in to compare products.', 'plogins-versus'),
                 'not_found'      => __('Product not found.', 'plogins-versus'),
                 'clear_error'    => __('Could not clear the comparison.', 'plogins-versus'),
+                'error'          => __('Something went wrong. Please try again.', 'plogins-versus'),
                 'limit_notice'   => __('You can compare up to {limit} products. The oldest item was removed.', 'plogins-versus'),
             ],
             isEnabled: fn (): bool => $this->isEnabled(),
@@ -83,15 +86,11 @@ final class VersusService implements HasHooks
         if ($this->engine instanceof CompareEngine) {
             $this->engine->registerHooks();
 
-            // The kit localises window.versusCompare on wp_enqueue_scripts@10
-            // but does not include a generic failure string; compare.js reads
-            // `config.errorText` to announce network/HTTP errors to assistive
-            // tech. Merge it in after the kit has enqueued (priority 20) without
-            // touching the kit.
-            add_action('wp_enqueue_scripts', [$this, 'localiseErrorText'], 20);
-
             // After the engine registers its endpoint on init:10.
             add_action('init', [$this, 'maybeFlushRewriteRules'], 20);
+
+            add_shortcode(self::SHORTCODE, [$this, 'renderShortcode']);
+            add_action('template_redirect', [$this, 'preventCaching']);
 
             return;
         }
@@ -116,23 +115,44 @@ final class VersusService implements HasHooks
     }
 
     /**
-     * Add a translatable failure message to the already-localised
-     * `versusCompare` object so compare.js can announce errors. No-op unless the
-     * kit actually enqueued the script for this request.
+     * `[versus]`: the visitor's own comparison table, the same one My Account
+     * shows, on any page (guests included when guests are allowed).
      */
-    public function localiseErrorText(): void
+    public function renderShortcode(): string
     {
-        if (! wp_script_is('versus', 'enqueued')) {
+        if (! $this->engine instanceof CompareEngine || ! $this->engine->canUse()) {
+            return '';
+        }
+
+        $this->engine->enqueueOnDemand();
+
+        return $this->engine->renderCompareTable();
+    }
+
+    /**
+     * The table is read from a per-visitor cookie, so the comparison page
+     * must never come out of a page cache.
+     */
+    public function preventCaching(): void
+    {
+        if (! $this->engine instanceof CompareEngine || ! is_page()) {
             return;
         }
 
-        $errorText = __('Something went wrong. Please try again.', 'plogins-versus');
+        $pageId = (int) get_queried_object_id();
+        $post = get_post($pageId);
 
-        wp_add_inline_script(
-            'versus',
-            'window.versusCompare = Object.assign(window.versusCompare || {}, ' . wp_json_encode(['errorText' => $errorText]) . ');',
-            'before',
-        );
+        if ($pageId !== $this->engine->comparePageId()
+            && ! ($post instanceof \WP_Post && has_shortcode($post->post_content, self::SHORTCODE))
+        ) {
+            return;
+        }
+
+        nocache_headers();
+
+        if (! defined('DONOTCACHEPAGE')) {
+            define('DONOTCACHEPAGE', true);
+        }
     }
 
     private function isEnabled(): bool

@@ -27,6 +27,8 @@ return [
     // Access + storage.
     'allow_guests'   => true,
     'show_in_account' => true,
+    // Page (id) whose [versus] shortcode guests open; 0 = My Account endpoint.
+    'compare_page_id' => 0,
     'max_items'      => 4,
 
     // Comparison table.

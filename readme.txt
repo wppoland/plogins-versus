@@ -4,7 +4,7 @@ Tags: woocommerce, product compare, compare products, product comparison, compar
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.0.20
+Stable tag: 1.0.22
 Requires Plugins: woocommerce
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -32,14 +32,14 @@ The table shows the product image, name, price, SKU, availability and short desc
 * **No jQuery** in the plugin's own front-end code, the script is vanilla JS, deferred and loaded in the footer.
 * **No layout shift (CLS).** The comparison table scrolls horizontally inside its own wrapper, so adding columns never reflows the page.
 * **Keyboard friendly.** The compare buttons are real buttons with `aria-pressed` state that updates over AJAX.
-* **Guests and customers.** Logged-out visitors build a comparison stored per browser; logged-in customers get a "Compare" tab in My Account, and a guest list is merged into the account on login.
+* **Guests and customers.** Logged-out visitors build and open a comparison stored per browser; logged-in customers get a "Compare" tab in My Account, and a guest list is merged into the account on login.
 
 = Settings =
 
 A WooCommerce-capability settings page (Versus menu) lets you:
 
 * Enable or disable comparison and set how many products can be compared at once (2-6).
-* Choose where the compare button appears (loops, single product) and whether guests can use it.
+* Choose where the compare button appears (loops, single product), whether guests can use it, and an optional comparison page for guests.
 * Choose which standard fields appear as rows (price, SKU, availability, short description) and whether to include product attributes.
 * Toggle difference highlighting, the "differences only" default, and the image / add-to-cart / remove controls in each column header.
 * Customise the front-end strings, the compare button, remove button, compare link, differences toggle, clear-all button and empty-list message, or leave them on their translated defaults.
@@ -54,13 +54,13 @@ Adding or removing a product is a single nonce-verified AJAX request; no full pa
 
 == Plogins Versus PRO ==
 
-The free plugin is complete for what it does: a Compare button and a comparison
-set, with nothing time-limited and no account to create. **Plogins Versus PRO**
-is a separate add-on that turns that set into a real comparison page:
+The free plugin is complete for what it does: a Compare button and a basic
+comparison table for guests and customers, with nothing time-limited and no
+account to create. **Plogins Versus PRO** is a separate add-on that adds a
+fuller comparison page:
 
 * **Comparison page shortcode** - `[versus_compare]` renders the shopper's set as a side-by-side table with price, SKU, stock, weight, dimensions, description and every product attribute
 * **Configurable rows** - choose which rows appear and cap how many products can be compared at once
-* **Difference highlighting** - mark the rows where compared products actually differ
 * **Sticky compare bar** - a persistent bar listing the selected products, linking straight to the comparison page
 * **Export** - download the comparison as CSV or PDF, or print it
 * **Category-scoped compare** - keep comparisons to like-for-like products
@@ -89,11 +89,11 @@ No. The plugin's own front-end script is vanilla JavaScript with no jQuery depen
 
 = Can guests compare products? =
 
-Yes, when "Allow guests" is enabled. A guest's comparison is stored per browser and is merged into their account when they log in.
+Yes, when "Allow guests" is enabled. A guest's comparison is stored per browser, and the View comparison link opens their table without an account: on the My Account Compare address above the login form, or on a page of your choice that holds the `[versus]` shortcode (set it under "Comparison page for guests"). That page is excluded from page caching, since each visitor sees their own list. When the guest logs in, the list is merged into their account.
 
 = Where does the compare button appear? =
 
-On shop and archive loops and on the single product page, depending on your settings. The comparison itself opens on the My Account "Compare" tab. A guest can build a list without an account and is asked to sign in to open it; the list they built is merged into the account on login.
+On shop and archive loops (classic templates and block-theme product grids such as the Product Collection block) and on the single product page, depending on your settings. The comparison itself opens on the My Account "Compare" tab. A guest sees the same table there above the login form, or on the comparison page you chose for guests.
 
 = What fields appear in the comparison table? =
 
@@ -128,6 +128,12 @@ Comparison data stays inside your WordPress database: a custom `{prefix}versus_c
 Versus is fully translatable and ships the `plogins-versus.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.0.22 =
+* Guests can now open their comparison table. The View comparison link used to land a logged-out shopper on a bare login form with no table on it; the table now shows above that form, and a new "Comparison page for guests" setting can send guests to any page holding the new `[versus]` shortcode instead. That page is excluded from page caching.
+
+= 1.0.21 =
+* Fixed: the compare button was missing from block-theme product grids (the Product Collection block, the blockified shop page), because only the classic loop hook added it. It now follows the product button in those grids and shows the same in-compare state, and the compare script and style load on any page that renders one.
 
 = 1.0.20 =
 * Fixed: the comparison page answered 404 on a new install until Permalinks were re-saved, because nothing flushed the rewrite rules for its My Account endpoint. The rules are now flushed once after install, update and activation.
@@ -205,6 +211,12 @@ Versus is fully translatable and ships the `plogins-versus.pot` template. Transl
 * Initial release: accessible product comparison for WooCommerce with a difference-highlighting table, guest + customer lists, and a settings page for compared fields and placement.
 
 == Upgrade Notice ==
+
+= 1.0.22 =
+Guests can open their comparison table without logging in.
+
+= 1.0.21 =
+The compare button now appears in block-theme product grids such as the Product Collection block.
 
 = 1.0.20 =
 The comparison page no longer answers 404 on a new install, and a cleared storefront label returns to its default.
