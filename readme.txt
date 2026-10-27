@@ -4,7 +4,7 @@ Tags: woocommerce, product compare, compare products, product comparison, compar
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.0.22
+Stable tag: 1.0.23
 Requires Plugins: woocommerce
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -25,6 +25,7 @@ The table shows the product image, name, price, SKU, availability and short desc
 * **Plugin page**: [plogins.com/plogins-versus/](https://plogins.com/plogins-versus/)
 * **Source code**: [github.com/wppoland/plogins-versus](https://github.com/wppoland/plogins-versus)
 * **Bug reports and feature requests**: [github.com/wppoland/plogins-versus/issues](https://github.com/wppoland/plogins-versus/issues)
+* **Versus Pro**: [plogins.com/plogins-versus-pro/](https://plogins.com/plogins-versus-pro/)
 
 
 = Built for speed and accessibility =
@@ -52,24 +53,21 @@ All strings are translatable through the `plogins-versus` text domain, and a `pl
 
 Adding or removing a product is a single nonce-verified AJAX request; no full page reload. Guest selections are kept in a per-browser cookie for six months and merged into the account on login. The CSS and JavaScript are enqueued only on pages that actually show the compare button or the table.
 
-== Plogins Versus PRO ==
+== Versus Pro ==
 
-The free plugin is complete for what it does: a Compare button and a basic
-comparison table for guests and customers, with nothing time-limited and no
-account to create. **Plogins Versus PRO** is a separate add-on that adds a
-fuller comparison page:
+Versus Pro is a separate paid plugin that works on top of Versus. It adds:
 
-* **Comparison page shortcode** - `[versus_compare]` renders the shopper's set as a side-by-side table with price, SKU, stock, weight, dimensions, description and every product attribute
-* **Configurable rows** - choose which rows appear and cap how many products can be compared at once
-* **Sticky compare bar** - a persistent bar listing the selected products, linking straight to the comparison page
-* **Export** - download the comparison as CSV or PDF, or print it
-* **Category-scoped compare** - keep comparisons to like-for-like products
+* Comparison page shortcode
+* Configurable rows
+* Sticky compare bar
+* Comparison export
+* Category-scoped compare
 
-Versus PRO requires the free plugin and does not replace it. If the free plugin
-is missing or disabled, PRO stays dormant and says so rather than half-working.
+The free edition is not a trial and its features stay available without a time limit.
 
-* **Plogins Versus PRO** - [plogins.com/versus-pro/](https://plogins.com/versus-pro/)
-* **Pricing** - [plogins.com/versus-pro/pricing/](https://plogins.com/versus-pro/pricing/)
+* **Versus Pro** - [plogins.com/plogins-versus-pro/](https://plogins.com/plogins-versus-pro/)
+* **Compare editions and pricing** - [plogins.com/plogins-versus-pro/pricing/](https://plogins.com/plogins-versus-pro/pricing/)
+* **PRO documentation** - [plogins.com/plogins-versus-pro/docs/](https://plogins.com/plogins-versus-pro/docs/)
 
 == Installation ==
 
@@ -128,6 +126,9 @@ Comparison data stays inside your WordPress database: a custom `{prefix}versus_c
 Versus is fully translatable and ships the `plogins-versus.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.0.23 =
+* Readme only: a PRO section with links to the paid edition.
 
 = 1.0.22 =
 * Guests can now open their comparison table. The View comparison link used to land a logged-out shopper on a bare login form with no table on it; the table now shows above that form, and a new "Comparison page for guests" setting can send guests to any page holding the new `[versus]` shortcode instead. That page is excluded from page caching.
