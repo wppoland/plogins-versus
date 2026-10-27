@@ -12,6 +12,8 @@ defined('ABSPATH') || exit;
 return [
     'name'       => 'Versus Pro',
     'url'        => 'https://plogins.com/plogins-versus-pro/pricing/',
+    'campaign'   => 'plogins-versus',
+    'locales'    => ['pl', 'de', 'es'],
     'sellable'   => true,
     'price_from' => 29,
     'currency'   => 'EUR',
