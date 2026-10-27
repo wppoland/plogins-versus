@@ -55,13 +55,20 @@ Adding or removing a product is a single nonce-verified AJAX request; no full pa
 
 == Versus Pro ==
 
-Versus Pro is a separate paid plugin that works on top of Versus. It adds:
+Versus Pro is a separate paid plugin that extends Versus:
 
-* Comparison page shortcode
-* Configurable rows
-* Sticky compare bar
-* Comparison export
-* Category-scoped compare
+| Feature | Free | Pro |
+|:--- |:---:|:---:|
+| Compare button | Yes | Yes |
+| Side-by-side table | Yes | Yes |
+| Difference highlighting | Yes | Yes |
+| Guest and customer lists | Yes | Yes |
+| Product cap | Yes | Yes |
+| Comparison page shortcode | - | Yes |
+| Configurable rows | - | Yes |
+| Sticky compare bar | - | Yes |
+| Comparison export | - | Yes |
+| Category-scoped compare | - | Yes |
 
 The free edition is not a trial and its features stay available without a time limit.
 
