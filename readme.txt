@@ -53,6 +53,10 @@ All strings are translatable through the `plogins-versus` text domain, and a `pl
 
 Adding or removing a product is a single nonce-verified AJAX request; no full page reload. Guest selections are kept in a per-browser cookie for six months and merged into the account on login. The CSS and JavaScript are enqueued only on pages that actually show the compare button or the table.
 
+= Works with other Plogins plugins =
+
+* [Shortlist - Wishlist for WooCommerce](https://plogins.com/plogins-shortlist/) - with two or more products on the wishlist, a "Compare these" button opens them in the comparison table, up to your maximum products setting.
+
 == Versus Pro ==
 
 Versus Pro is a separate paid plugin that extends Versus.
@@ -115,6 +119,10 @@ Yes. Difference highlighting and a "differences only" toggle help shoppers focus
 
 Yes. Logged-in customers get a My Account Compare tab. Guest compare lists can be merged into the account after login.
 
+
+= Does it work with Shortlist? =
+
+Yes, with no setting. Under the Shortlist wishlist, a "Compare these" button replaces the visitor's comparison with the wishlist products, in wishlist order, up to the Maximum products setting, and opens the comparison table. It works without JavaScript.
 
 = Does this plugin work on WordPress Multisite? =
 
