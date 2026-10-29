@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Plogins Versus - Product Compare for WooCommerce 1.0.7\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/plogins-versus\n"
-"POT-Creation-Date: 2026-10-23T18:41:50+00:00\n"
+"POT-Creation-Date: 2026-10-29T13:43:07+00:00\n"
 "PO-Revision-Date: 2026-06-15T18:07:59+00:00\n"
 "Last-Translator: motylanogha <szatkowski.mariusz@gmail.com>\n"
 "Language-Team: German <de@li.org>\n"
@@ -49,48 +49,48 @@ msgstr ""
 msgid "Versus requires WooCommerce to be active."
 msgstr "Versus erfordert, dass WooCommerce aktiv ist."
 
-#: src/Admin/ProUpsell.php:88
+#: src/Admin/ProUpsell.php:113
 msgid "Coming soon"
 msgstr "Demnächst"
 
 #. translators: 1: currency symbol, 2: yearly price
-#: src/Admin/ProUpsell.php:94
+#: src/Admin/ProUpsell.php:119
 #, php-format
 msgid "from %1$s%2$d/yr"
 msgstr "ab %1$s%2$d/Jahr"
 
-#: src/Admin/ProUpsell.php:103
+#: src/Admin/ProUpsell.php:128
 msgid "Upgrade to PRO"
 msgstr "Auf PRO upgraden"
 
-#: src/Admin/ProUpsell.php:104
+#: src/Admin/ProUpsell.php:129
 msgid "Get notified"
 msgstr "Benachrichtige mich"
 
-#: src/Admin/ProUpsell.php:134
+#: src/Admin/ProUpsell.php:159
 msgid "Permission denied."
 msgstr "Zugriff verweigert."
 
 #. translators: %s: PRO edition name
-#: src/Admin/ProUpsell.php:164
+#: src/Admin/ProUpsell.php:189
 #, php-format
 msgid "Do more with %s"
 msgstr "Mehr erreichen mit %s"
 
-#: src/Admin/ProUpsell.php:171
+#: src/Admin/ProUpsell.php:196
 msgid "Dismiss this notice"
 msgstr "Diesen Hinweis ausblenden"
 
-#: src/Admin/ProUpsell.php:193
+#: src/Admin/ProUpsell.php:218
 msgid "Unlock every PRO feature"
 msgstr "Alle PRO-Funktionen freischalten"
 
-#: src/Admin/ProUpsell.php:206
+#: src/Admin/ProUpsell.php:231
 msgid "one licence, every PRO feature"
 msgstr "eine Lizenz, alle PRO-Funktionen"
 
 #. translators: %s: PRO edition name
-#: src/Admin/ProUpsell.php:225
+#: src/Admin/ProUpsell.php:250
 #, php-format
 msgid "What %s adds"
 msgstr "Was %s ergänzt"
@@ -270,7 +270,7 @@ msgstr ""
 "Wähle aus, welche Standardfelder als Zeilen angezeigt werden. Zeilen, die "
 "sich zwischen den Produkten unterscheiden, können hervorgehoben werden."
 
-#: src/Admin/Settings.php:229 src/Service/VersusService.php:173
+#: src/Admin/Settings.php:229 src/Service/VersusService.php:234
 msgid "Price"
 msgstr "Preis"
 
@@ -282,7 +282,7 @@ msgstr ""
 "Fügt eine Preiszeile hinzu, die den aktuellen Preis jedes Produkts anzeigt "
 "(einschließlich aller Verkaufspreise)."
 
-#: src/Admin/Settings.php:230 src/Service/VersusService.php:174
+#: src/Admin/Settings.php:230 src/Service/VersusService.php:235
 msgid "SKU"
 msgstr "Artikelnummer"
 
@@ -294,7 +294,7 @@ msgstr ""
 "Fügt eine SKU-Zeile hinzu, nützlich für Geschäfte, in denen Kunden auf "
 "Teile- oder Modellnummern verweisen."
 
-#: src/Admin/Settings.php:231 src/Service/VersusService.php:175
+#: src/Admin/Settings.php:231 src/Service/VersusService.php:236
 msgid "Availability"
 msgstr "Verfügbarkeit"
 
@@ -438,8 +438,8 @@ msgstr ""
 msgid "\"Compare\" button"
 msgstr "Schaltfläche „Vergleichen“."
 
-#: src/Admin/Settings.php:250 src/Service/VersusService.php:59
-#: src/Service/VersusService.php:61
+#: src/Admin/Settings.php:250 src/Service/VersusService.php:61
+#: src/Service/VersusService.php:63
 msgid "Compare"
 msgstr "Vergleichen"
 
@@ -453,7 +453,7 @@ msgstr ""
 msgid "\"Remove\" button"
 msgstr "Schaltfläche „Entfernen“."
 
-#: src/Admin/Settings.php:251 src/Service/VersusService.php:60
+#: src/Admin/Settings.php:251 src/Service/VersusService.php:62
 #: templates/compare-table.php:34
 msgid "Remove"
 msgstr "Entfernen"
@@ -534,33 +534,33 @@ msgstr "Weitere Informationen"
 msgid "Show the %s row."
 msgstr "Zeige die Zeile %s an."
 
-#: src/Service/VersusService.php:62 templates/compare-table.php:80
+#: src/Service/VersusService.php:64 templates/compare-table.php:80
 msgid "Feature"
 msgstr "Besonderheit"
 
-#: src/Service/VersusService.php:63
+#: src/Service/VersusService.php:65
 msgid "Please log in to compare products."
 msgstr "Bitte melde dich an, um Produkte zu vergleichen."
 
-#: src/Service/VersusService.php:64
+#: src/Service/VersusService.php:66
 msgid "Product not found."
 msgstr "Produkt nicht gefunden."
 
-#: src/Service/VersusService.php:65
+#: src/Service/VersusService.php:67
 msgid "Could not clear the comparison."
 msgstr "Der Vergleich konnte nicht gelöscht werden."
 
-#: src/Service/VersusService.php:66
+#: src/Service/VersusService.php:68
 msgid "Something went wrong. Please try again."
 msgstr "Etwas ist schief gelaufen. Bitte versuche es erneut."
 
-#: src/Service/VersusService.php:67
+#: src/Service/VersusService.php:69
 msgid "You can compare up to {limit} products. The oldest item was removed."
 msgstr ""
 "Du kannst bis zu {limit} Produkte vergleichen. Der älteste Artikel wurde "
 "entfernt."
 
-#: src/Service/VersusService.php:176
+#: src/Service/VersusService.php:237
 msgid "Description"
 msgstr "Beschreibung"
 
@@ -571,6 +571,18 @@ msgstr "Vergleiche Produkte"
 #: templates/compare-table.php:71
 msgid "Browse products"
 msgstr "Produkte durchsuchen"
+
+#: templates/wishlist-compare.php:28
+msgid "Compare these"
+msgstr ""
+
+#. translators: %d: how many products a comparison holds at most.
+#: templates/wishlist-compare.php:36
+#, php-format
+msgid "Only the first %d is compared."
+msgid_plural "Only the first %d are compared."
+msgstr[0] ""
+msgstr[1] ""
 
 #~ msgid "Wkrótce"
 #~ msgstr "Demnächst"
