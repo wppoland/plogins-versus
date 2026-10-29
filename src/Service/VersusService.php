@@ -27,6 +27,8 @@ final class VersusService implements HasHooks
 
     private const SHORTCODE = 'versus';
 
+    private const WISHLIST_ACTION = 'versus_compare_wishlist';
+
     private ?CompareEngine $engine = null;
 
     public function __construct(
@@ -92,6 +94,11 @@ final class VersusService implements HasHooks
             add_shortcode(self::SHORTCODE, [$this, 'renderShortcode']);
             add_action('template_redirect', [$this, 'preventCaching']);
 
+            // Shortlist fires this under the wishlist; without Shortlist it never runs.
+            add_action('shortlist_after_wishlist_items', [$this, 'renderWishlistCompare'], 20);
+            add_action('admin_post_' . self::WISHLIST_ACTION, [$this, 'handleWishlistCompare']);
+            add_action('admin_post_nopriv_' . self::WISHLIST_ACTION, [$this, 'handleWishlistCompare']);
+
             return;
         }
 
@@ -127,6 +134,63 @@ final class VersusService implements HasHooks
         $this->engine->enqueueOnDemand();
 
         return $this->engine->renderCompareTable();
+    }
+
+    /**
+     * "Compare these" under a Shortlist wishlist with two or more products.
+     *
+     * do_action() hands a one-item array of objects over as the bare object,
+     * so a one-product wishlist arrives as a WC_Product, not an array.
+     *
+     * @param mixed $products The wishlist products Shortlist passes.
+     */
+    public function renderWishlistCompare(mixed $products): void
+    {
+        if (! is_array($products) || ! $this->engine instanceof CompareEngine || ! $this->engine->canUse()) {
+            return;
+        }
+
+        $ids = [];
+
+        foreach ($products as $product) {
+            if ($product instanceof \WC_Product) {
+                $ids[] = $product->get_id();
+            }
+        }
+
+        if (count($ids) < 2) {
+            return;
+        }
+
+        $this->engine->enqueueOnDemand();
+
+        $this->renderTemplate('wishlist-compare', [
+            'product_ids' => $ids,
+            'max_items'   => $this->engine->getMaxItems(),
+            'action'      => self::WISHLIST_ACTION,
+        ]);
+    }
+
+    /**
+     * Form target of "Compare these": the comparison becomes the wishlist
+     * products, then the shopper lands on the comparison table.
+     */
+    public function handleWishlistCompare(): void
+    {
+        check_admin_referer(self::WISHLIST_ACTION);
+
+        if (! $this->engine instanceof CompareEngine || ! $this->engine->canUse()) {
+            wp_safe_redirect(wc_get_page_permalink('myaccount'));
+            exit;
+        }
+
+        $raw = isset($_POST['product_ids']) ? (array) wp_unslash($_POST['product_ids']) : []; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Cast to int on the next line.
+        $ids = array_values(array_filter(array_map('absint', $raw)));
+
+        $this->engine->compareOnly($ids);
+
+        wp_safe_redirect($this->engine->getCompareUrl());
+        exit;
     }
 
     /**
