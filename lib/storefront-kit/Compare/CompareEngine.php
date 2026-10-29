@@ -261,6 +261,38 @@ final class CompareEngine
         wp_send_json_success($response);
     }
 
+    /**
+     * Replace the visitor's comparison with these products, in order, up to
+     * the item cap. Unknown or unreadable ids are skipped.
+     *
+     * @param list<int> $productIds
+     * @return int How many products are now compared.
+     */
+    public function compareOnly(array $productIds): int
+    {
+        [$userId, $sessionId] = $this->context(true);
+        $this->repository->clear($userId, $sessionId);
+
+        $added = 0;
+
+        foreach (array_unique($productIds) as $productId) {
+            if ($added >= $this->getMaxItems()) {
+                break;
+            }
+
+            $product = wc_get_product($productId);
+
+            if (! $product instanceof \WC_Product || ! $this->isReadable($product)) {
+                continue;
+            }
+
+            $this->repository->add($productId, $userId, $sessionId);
+            ++$added;
+        }
+
+        return $added;
+    }
+
     public function handleClear(): void
     {
         check_ajax_referer($this->nonceAction, 'nonce');
@@ -558,7 +590,7 @@ final class CompareEngine
         return ! empty($this->getSettings()['show_sticky_bar']);
     }
 
-    private function getMaxItems(): int
+    public function getMaxItems(): int
     {
         return max(2, min(6, (int) ($this->getSettings()['max_items'] ?? 4)));
     }
