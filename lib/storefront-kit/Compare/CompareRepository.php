@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace WPPoland\StorefrontKit\Compare;
+namespace Versus\Vendor\StorefrontKit\Compare;
 
 /**
  * Storage contract for the compare engine. The host plugin implements this

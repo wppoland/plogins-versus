@@ -7,7 +7,7 @@ namespace Versus\Repository;
 defined('ABSPATH') || exit;
 
 use wpdb;
-use WPPoland\StorefrontKit\Compare\CompareRepository as CompareRepositoryContract;
+use Versus\Vendor\StorefrontKit\Compare\CompareRepository as CompareRepositoryContract;
 
 /**
  * Data access for product compare items, backed by the

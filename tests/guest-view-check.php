@@ -23,7 +23,7 @@ $check(! is_user_logged_in(), 'run logged out');
 
 $service = \Versus\Plugin::instance()->container()->get(\Versus\Service\VersusService::class);
 $engine = (new ReflectionProperty($service, 'engine'))->getValue($service);
-$check($engine instanceof \WPPoland\StorefrontKit\Compare\CompareEngine, 'engine is wired');
+$check($engine instanceof \Versus\Vendor\StorefrontKit\Compare\CompareEngine, 'engine is wired');
 
 $original = get_option('versus_settings', []);
 $set = static function (array $patch) use ($original): void {

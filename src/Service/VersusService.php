@@ -8,7 +8,7 @@ defined('ABSPATH') || exit;
 
 use Versus\Contract\HasHooks;
 use Versus\Repository\CompareRepository;
-use WPPoland\StorefrontKit\Compare\CompareEngine;
+use Versus\Vendor\StorefrontKit\Compare\CompareEngine;
 
 /**
  * Thin adapter over the storefront-kit {@see CompareEngine}.

@@ -22,7 +22,7 @@ $check = static function (bool $ok, string $what): void {
 
 $service = \Versus\Plugin::instance()->container()->get(\Versus\Service\VersusService::class);
 $engine = (new ReflectionProperty($service, 'engine'))->getValue($service);
-$check($engine instanceof \WPPoland\StorefrontKit\Compare\CompareEngine, 'engine is wired');
+$check($engine instanceof \Versus\Vendor\StorefrontKit\Compare\CompareEngine, 'engine is wired');
 
 $original = get_option('versus_settings', []);
 update_option('versus_settings', array_merge(is_array($original) ? $original : [], ['enabled' => true, 'max_items' => 2]));
