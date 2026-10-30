@@ -4,7 +4,7 @@ Tags: woocommerce, product compare, compare products, product comparison, compar
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.0.26
+Stable tag: 1.0.27
 Requires Plugins: woocommerce
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -144,6 +144,9 @@ Comparison data stays inside your WordPress database: a custom `{prefix}versus_c
 Versus is fully translatable and ships the `plogins-versus.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.0.27 =
+* Fixed: deleting the plugin on a multisite network now removes its compare table and settings from every site, not only the main one.
 
 = 1.0.26 =
 * Fixed: the site could fatal ("Unknown named parameter") when another Plogins plugin with an older copy of the shared library was active. The plugin's bundled copy now lives under its own namespace.
