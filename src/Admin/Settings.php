@@ -257,6 +257,30 @@ final class Settings implements HasHooks
                     </tbody>
                 </table>
 
+                <h2><?php esc_html_e('Ecosystem integrations', 'plogins-versus'); ?></h2>
+                <table class="form-table" role="presentation">
+                    <tbody>
+                        <tr>
+                            <th scope="row"><?php esc_html_e('Shortlist (Wishlist)', 'plogins-versus'); ?></th>
+                            <td>
+                                <p class="description">
+                                    <?php
+                                    if (class_exists('\Shortlist\Plugin')) {
+                                        esc_html_e('Shortlist is active. When a customer has two or more products on their wishlist, Versus shows a "Compare these" button below the wishlist.', 'plogins-versus');
+                                    } else {
+                                        printf(
+                                            /* translators: %s: partner plugin name, linked to its search on the Add Plugins screen. */
+                                            esc_html__('Install %s to let customers save products to a wishlist and compare them with Versus.', 'plogins-versus'),
+                                            '<a href="' . esc_url(admin_url('plugin-install.php?s=' . rawurlencode('Shortlist - Wishlist for WooCommerce') . '&tab=search&type=term')) . '">' . esc_html('Shortlist - Wishlist for WooCommerce') . '</a>'
+                                        );
+                                    }
+                                    ?>
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
                 <?php submit_button(); ?>
             </form>
 
