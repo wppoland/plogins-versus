@@ -4,7 +4,7 @@
  * Themeable via CSS custom properties (override `--versus-*` from your theme).
  * Layout-shift-safe: the table wrapper reserves its own scroll area so adding
  * columns never reflows the page. Motion is opt-in and disabled when the visitor
- * prefers reduced motion. Dark mode follows the visitor's system preference.
+ * prefers reduced motion. Dark mode follows the page's color-scheme (set by the theme).
  */
 
 .versus-compare,
@@ -276,16 +276,32 @@
 
 /* ----------------------------------------------------------------- dark mode */
 
-@media (prefers-color-scheme: dark) {
+@supports (color: light-dark(white, black)) {
     .versus-compare,
     .versus-compare-account {
-        --versus-accent: #a78bfa;
-        --versus-surface: #1a1d21;
-        --versus-surface-muted: #23272c;
-        --versus-border: #3a3f45;
-        --versus-text: #e4e6eb;
-        --versus-text-muted: #9aa0a6;
-        --versus-diff: rgba(255, 196, 0, .12);
-        --versus-focus: 0 0 0 2px var(--versus-surface), 0 0 0 4px var(--versus-accent);
+        --versus-accent: light-dark(#6d28d9, #a78bfa);
+        --versus-surface: light-dark(#ffffff, #1a1d21);
+        --versus-surface-muted: light-dark(#f6f7f9, #23272c);
+        --versus-border: light-dark(#d8dce0, #3a3f45);
+        --versus-text: light-dark(#1d2327, #e4e6eb);
+        --versus-text-muted: light-dark(#646970, #9aa0a6);
+        --versus-diff: light-dark(rgba(255, 196, 0, .16), rgba(255, 196, 0, .12));
+    }
+}
+
+/* Fallback for browsers without light-dark(): keep the OS-based dark styling. */
+@supports not (color: light-dark(white, black)) {
+    @media (prefers-color-scheme: dark) {
+        .versus-compare,
+        .versus-compare-account {
+            --versus-accent: #a78bfa;
+            --versus-surface: #1a1d21;
+            --versus-surface-muted: #23272c;
+            --versus-border: #3a3f45;
+            --versus-text: #e4e6eb;
+            --versus-text-muted: #9aa0a6;
+            --versus-diff: rgba(255, 196, 0, .12);
+            --versus-focus: 0 0 0 2px var(--versus-surface), 0 0 0 4px var(--versus-accent);
+        }
     }
 }
