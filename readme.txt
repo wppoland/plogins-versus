@@ -4,7 +4,7 @@ Tags: woocommerce, product compare, compare products, product comparison, compar
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.0.28
+Stable tag: 1.0.29
 Requires Plugins: woocommerce
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -144,6 +144,9 @@ Comparison data stays inside your WordPress database: a custom `{prefix}versus_c
 Versus is fully translatable and ships the `plogins-versus.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.0.29 =
+* Plugins list shows a shortcut to the settings screen.
 
 = 1.0.28 =
 * Changed: dark styling follows the theme's color scheme instead of the visitor's operating system, so widgets stay light on light themes; older browsers keep the previous behaviour.
