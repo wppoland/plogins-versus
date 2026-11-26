@@ -78,7 +78,8 @@
     mask: var(--versus-check) center / contain no-repeat;
 }
 
-.versus-compare {
+.versus-compare,
+.versus-compare-account {
     --versus-check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M6.5 11.5 3 8l1.1-1.1 2.4 2.4 5.4-5.4L13 5z'/%3E%3C/svg%3E");
 }
 

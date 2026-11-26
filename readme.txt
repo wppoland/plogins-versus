@@ -4,7 +4,7 @@ Tags: woocommerce, product compare, compare products, product comparison, compar
 Requires at least: 6.5
 Tested up to: 7.2
 Requires PHP: 8.1
-Stable tag: 1.0.29
+Stable tag: 1.0.30
 Requires Plugins: woocommerce
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -144,6 +144,9 @@ Comparison data stays inside your WordPress database: a custom `{prefix}versus_c
 Versus is fully translatable and ships the `plogins-versus.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.0.30 =
+* Fixed: the Remove button in the comparison table shows its check mark instead of a solid square.
 
 = 1.0.29 =
 * Plugins list shows a shortcut to the settings screen.
