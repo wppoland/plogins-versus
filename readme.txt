@@ -4,7 +4,7 @@ Tags: woocommerce, product compare, compare products, product comparison, compar
 Requires at least: 6.5
 Tested up to: 7.2
 Requires PHP: 8.1
-Stable tag: 1.0.32
+Stable tag: 1.0.33
 Requires Plugins: woocommerce
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -144,6 +144,9 @@ Comparison data stays inside your WordPress database: a custom `{prefix}versus_c
 Versus is fully translatable and ships the `plogins-versus.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.0.33 =
+* The translation template (.pot) lists every current interface string again, including the Shortlist integration settings and the reworded My Account help.
 
 = 1.0.32 =
 * The Account menu help no longer asks you to re-save Permalinks: the compare endpoint is always registered and the rules are flushed once after an install or update.
