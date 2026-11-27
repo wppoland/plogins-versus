@@ -226,7 +226,7 @@ final class Settings implements HasHooks
                             </td>
                         </tr>
                         <?php
-                        $this->checkboxRow('show_in_account', __('Account menu', 'plogins-versus'), __('Add a "Compare" tab to the My Account menu for logged-in customers.', 'plogins-versus'), $settings, __('Adds a Compare tab inside My Account so signed-in customers can return to their saved comparison at any time. With the tab off, the comparison is still reachable from the View comparison link next to each compare button. If you change this, save and then re-save Permalinks under Settings > Permalinks once.', 'plogins-versus'));
+                        $this->checkboxRow('show_in_account', __('Account menu', 'plogins-versus'), __('Add a "Compare" tab to the My Account menu for logged-in customers.', 'plogins-versus'), $settings, __('Adds a Compare tab inside My Account so signed-in customers can return to their saved comparison at any time. With the tab off, the comparison is still reachable from the View comparison link next to each compare button.', 'plogins-versus'));
                         ?>
                     </tbody>
                 </table>
