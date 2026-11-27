@@ -56,11 +56,35 @@
       body: new URLSearchParams(params).toString(),
     });
 
-    if (!response.ok) {
+    // A refusal (e.g. Versus Pro's same-category rule) answers 4xx with a JSON
+    // message; keep it so the shopper is told why.
+    const payload = await response.json().catch(() => null);
+
+    if (!payload) {
       throw new Error(`HTTP ${response.status}`);
     }
 
-    return response.json();
+    return payload;
+  };
+
+  /** Show an error as a WooCommerce notice: above the products when the page has a notices area, else next to the button. */
+  const showError = (message, near) => {
+    if (!message) {
+      return;
+    }
+    document.querySelectorAll('[data-versus-compare-error]').forEach((old) => old.remove());
+    const notice = document.createElement('ul');
+    notice.className = 'woocommerce-error';
+    notice.setAttribute('role', 'alert');
+    notice.setAttribute('data-versus-compare-error', '');
+    notice.appendChild(document.createElement('li')).textContent = message;
+    const wrapper = document.querySelector('.woocommerce-notices-wrapper');
+    if (wrapper) {
+      wrapper.prepend(notice);
+    } else {
+      near.insertAdjacentElement('afterend', notice);
+    }
+    notice.scrollIntoView({ block: 'nearest', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   };
 
   document.addEventListener('click', async (event) => {
@@ -88,11 +112,11 @@
         if (payload && payload.success) {
           window.location.href = (payload.data && payload.data.compare_url) || window.location.href;
         } else {
-          announce((payload && payload.data && payload.data.message) || config.errorText || '');
+          showError((payload && payload.data && payload.data.message) || config.errorText || '', clearButton);
           clearButton.removeAttribute('aria-busy');
         }
       } catch (error) {
-        announce(config.errorText || '');
+        showError(config.errorText || '', clearButton);
         clearButton.removeAttribute('aria-busy');
       }
 
@@ -138,6 +162,7 @@
         updateButtons(productId, data.in_compare, data.button_text);
         setCount(data.count);
         announce(data.message || '');
+        document.querySelectorAll('[data-versus-compare-error]').forEach((stale) => stale.remove());
 
         // If we're on the comparison page, the table no longer matches the
         // stored set after a remove, refresh so it stays in sync.
@@ -145,10 +170,10 @@
           window.location.reload();
         }
       } else {
-        announce((payload && payload.data && payload.data.message) || config.errorText || '');
+        showError((payload && payload.data && payload.data.message) || config.errorText || '', button);
       }
     } catch (error) {
-      announce(config.errorText || '');
+      showError(config.errorText || '', button);
     } finally {
       button.disabled = false;
       button.removeAttribute('aria-busy');
